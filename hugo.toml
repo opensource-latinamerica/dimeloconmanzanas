@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'es'
+title = 'Dímelo con manzanas'
+theme = ["mostafa-hugo-theme"]
