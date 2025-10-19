@@ -1,0 +1,22 @@
+{{/* Get the theme's original CSS */}}
+{{ $options := dict "targetPath" "theme.css" "enableSourceMap" true "precision" 6 }}
+{{ $themeCSS := resources.Get "sass/theme.scss" | resources.ExecuteAsTemplate "theme.scss" . | toCSS $options }}
+
+{{/* Get the custom CSS */}}
+{{ $customCSS := resources.Get "css/custom.css" | toCSS $options }}
+
+{{/* Combine the stylesheets */}}
+{{ $allCSS := slice $themeCSS $customCSS | resources.Concat "css/main.css" }}
+
+{{ if or (hugo.IsServer) (eq hugo.Environment "development") }}
+    <link rel="stylesheet" href="{{ $allCSS.Permalink }}" media="screen">
+{{ else }}
+    {{ $allCSS := $allCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $allCSS.Permalink }}" integrity="{{ $allCSS.Data.Integrity }}" media="screen">
+{{ end }}
+
+{{ if isset .Site.Params "css_modules" }}
+    {{ range .Site.Params.css_modules }}
+        <link rel="stylesheet" href="{{ . | absURL }}">
+    {{ end }}
+{{ end }}

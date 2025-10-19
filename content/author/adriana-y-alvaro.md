@@ -9,10 +9,14 @@ excludefromindex: true
 
 ## Adriana
 
+{{< author-card src="adriana.jpg" >}}
 Una mujer de 41 años con una voz dulce y un comportamiento tranquilo, es amante de los perros y trabaja en ventas para una empresa de TI.
+{{< /author-card >}}
 
 ## Alvaro
 
+{{< author-card src="alvaro.jpg" >}}
 Es un chileno de 42 años, graduado en ciencias de la computación. Ha vivido en México la mitad de su vida, por lo que su acento es una mezcla. Intenta hablar de forma neutra para ser entendido en toda América Latina. Estudió ingeniería de sistemas y tiene una maestría en ciencias de la computación. Actualmente, vive en los suburbios de la zona metropolitana de México. Habla español como lengua nativa, también inglés, y está intentando aprender italiano.
+{{< /author-card >}}
 
 

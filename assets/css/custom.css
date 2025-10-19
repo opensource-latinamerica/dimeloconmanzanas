@@ -1,0 +1,29 @@
+/* Author Card Layout */
+.author-card-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 2em;
+}
+
+.author-card-flex::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.author-image-container {
+  flex-shrink: 0;
+}
+
+.author-description {
+  flex-grow: 1;
+}
+
+.author-image-circle {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}

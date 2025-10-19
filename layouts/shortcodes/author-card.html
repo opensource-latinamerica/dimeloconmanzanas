@@ -1,0 +1,14 @@
+{{ $src := .Get "src" }}
+{{ $image := resources.Get $src }}
+{{ if $image }}
+<div class="author-card-flex">
+  <div class="author-image-container">
+    <img src="{{ $image.RelPermalink }}" alt="Author Image" class="author-image-circle">
+  </div>
+  <div class="author-description">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
+{{ else }}
+{{ errorf "Image not found: %s" $src }}
+{{ end }}
