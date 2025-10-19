@@ -12,3 +12,17 @@ Explora cómo funciona el internet usando analogías sencillas, aprende el rol d
 <!--more-->
 
 Adriana y Álvaro explican conceptos clave usando ejemplos, anécdotas y un lenguaje ameno y práctico.
+
+<!--transcript-->
+
+## Capítulo 1
+
+El Internet como una Oficina Postal Global.
+
+### Capítulo 2
+
+Herramientas y Usos: Del Correo Electrónico al Chat en Grupo.
+
+### Capítulo 3
+
+Seguridad en la Ciudad Digital: Virus, Phishing y Spam.
