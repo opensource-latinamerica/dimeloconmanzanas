@@ -1,9 +1,13 @@
 {{ $src := .Get "src" }}
+{{ $link := .Get "link" }}
 {{ $image := resources.Get $src }}
+
 {{ if $image }}
 <div class="author-card-flex">
   <div class="author-image-container">
-    <img src="{{ $image.RelPermalink }}" alt="Author Image" class="author-image-circle">
+    <a href="{{ $link }}" target="_blank" rel="noopener noreferrer">
+      <img src="{{ $image.RelPermalink }}" alt="Author Image" class="author-image-circle">
+    </a>
   </div>
   <div class="author-description">
     {{ .Inner | markdownify }}
