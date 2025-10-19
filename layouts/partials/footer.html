@@ -1,0 +1,92 @@
+{{ if .Site.Params.showFooter | default true }}
+<footer>
+    <div class="container">
+
+        {{ if gt (.Site.Params.amountLatestPostsInFooter | default 7) 0 }}
+        <div class="recent-posts">
+            <strong>{{ i18n "latestPosts" }}</strong>
+            <ul>
+                {{ $dontRender :=  (slice "page" "quote" "link" "status" "archive") }}
+                {{ $pages := .Site.Pages.ByPublishDate.Reverse }}
+                {{ $pages = where $pages ".Kind" "page" }}
+                {{ $pages = where $pages ".Type" "not in" $dontRender }}
+                {{ $pages = where $pages ".Params.excludefromindex" "!=" true }}
+                {{ range (first (.Site.Params.amountLatestPostsInFooter | default 7) $pages) }}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+        {{ if and .Site.Taxonomies.categories (gt ( .Site.Params.amountCategoriesInFooter | default 7 ) 0 ) }}
+        <div class="categories">
+            {{ with .Site.GetPage "/categories" }}
+            <a href="{{ .Permalink }}"><strong>{{ i18n "categories" }}</strong></a>
+            {{ end }}
+
+            <ul>
+                {{ range $order, $taxonomy := (first ( .Site.Params.amountCategoriesInFooter | default 7 ) .Site.Taxonomies.categories.ByCount) }}
+                <li>
+                {{ with $.Site.GetPage (printf "/categories/%s" $taxonomy.Name) }}
+                    <a href="{{ .Permalink }}">{{ .Title }} ({{ $taxonomy.Count }})</a>
+                {{ end }}
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+        <div class="right">
+            {{ if .Site.Params.otherLinks }}
+            <strong>{{ i18n "otherLinks" }}</strong>
+
+            <ul>
+                {{ range .Site.Params.otherLinks }}
+                <li>
+                    <a href="{{ .link }}">{{ .name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+            {{ end }}
+
+
+
+            {{ if .Site.Params.showArchive | default true }}
+            <div class="archive">
+                {{ with .Site.GetPage "/archive" }}
+                <a href="{{ .Permalink }}"><strong>{{ i18n "archive" }}</strong></a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</footer>
+{{ end }}
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="{{ .Site.Params.copyrightUrl | default .Site.BaseURL }}">
+                &copy;
+                {{ if .Site.Params.copyrightUseCurrentYear }}
+                {{ now.Year }}
+                {{ else if gt now.Year (.Site.Params.copyrightYearOverride | default 2024) }}
+                {{ .Site.Params.copyrightYearOverride | default 2024 }} - {{ now.Year }}
+                {{ else }}
+                {{ .Site.Params.copyrightYearOverride | default 2024 }}
+                {{ end }}
+                {{ .Site.Params.copyrightBy | default (printf "by %s" .Site.Sites.Default.Title) }}
+            </a>
+            {{ with  .OutputFormats.Get "rss" -}}
+            -
+            <a href="{{ .Permalink }}">RSS</a>
+            {{- end }}
+        </div>
+        <div class="author">
+            <a href="https://github.com/mirmousaviii/mostafa-hugo-theme"
+                target="_blank">Powered by Mostafa-Hugo-Theme</a>
+        </div>
+    </div>
+</div>

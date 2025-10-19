@@ -2,6 +2,7 @@
 title: "Adriana y Alvaro"
 date: 2025-10-15T09:00:00-05:00
 draft: false
+excludefromindex: true
 ---
 
 "Dímelo con Manzanas" es presentado por Adriana y Alvaro.
