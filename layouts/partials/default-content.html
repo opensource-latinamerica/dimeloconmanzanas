@@ -1,0 +1,54 @@
+<!-- CUSTOM DEFAULT-CONTENT.HTML TEMPLATE -->
+<div class="content">
+    <h1 class="article-title">
+        <a href="{{ .ctx.Permalink }}">
+            {{ .ctx.Title }}
+        </a>
+    </h1>
+
+    <!-- Meta section completely removed to hide author -->
+
+    {{ if or (eq .template_type "single") (.ctx.Params.noSummary) }}
+        {{ if and (gt .ctx.WordCount .ctx.Site.Params.tocMinWordCount ) (.ctx.Params.toc) }}
+            <h2>{{ i18n "tableOfContents" | default "tableOfContents" }}</h2>
+            {{ .ctx.TableOfContents }}
+        {{ end }}
+
+        {{ .ctx.Content }}
+    {{ else }}
+        {{ .ctx.Summary }}
+
+
+        {{ if or (.ctx.Truncated) (isset .ctx.Params "summary") }}
+            <a href="{{ .ctx.Permalink }}" class="more">
+                {{ i18n "continueReading" }}
+                {{ if ( .ctx.Site.Params.showReadingTime | default false ) }}
+                    {{ if eq .ctx.Params.readingTime 0 }}
+                    <!--hide reading time when it's set to 0 &ndash;&gt;-->
+                    {{ else if .ctx.Params.readingTime }}
+                    <span class="readingTime">({{ i18n "readingTime" .ctx.Params.readingTime }})</span>
+                    {{ else }}
+                    <span class="readingTime">({{ i18n "readingTime" .ctx.ReadingTime }})</span>
+                    {{ end }}
+                {{ end }}
+            </a>
+        {{ end }}
+
+    {{ end }}
+
+    {{ with .ctx.Params.tags }}
+    <div class="tags">
+        {{ range . }}
+        {{ $urlValue := replace . " " "-" | lower}}
+        {{ with $.ctx.Site.GetPage (printf "/tags/%s" $urlValue) }}
+        <a class="link" href="{{ .Permalink }}">
+            <i class="fa fa-tag"></i> {{ .Title }}
+        </a>
+        {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Author section at the bottom completely removed -->
+
+</div>

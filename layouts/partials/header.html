@@ -1,0 +1,96 @@
+<style>
+    .logo {
+        max-height: 150px;
+        margin-top: 20px;
+        border-radius: 15px;
+    }
+</style>
+<header>
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="title-container">
+            {{ if .Site.Params.logo }}
+                {{ $logo := resources.Get .Site.Params.logo }}
+                {{ if $logo }}
+                <a href="{{ .Site.BaseURL }}">
+                    <img src="{{ $logo.RelPermalink }}" alt="logo" class="logo">
+                </a>
+                {{ end }}
+            {{ else }}
+            <h1 class="title">
+                <a href="{{ .Site.BaseURL }}">
+                    {{ .Site.Title }}
+                </a>
+            </h1>
+            {{ end }}
+            {{ if .Site.Params.showSubtitle }}
+            <h2 class="subtitle">
+                {{ .Site.Params.subtitle }}
+            </h2>
+            {{ end }}
+        </div>
+
+        <nav>
+            <ul>
+                {{ range .Site.Params.socialMediaLinks }}
+                <li><a href="{{ .link }}" target="_blank" rel="{{ .rel }}"><em class="{{ .icon }}"></em></a></li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<div class="navigation">
+
+    <!-- Menu Navigation -->
+    {{ if .Site.Menus.main }}
+    <div class="pages menu-wrapper">
+        <ul>
+            {{ $activeFound := false }}
+            {{ range .Site.Menus.main }}
+            <li {{ if eq .URL $.Page.RelPermalink }} class="active menu-toggle"{{ $activeFound = true }}{{ end }}>
+                <a href="{{ .URL }}">{{ if i18n .Name }}{{ i18n .Name }}{{ else }}{{ .Name }}{{ end }}</a>
+            </li>
+            {{ end }}
+            {{ if not $activeFound }}
+            <li class="active menu-toggle menu-button">
+                <a href="#">{{ i18n "pages" }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+
+
+
+    <!-- Language Chooser -->
+    {{ if and (gt .Site.Languages 1) (.Site.Params.showHeaderLanguageChooser | default true) }}
+    {{- $language := .Language -}}
+    {{- $pages := .Page.AllTranslations -}}
+    <div class="languages menu-wrapper">
+        <ul>
+            {{ range $.Site.Home.AllTranslations }}
+            {{ $url := .RelPermalink }}
+            {{ range where $pages "Lang" .Language.Lang }}
+            {{ $url = .RelPermalink }}
+            {{ end }}
+
+            {{ if eq $language .Language }}
+            <li class="active menu-toggle"><a href="{{ $url }}">
+                {{ .Language.LanguageName }}
+            </a></li>
+            {{ else }}
+            <li><a href="{{ $url }}">
+                {{ .Language.LanguageName }}
+            </a></li>
+            {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+
+</div>

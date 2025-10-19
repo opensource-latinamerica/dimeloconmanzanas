@@ -1,4 +1,43 @@
-baseURL = 'https://example.org/'
-languageCode = 'es'
-title = 'Dímelo con manzanas'
-theme = ["mostafa-hugo-theme"]
+baseURL = "https://conmanzanas.lat"
+languageCode = "es-ES"
+title = "Dímelo con manzanas"
+DefaultContentLanguage = "es"
+
+[module]
+  [[module.imports]]
+    path = "github.com/mirmousaviii/mostafa-hugo-theme"
+
+[menus]
+  [[menus.main]]
+    name = "Inicio"
+    url = "/"
+    weight = 10
+
+  [[menus.main]]
+    name = "authors"
+    url = "/author/adriana-y-alvaro/"
+    weight = 20
+
+  [[menus.main]]
+    name = "Episodios"
+    url = "/categories/episodio/"
+    weight = 30
+
+[params]
+    logo = "image_1758312870445.webp"
+    author = "Adriana y Álvaro"
+    description = "Explorando ideas complejas con explicaciones sencillas."
+    pinnedPost = "/article/bienvenido/"
+
+[Languages]
+    [Languages.es]
+        weight = 10
+        languageCode = 'es'
+        languageDirection = 'ltr'
+        languageName = 'Español'
+        title = "Dímelo con manzanas"
+        [Languages.es.params]
+            subtitle = "Explorando ideas complejas con explicaciones sencillas."
+
+[outputs]
+    home = [ "HTML", "RSS", "JSON" ]
