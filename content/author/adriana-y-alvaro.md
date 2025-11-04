@@ -10,7 +10,7 @@ excludefromindex: true
 ## Adriana
 
 {{< author-card src="adriana.webp" link="https://www.linkedin.com/in/adriana-m%C3%A9ndez-03751353" >}}
-Una mujer de 41 años con una voz dulce y un comportamiento tranquilo, es amante de los perros y trabaja en ventas para una empresa de TI.
+Es una mujer mexicana de 41 años. Nació en Morelia y hace 13 años se mudó a la CDMX. Ama los animales, en especial a los perritos. Estudió ingeniería mecánica, pero profesionalmente se ha dedicado más a la tecnología. Le gusta la vida tranquila, el café y el reggaetón.
 {{< /author-card >}}
 
 ## Alvaro
