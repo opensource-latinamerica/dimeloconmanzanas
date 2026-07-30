@@ -10,13 +10,13 @@ excludefromindex: true
 ## Adriana
 
 {{< author-card src="adriana.webp" link="https://www.linkedin.com/in/adriana-m%C3%A9ndez-03751353" >}}
-Es una mujer mexicana de 41 años. Nació en Morelia y hace 13 años se mudó a la CDMX. Ama los animales, en especial a los perritos. Estudió ingeniería mecánica, pero profesionalmente se ha dedicado más a la tecnología. Le gusta la vida tranquila, el café y el reggaetón.
+Adriana nació en Morelia y hace 13 años se mudó a la CDMX. Ama los animales, en especial a los perritos. Estudió ingeniería mecánica, pero profesionalmente se ha dedicado más a la tecnología. Le gusta la vida tranquila, el café y el reggaetón.
 {{< /author-card >}}
 
 ## Alvaro
 
 {{< author-card src="alvaro.webp" link="https://www.linkedin.com/in/alvaro-soto-58564226" >}}
-Es un chileno de 42 años, graduado en ciencias de la computación. Ha vivido en México la mitad de su vida, por lo que su acento es una mezcla. Intenta hablar de forma neutra para ser entendido en toda América Latina. Estudió ingeniería de sistemas y tiene una maestría en ciencias de la computación. Actualmente, vive en los suburbios de la zona metropolitana de México. Habla español como lengua nativa, también inglés, y está intentando aprender italiano.
+Alvaro, graduado en ciencias de la computación. Ha vivido en México la mitad de su vida, por lo que su acento es una mezcla. Intenta hablar de forma neutra para ser entendido en toda América Latina. Estudió ingeniería de sistemas y tiene una maestría en ciencias de la computación. Actualmente, vive en los suburbios de la zona metropolitana de México. Habla español como lengua nativa, también inglés y está intentando aprender italiano.
 {{< /author-card >}}
 
 
