@@ -41,6 +41,12 @@
   display: block;
 }
 
+/* Hide episode spotify player in preview cards (homepage, category lists, tags) */
+.article-wrapper:not(.single) .spotify-widget {
+  display: none !important;
+}
+
+
 /* Header Spotify Widget & Button */
 .header-spotify {
   display: flex;
