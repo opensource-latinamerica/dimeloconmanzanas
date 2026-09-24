@@ -16,7 +16,7 @@ Adriana nació en Morelia y hace 13 años se mudó a la CDMX. Ama los animales, 
 ## Alvaro
 
 {{< author-card src="alvaro.webp" link="https://www.linkedin.com/in/alvaro-soto-58564226" >}}
-Alvaro, graduado en ciencias de la computación. Ha vivido en México la mitad de su vida, por lo que su acento es una mezcla. Intenta hablar de forma neutra para ser entendido en toda América Latina. Estudió ingeniería de sistemas y tiene una maestría en ciencias de la computación. Actualmente, vive en los suburbios de la zona metropolitana de México. Habla español como lengua nativa, también inglés y está intentando aprender italiano.
+Alvaro ha vivido la mitad de su vida en México, por lo que su acento es una mezcla curiosa con la que busca conectar con toda América Latina. Es ingeniero de sistemas con maestría en ciencias de la computación y un apasionado de la tecnología. Vive en los alrededores de la CDMX, habla inglés y en sus ratos libres anda aprendiendo italiano.
 {{< /author-card >}}
 
 
