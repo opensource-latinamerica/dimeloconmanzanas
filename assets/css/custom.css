@@ -1,4 +1,52 @@
-/* Author Card Layout */
+/* ==========================================================================
+   GLOBAL RESET & RESPONSIVE FOUNDATION
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* Prevent long text/URLs from breaking mobile viewports */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+td,
+th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   AUTHOR CARD COMPONENT
+   ========================================================================== */
 .author-card-flex {
   display: flex;
   flex-direction: row;
@@ -28,7 +76,10 @@
   object-fit: cover;
 }
 
-/* Spotify Embed Widget */
+/* ==========================================================================
+   SPOTIFY PLAYER WIDGETS
+   ========================================================================== */
+/* In-Article Episode Player */
 .spotify-widget {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
@@ -41,13 +92,12 @@
   display: block;
 }
 
-/* Hide episode spotify player in preview cards (homepage, category lists, tags) */
+/* Hide episode player in preview cards (homepage, category lists, tags) */
 .article-wrapper:not(.single) .spotify-widget {
   display: none !important;
 }
 
-
-/* Header Spotify Widget & Button */
+/* Header Show Widget & Follow Button */
 .header-spotify {
   display: flex;
   align-items: center;
@@ -92,79 +142,9 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 800px) {
-  .header-spotify {
-    max-width: 100%;
-    justify-content: center;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-/* Accessibility: Skip Link (WCAG 2.4.1) */
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 20px;
-  background: #FF8D00;
-  color: #111111 !important;
-  font-weight: 700;
-  padding: 12px 20px;
-  border-radius: 6px;
-  z-index: 100000;
-  text-decoration: none !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  transition: top 0.2s ease;
-}
-
-.skip-link:focus {
-  top: 20px;
-  outline: 3px solid #FFFFFF;
-}
-
-/* Accessibility: Keyboard Focus Visibility (WCAG 2.4.7) */
-:focus-visible {
-  outline: 2px solid #FF8D00;
-  outline-offset: 3px;
-}
-
-/* Accessibility: Respect Reduced Motion (WCAG 2.3.3) */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Touch Target Minimum Sizes (WCAG 2.5.8) */
-.mostafa-hugo-theme .navigation .pages ul li a {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-}
-
-#back-to-top-button {
-  min-width: 44px;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Responsive Author Card on Mobile */
-@media (max-width: 600px) {
-  .author-card-flex {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-}
-
-/* Typography & Reading Ergonomics */
+/* ==========================================================================
+   TYPOGRAPHY & READING ERGONOMICS
+   ========================================================================== */
 .content p {
   line-height: 1.7;
 }
@@ -177,12 +157,14 @@
 /* Enhanced Markdown Table Styling for Episodes */
 .content table {
   width: 100%;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-collapse: separate;
   border-spacing: 0;
   margin: 1.8rem 0;
   border: 1px solid #333333;
   border-radius: 8px;
-  overflow: hidden;
 }
 
 .content table th {
@@ -208,3 +190,219 @@
   background-color: rgba(255, 255, 255, 0.03);
 }
 
+/* ==========================================================================
+   ACCESSIBILITY (WCAG 2.2)
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: #FF8D00;
+  color: #111111 !important;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 6px;
+  z-index: 100000;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 20px;
+  outline: 3px solid #FFFFFF;
+}
+
+:focus-visible {
+  outline: 2px solid #FF8D00;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.mostafa-hugo-theme .navigation .pages ul li a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+#back-to-top-button {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+
+/* 1. Large Desktops & Widescreens (> 1200px) */
+@media (min-width: 1200px) {
+  .mostafa-hugo-theme .container {
+    max-width: 1000px;
+  }
+  .mostafa-hugo-theme article {
+    width: 820px;
+  }
+}
+
+/* 2. Laptops & Landscape Tablets (801px - 1024px) */
+@media (min-width: 801px) and (max-width: 1024px) {
+  .mostafa-hugo-theme header {
+    padding: 0 30px !important;
+  }
+  .mostafa-hugo-theme .navigation {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+  }
+  .mostafa-hugo-theme .container {
+    width: 92% !important;
+    max-width: 100% !important;
+  }
+  .mostafa-hugo-theme article {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 24px auto !important;
+  }
+  .header-spotify {
+    max-width: 380px !important;
+  }
+}
+
+/* 3. Tablets Portrait & Mobile (< 800px) */
+@media (max-width: 800px) {
+  .mostafa-hugo-theme header {
+    padding: 0 24px 1.5rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .mostafa-hugo-theme header .container {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .mostafa-hugo-theme header .title-container {
+    align-items: center !important;
+    margin-right: 0 !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+
+  .header-spotify {
+    max-width: 100% !important;
+    justify-content: center !important;
+    margin: 12px auto 16px !important;
+  }
+
+  .mostafa-hugo-theme .navigation {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
+
+  /* CRITICAL: Fix mobile horizontal scrollbar by fixing article margin/width */
+  .mostafa-hugo-theme .main article {
+    margin: 16px auto !important;
+    width: calc(100% - 32px) !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .mostafa-hugo-theme article .footer {
+    flex-wrap: wrap !important;
+    padding: 0.8rem 1rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .mostafa-hugo-theme article .footer .date,
+  .mostafa-hugo-theme article .footer .categories,
+  .mostafa-hugo-theme article .footer .tags {
+    margin: 0.2rem 0.5rem !important;
+  }
+
+  .mostafa-hugo-theme footer .container {
+    padding: 2.5rem 1.5rem 1.5rem !important;
+  }
+
+  .mostafa-hugo-theme .credits .container {
+    padding: 2rem 1.5rem !important;
+  }
+}
+
+/* 4. Small Tablets & Phablets (< 600px) */
+@media (max-width: 600px) {
+  .author-card-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .author-image-circle {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* 5. Mobile Phones (< 480px) */
+@media (max-width: 480px) {
+  .mostafa-hugo-theme header {
+    padding: 0 16px 1.25rem !important;
+  }
+
+  .logo {
+    max-height: 110px !important;
+    margin-top: 15px !important;
+  }
+
+  .mostafa-hugo-theme .navigation {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+
+  .mostafa-hugo-theme .main article {
+    margin: 12px auto !important;
+    width: calc(100% - 24px) !important;
+  }
+
+  .mostafa-hugo-theme article .content {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .mostafa-hugo-theme article .content h1,
+  .mostafa-hugo-theme article .content .article-title {
+    font-size: 1.4rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .mostafa-hugo-theme article .content h2 {
+    font-size: 1.25rem !important;
+    margin-top: 1.75rem !important;
+  }
+
+  .mostafa-hugo-theme article .content h3 {
+    font-size: 1.15rem !important;
+  }
+
+  .author-image-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .content table th,
+  .content table td {
+    padding: 8px 10px !important;
+    font-size: 0.85rem !important;
+  }
+}
