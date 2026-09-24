@@ -6,8 +6,8 @@
     }
 </style>
 <header>
-    <a id="back-to-top-button">
-        <i class="fas fa-angle-up"></i>
+    <a id="back-to-top-button" href="#" aria-label="Volver arriba">
+        <i class="fas fa-angle-up" aria-hidden="true"></i>
     </a>
 
     <div class="container">
@@ -15,8 +15,8 @@
             {{ if .Site.Params.logo }}
                 {{ $logo := resources.Get .Site.Params.logo }}
                 {{ if $logo }}
-                <a href="{{ .Site.BaseURL }}">
-                    <img src="{{ $logo.RelPermalink }}" alt="logo" class="logo">
+                <a href="{{ .Site.BaseURL }}" aria-label="{{ .Site.Title }}">
+                    <img src="{{ $logo.RelPermalink }}" alt="Dímelo con manzanas - Podcast" class="logo">
                 </a>
                 {{ end }}
             {{ else }}
@@ -65,7 +65,7 @@
         </div>
         {{ end }}
 
-        <nav>
+        <nav aria-label="Redes sociales">
             <ul>
                 {{ range .Site.Params.socialMediaLinks }}
                 <li><a href="{{ .link }}" target="_blank" rel="{{ .rel }}"><em class="{{ .icon }}"></em></a></li>
@@ -76,7 +76,7 @@
 </header>
 
 
-<div class="navigation">
+<nav class="navigation" aria-label="Navegación principal">
 
     <!-- Menu Navigation -->
     {{ if .Site.Menus.main }}
@@ -125,4 +125,4 @@
     </div>
     {{ end }}
 
-</div>
+</nav>

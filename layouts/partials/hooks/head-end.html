@@ -1,0 +1,70 @@
+{{- if .IsHome -}}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@graph" (slice
+    (dict
+      "@type" "WebSite"
+      "@id" (printf "%s#website" .Site.BaseURL)
+      "url" .Site.BaseURL
+      "name" .Site.Title
+      "description" .Site.Params.description
+      "inLanguage" .Site.Language.Lang
+    )
+    (dict
+      "@type" "PodcastSeries"
+      "@id" (printf "%s#podcast" .Site.BaseURL)
+      "url" .Site.BaseURL
+      "name" .Site.Title
+      "description" .Site.Params.description
+      "inLanguage" .Site.Language.Lang
+      "author" (dict
+        "@type" "Person"
+        "name" .Site.Params.author
+      )
+      "sameAs" (slice (.Site.Params.spotifyShow | default "https://open.spotify.com/show/572TEMd9ajMayp3hr4cl5R"))
+      "webFeed" ("index.xml" | absURL)
+    )
+  )
+| jsonify | safeJS }}
+</script>
+{{- else if and .IsPage (in .Params.categories "episodio") -}}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "PodcastEpisode"
+  "name" .Title
+  "description" (.Description | default .Summary | plainify | chomp)
+  "url" .Permalink
+  "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "inLanguage" .Site.Language.Lang
+  "partOfSeries" (dict
+    "@type" "PodcastSeries"
+    "name" .Site.Title
+    "url" .Site.BaseURL
+  )
+| jsonify | safeJS }}
+</script>
+{{- else if .IsPage -}}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "Article"
+  "headline" .Title
+  "description" (.Description | default .Summary | plainify | chomp)
+  "url" .Permalink
+  "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "author" (dict
+    "@type" "Person"
+    "name" (.Params.author | default .Site.Params.author)
+  )
+  "publisher" (dict
+    "@type" "Organization"
+    "name" .Site.Title
+    "url" .Site.BaseURL
+  )
+| jsonify | safeJS }}
+</script>
+{{- end -}}
