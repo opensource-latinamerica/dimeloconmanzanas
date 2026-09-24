@@ -1,0 +1,41 @@
+{{- $input := "" -}}
+{{- if .IsNamedParams -}}
+  {{- $input = .Get "id" | default (.Get "url" | default (.Get "src")) -}}
+{{- else -}}
+  {{- $input = .Get 0 -}}
+{{- end -}}
+
+{{- $type := .Get "type" | default "episode" -}}
+{{- $id := $input -}}
+
+{{- if findRE `open\.spotify\.com` $input -}}
+  {{- $matches := findRESubmatch `open\.spotify\.com/(episode|track|album|show|playlist)/([a-zA-Z0-9]+)` $input -}}
+  {{- if gt (len $matches) 0 -}}
+    {{- $type = index (index $matches 0) 1 -}}
+    {{- $id = index (index $matches 0) 2 -}}
+  {{- end -}}
+{{- else if findRE `^spotify:` $input -}}
+  {{- $matches := findRESubmatch `spotify:(episode|track|album|show|playlist):([a-zA-Z0-9]+)` $input -}}
+  {{- if gt (len $matches) 0 -}}
+    {{- $type = index (index $matches 0) 1 -}}
+    {{- $id = index (index $matches 0) 2 -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $height := .Get "height" | default "152" -}}
+{{- $width := .Get "width" | default "100%" -}}
+{{- $title := .Get "title" | default "Spotify Embed" -}}
+
+<div class="spotify-widget">
+  <iframe
+    style="border-radius: 12px; border: 0;"
+    src="https://open.spotify.com/embed/{{ $type }}/{{ $id }}?utm_source=generator"
+    width="{{ $width }}"
+    height="{{ $height }}"
+    frameborder="0"
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+    title="{{ $title }}">
+  </iframe>
+</div>

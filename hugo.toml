@@ -28,6 +28,9 @@ DefaultContentLanguage = "es"
     author = "Adriana y Álvaro"
     description = "Explorando ideas complejas con explicaciones sencillas."
     pinnedPost = "/article/bienvenido/"
+    spotifyShow = "https://open.spotify.com/show/572TEMd9ajMayp3hr4cl5R"
+    spotifyHeaderType = "widget" # Options: "widget" (embedded player) or "button" (direct follow button)
+
 
 [Languages]
     [Languages.es]

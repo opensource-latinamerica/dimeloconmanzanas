@@ -33,6 +33,38 @@
             {{ end }}
         </div>
 
+        {{ with .Site.Params.spotifyShow }}
+        {{- $showId := . -}}
+        {{- if findRE `open\.spotify\.com` . -}}
+          {{- $matches := findRESubmatch `open\.spotify\.com/show/([a-zA-Z0-9]+)` . -}}
+          {{- if gt (len $matches) 0 -}}
+            {{- $showId = index (index $matches 0) 1 -}}
+          {{- end -}}
+        {{- end -}}
+        <div class="header-spotify">
+            {{ if eq $.Site.Params.spotifyHeaderType "button" }}
+            <a href="https://open.spotify.com/show/{{ $showId }}" target="_blank" rel="noopener noreferrer" class="spotify-follow-button" title="Seguir Dímelo con manzanas en Spotify">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.502 17.31c-.216.353-.675.467-1.028.25-2.816-1.72-6.36-2.11-10.536-1.157-.404.092-.81-.16-.902-.564-.092-.403.16-.81.564-.902 4.568-1.043 8.49-.603 11.652 1.344.353.217.467.675.25 1.029zm1.468-3.262c-.272.441-.85.582-1.291.31-3.224-1.982-8.139-2.553-11.954-1.395-.497.151-1.026-.135-1.177-.633-.151-.497.135-1.026.633-1.177 4.356-1.322 9.774-.683 13.48 1.595.44.272.581.85.309 1.29zm.126-3.41c-3.867-2.296-10.245-2.508-13.929-1.39-.594.18-1.222-.16-1.402-.754-.18-.594.16-1.222.754-1.402 4.238-1.286 11.281-1.036 15.727 1.603.535.318.71 1.01.392 1.545-.317.535-1.01.71-1.542.398z"/>
+                </svg>
+                <span>Seguir en Spotify</span>
+            </a>
+            {{ else }}
+            <iframe
+                style="border-radius: 12px; border: 0;"
+                src="https://open.spotify.com/embed/show/{{ $showId }}?utm_source=generator"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="Dímelo con manzanas en Spotify">
+            </iframe>
+            {{ end }}
+        </div>
+        {{ end }}
+
         <nav>
             <ul>
                 {{ range .Site.Params.socialMediaLinks }}

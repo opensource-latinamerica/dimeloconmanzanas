@@ -7,6 +7,8 @@ categories: ["episodio"]
 author: "Adriana y Alvaro"
 ---
 
+{{< spotify "https://open.spotify.com/episode/31cG4fWu2Ri46u80qieDFl" >}}
+
 ¿Alguna vez has sentido que una inteligencia artificial "te entiende" mejor que muchas personas? En este episodio, desglosamos con manzanas un reciente reporte científico sobre cómo la IA está cambiando nuestras emociones, nuestras relaciones y nuestra salud mental.
 
 <!--more-->
