@@ -11,7 +11,7 @@ author: "Adriana y Alvaro"
 
 <!--more-->
 
-{{< spotify "https://open.spotify.com/episode/31cG4fWu2Ri46u80qieDFl" >}}
+{{< spotify "https://open.spotify.com/episode/2p7D87O0k7lGne83xtWqvD" >}}
 
 Adriana y Álvaro analizan de forma cercana y accesible los riesgos, las ventajas y los matices de interactuar con chatbots, apoyándose en investigaciones recientes y casos reales.
 
