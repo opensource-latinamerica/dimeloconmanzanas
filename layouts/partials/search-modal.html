@@ -1,0 +1,161 @@
+<div id="search-modal" class="search-modal-backdrop" role="dialog" aria-modal="true" aria-label="Buscador del podcast" style="display: none;">
+  <div class="search-modal-content">
+    <div class="search-input-wrapper">
+      <span class="search-icon" aria-hidden="true">
+        <i class="fa fa-magnifying-glass"></i>
+      </span>
+      <input type="search" 
+             id="podcast-search-input" 
+             class="podcast-search-input" 
+             placeholder="Buscar episodios, temas (IA, seguridad, psicología)..." 
+             autocomplete="off"
+             aria-label="Escribe para buscar">
+      <button type="button" class="search-close-btn" onclick="closeSearchModal()" aria-label="Cerrar buscador">
+        <i class="fa fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="search-shortcuts-hint">
+      <span>Escribe para buscar</span>
+      <span>Presiona <kbd>ESC</kbd> para salir</span>
+    </div>
+
+    <div id="podcast-search-results" class="search-results-list" role="region" aria-live="polite">
+      <div class="search-empty-state">
+        <p>Escribe una palabra o tema para buscar en todos los episodios de Dímelo con Manzanas.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var modal = document.getElementById('search-modal');
+  var input = document.getElementById('podcast-search-input');
+  var resultsContainer = document.getElementById('podcast-search-results');
+  var searchIndex = null;
+  var isFetching = false;
+
+  function loadSearchIndex(callback) {
+    if (searchIndex) {
+      if (callback) callback(searchIndex);
+      return;
+    }
+    if (isFetching) return;
+    isFetching = true;
+    fetch('{{ "/index.json" | relURL }}')
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        searchIndex = data.filter(function(item) {
+          return item.type === 'article' || item.type === 'category' || item.type === 'tag';
+        });
+        isFetching = false;
+        if (callback) callback(searchIndex);
+      })
+      .catch(function(err) {
+        console.error('Error loading search index:', err);
+        isFetching = false;
+      });
+  }
+
+  window.openSearchModal = function() {
+    if (!modal) return;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    loadSearchIndex();
+    setTimeout(function() {
+      if (input) input.focus();
+    }, 50);
+  };
+
+  window.closeSearchModal = function() {
+    if (!modal) return;
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    if (input) input.value = '';
+    renderDefaultState();
+  };
+
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeSearchModal();
+      }
+    });
+  }
+
+  // Keyboard shortcut: Cmd+K or Ctrl+K or /
+  window.addEventListener('keydown', function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      if (modal.style.display === 'flex') {
+        closeSearchModal();
+      } else {
+        openSearchModal();
+      }
+    } else if (e.key === 'Escape' && modal.style.display === 'flex') {
+      closeSearchModal();
+    }
+  });
+
+  function renderDefaultState() {
+    if (!resultsContainer) return;
+    resultsContainer.innerHTML = '<div class="search-empty-state"><p>Escribe una palabra o tema para buscar en todos los episodios de Dímelo con Manzanas.</p></div>';
+  }
+
+  if (input) {
+    input.addEventListener('input', function(e) {
+      var query = e.target.value.trim().toLowerCase();
+      if (!query) {
+        renderDefaultState();
+        return;
+      }
+
+      loadSearchIndex(function(index) {
+        var matches = index.filter(function(item) {
+          var titleMatch = item.title && item.title.toLowerCase().indexOf(query) !== -1;
+          var tagsMatch = Array.isArray(item.tags) && item.tags.some(function(t) { return t.toLowerCase().indexOf(query) !== -1; });
+          var catsMatch = Array.isArray(item.categories) && item.categories.some(function(c) { return c.toLowerCase().indexOf(query) !== -1; });
+          return titleMatch || tagsMatch || catsMatch;
+        });
+
+        if (matches.length === 0) {
+          resultsContainer.innerHTML = '<div class="search-no-results"><p>No encontramos resultados para «' + escapeHtml(query) + '»</p><p class="search-hint">Prueba con palabras como "IA", "seguridad", "emociones" o "bienvenido".</p></div>';
+          return;
+        }
+
+        var html = '<ul class="search-matches-list">';
+        matches.forEach(function(item) {
+          var typeLabel = item.type === 'article' ? 'Episodio' : (item.type === 'tag' ? 'Tema' : 'Categoría');
+          var badgeClass = item.type === 'article' ? 'badge-article' : 'badge-topic';
+          
+          html += '<li class="search-match-item">' +
+                    '<a href="' + item.url + '" class="search-match-link">' +
+                      '<div class="match-info">' +
+                        '<span class="match-badge ' + badgeClass + '">' + typeLabel + '</span>' +
+                        '<span class="match-title">' + highlightText(item.title, query) + '</span>' +
+                      '</div>' +
+                      '<span class="match-arrow">→</span>' +
+                    '</a>' +
+                  '</li>';
+        });
+        html += '</ul>';
+        resultsContainer.innerHTML = html;
+      });
+    });
+  }
+
+  function escapeHtml(text) {
+    var div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  function highlightText(text, query) {
+    if (!text) return '';
+    var escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    var regex = new RegExp('(' + escapedQuery + ')', 'gi');
+    return escapeHtml(text).replace(regex, '<mark>$1</mark>');
+  }
+})();
+</script>

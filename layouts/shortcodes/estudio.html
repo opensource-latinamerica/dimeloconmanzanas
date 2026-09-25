@@ -1,0 +1,74 @@
+{{- $titulo := .Get "titulo" | default "Estudio Científico de Referencia" -}}
+{{- $autores := .Get "autores" -}}
+{{- $revista := .Get "revista" -}}
+{{- $anio := .Get "anio" -}}
+{{- $url := .Get "url" -}}
+{{- $pdf := .Get "pdf" -}}
+
+<div class="estudio-card" role="region" aria-label="Ficha de Estudio: {{ $titulo }}">
+  <div class="estudio-card-badge">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+    </svg>
+    <span>Ficha de Estudio Científico</span>
+  </div>
+
+  <h4 class="estudio-card-title">
+    {{ if $url }}
+    <a href="{{ $url }}" target="_blank" rel="noopener noreferrer">{{ $titulo }}</a>
+    {{ else }}
+    {{ $titulo }}
+    {{ end }}
+  </h4>
+
+  {{ if or $autores $revista $anio }}
+  <div class="estudio-card-meta">
+    {{ with $autores }}
+    <span class="estudio-meta-item">
+      <i class="fa fa-user-pen" aria-hidden="true"></i> {{ . }}
+    </span>
+    {{ end }}
+    {{ with $revista }}
+    <span class="estudio-meta-item estudio-meta-journal">
+      <i class="fa fa-book-bookmark" aria-hidden="true"></i> {{ . }}
+    </span>
+    {{ end }}
+    {{ with $anio }}
+    <span class="estudio-meta-item">
+      <i class="fa fa-calendar" aria-hidden="true"></i> {{ . }}
+    </span>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ with .Inner }}
+  <div class="estudio-card-summary">
+    {{ . | markdownify }}
+  </div>
+  {{ end }}
+
+  <div class="estudio-card-actions">
+    {{ with $url }}
+    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="estudio-btn estudio-btn-primary">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+      <span>Leer publicación</span>
+    </a>
+    {{ end }}
+
+    {{ with $pdf }}
+    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="estudio-btn estudio-btn-pdf">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      <span>Descargar PDF</span>
+    </a>
+    {{ end }}
+  </div>
+</div>

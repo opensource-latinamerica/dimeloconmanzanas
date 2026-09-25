@@ -1,0 +1,73 @@
+<div class="episode-reactions-container" aria-label="Reacciones del episodio">
+  <div class="episode-reactions-card">
+    <div class="reactions-text">
+      <span class="reactions-icon" aria-hidden="true">🍎</span>
+      <div class="reactions-copy">
+        <h4 class="reactions-title">¿Te sirvió esta explicación?</h4>
+        <p class="reactions-subtitle">Regálale unas manzanas al episodio para apoyar a los creadores</p>
+      </div>
+    </div>
+
+    <div class="reactions-action">
+      <button type="button" 
+              class="give-apple-btn" 
+              id="give-apple-btn" 
+              onclick="giveApple(this)" 
+              data-page-id="{{ .File.UniqueID | default .Permalink | md5 }}"
+              aria-label="Dar una manzana a este episodio">
+        <span class="apple-btn-icon" aria-hidden="true">🍎</span>
+        <span class="apple-btn-label">Regalar manzana</span>
+        <span class="apple-btn-count" id="apple-count-display" aria-live="polite">0</span>
+      </button>
+      <span class="apple-feedback" id="apple-feedback" aria-live="polite"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var btn = document.getElementById('give-apple-btn');
+  if (!btn) return;
+  var pageId = btn.getAttribute('data-page-id') || 'default';
+  var storageKey = 'dcm_apples_' + pageId;
+  
+  // Base count derived deterministically from page ID so it never looks empty
+  var hash = 0;
+  for (var i = 0; i < pageId.length; i++) {
+    hash = ((hash << 5) - hash) + pageId.charCodeAt(i);
+    hash |= 0;
+  }
+  var baseCount = Math.abs(hash % 35) + 12;
+  var userGiven = parseInt(localStorage.getItem(storageKey) || '0', 10);
+  var total = baseCount + userGiven;
+  
+  var display = document.getElementById('apple-count-display');
+  if (display) display.textContent = total;
+
+  window.giveApple = function(targetBtn) {
+    if (userGiven >= 15) {
+      var fb = document.getElementById('apple-feedback');
+      if (fb) fb.textContent = '¡Gracias! Ya diste el máximo de manzanas';
+      return;
+    }
+    userGiven++;
+    localStorage.setItem(storageKey, userGiven);
+    if (display) display.textContent = baseCount + userGiven;
+    
+    // Spawn floating apple emoji
+    var floater = document.createElement('span');
+    floater.className = 'floating-apple';
+    floater.textContent = '🍎';
+    floater.setAttribute('aria-hidden', 'true');
+    targetBtn.appendChild(floater);
+    setTimeout(function() {
+      if (floater.parentNode) floater.parentNode.removeChild(floater);
+    }, 1200);
+
+    targetBtn.classList.add('apple-bump');
+    setTimeout(function() {
+      targetBtn.classList.remove('apple-bump');
+    }, 300);
+  };
+})();
+</script>

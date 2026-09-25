@@ -1,0 +1,15 @@
+{{- $titulo := .Get "titulo" | default "Explicado con Manzanas" -}}
+{{- $badge := .Get "badge" | default "Analogía" -}}
+
+<aside class="manzana-callout" role="note" aria-label="{{ $titulo }}">
+  <div class="manzana-callout-header">
+    <div class="manzana-badge">
+      <span class="manzana-icon" aria-hidden="true">🍎</span>
+      <span class="manzana-badge-text">{{ $badge }}</span>
+    </div>
+    <h3 class="manzana-title">{{ $titulo }}</h3>
+  </div>
+  <div class="manzana-content">
+    {{ .Inner | markdownify }}
+  </div>
+</aside>

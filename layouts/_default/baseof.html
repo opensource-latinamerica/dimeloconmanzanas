@@ -121,6 +121,7 @@
     {{ end }}
 
     {{ partial "js.html" . }}
+    {{ partial "search-modal.html" . }}
 
     {{ if and (isset .Site.Params "algolia_search") (eq .Site.Params.algolia_search true) }}
         {{ partial "algolia-search.html" . }}

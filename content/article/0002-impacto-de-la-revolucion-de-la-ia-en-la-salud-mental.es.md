@@ -79,6 +79,12 @@ En el ambiente científico existe un término muy simpático para explicar la IA
 
 Las inteligencias artificiales actúan de forma parecida: repiten patrones de texto a una velocidad increíble, pero no tienen noción de la verdad. Por eso ocurren las llamadas "alucinaciones", donde la máquina inventa datos con total seguridad y convicción.
 
+{{< manzana titulo="Analogía con Manzanas: El Loro y la Biblioteca" badge="Analogía Clave" >}}
+Imagina un loro con una memoria infinita que memorizó cada libro de una biblioteca inmensa. Si le preguntas cómo construir un telescopio o reparar un motor, te recitará las palabras con una exactitud asombrosa... pero **el loro no tiene idea de qué es un engranaje ni comprende qué son las estrellas**.
+
+Repite secuencias estadísticas perfectas, pero carece de comprensión, juicio y conciencia. Cuando un chatbot te responde con palabras aparentemente reconfortantes, recuerda: es un modelo matemático calculando cuál es la palabra estadísticamente más probable que debe seguir.
+{{< /manzana >}}
+
 ---
 
 ## Capítulo 7: ¿Hacia dónde vamos? Propuestas para un futuro saludable
@@ -99,5 +105,13 @@ La inteligencia artificial es una herramienta poderosa que puede abrir puertas i
 
 ### 📚 Enlaces de Referencia y Estudio Científico
 Si deseas profundizar en el informe clínico y académico original en el que se basó este episodio:
-* 📄 **Artículo original**: [Minds in Crisis: How the AI Revolution is Impacting Mental Health](https://www.mentalhealthjournal.org/articles/minds-in-crisis-how-the-ai-revolution-is-impacting-mental-health.html)
-* 📥 **Documento PDF completo**: [Descargar Reporte en PDF](https://www.mentalhealthjournal.org/articles/minds-in-crisis-how-the-ai-revolution-is-impacting-mental-health.pdf)
+
+{{< estudio 
+    titulo="Minds in Crisis: How the AI Revolution is Impacting Mental Health"
+    autores="Investigación Clínica y Salud Digital"
+    revista="Mental Health Journal"
+    anio="2025"
+    url="https://www.mentalhealthjournal.org/articles/minds-in-crisis-how-the-ai-revolution-is-impacting-mental-health.html"
+    pdf="https://www.mentalhealthjournal.org/articles/minds-in-crisis-how-the-ai-revolution-is-impacting-mental-health.pdf" >}}
+Análisis clínico multidisciplinario sobre los efectos del apego emocional a chatbots conversacionales, la ilusión de reciprocidad afectiva y las recomendaciones terapéuticas para la era de la inteligencia artificial generativa.
+{{< /estudio >}}

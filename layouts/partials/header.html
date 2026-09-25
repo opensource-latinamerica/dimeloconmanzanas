@@ -93,6 +93,13 @@
                 <a href="#">{{ i18n "pages" }}</a>
             </li>
             {{ end }}
+            <li class="menu-search-item">
+                <button type="button" class="header-search-btn" onclick="openSearchModal()" aria-label="Buscar en el podcast (Ctrl+K)">
+                    <i class="fa fa-magnifying-glass" aria-hidden="true"></i>
+                    <span>Buscar</span>
+                    <kbd class="search-kbd">⌘K</kbd>
+                </button>
+            </li>
         </ul>
     </div>
     {{ end }}
