@@ -1,3 +1,11 @@
+<script>
+(function() {
+  var saved = localStorage.getItem('dcm_theme');
+  var theme = saved || 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+
 {{- if .IsHome -}}
 <script type="application/ld+json">
 {{ dict
