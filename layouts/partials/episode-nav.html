@@ -1,0 +1,26 @@
+{{- $prev := .PrevInSection -}}
+{{- $next := .NextInSection -}}
+
+{{- if or $prev $next -}}
+<nav class="episode-nav-container" aria-label="Navegación entre episodios">
+  <div class="episode-nav-wrapper">
+    {{ with $prev }}
+    <a href="{{ .Permalink }}" class="episode-nav-card episode-nav-prev" rel="prev">
+      <span class="episode-nav-direction">← Episodio anterior</span>
+      <span class="episode-nav-title">{{ .Title }}</span>
+    </a>
+    {{ else }}
+    <div class="episode-nav-card episode-nav-empty"></div>
+    {{ end }}
+
+    {{ with $next }}
+    <a href="{{ .Permalink }}" class="episode-nav-card episode-nav-next" rel="next">
+      <span class="episode-nav-direction">Siguiente episodio →</span>
+      <span class="episode-nav-title">{{ .Title }}</span>
+    </a>
+    {{ else }}
+    <div class="episode-nav-card episode-nav-empty"></div>
+    {{ end }}
+  </div>
+</nav>
+{{- end -}}

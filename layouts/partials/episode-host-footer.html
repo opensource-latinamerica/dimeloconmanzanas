@@ -1,0 +1,18 @@
+{{- $adrianaImg := resources.Get "adriana.webp" -}}
+{{- $alvaroImg := resources.Get "alvaro.webp" -}}
+
+<div class="episode-hosts-card" aria-label="Acerca de los anfitriones">
+  <div class="episode-hosts-avatars">
+    {{ with $adrianaImg }}
+    <img src="{{ .RelPermalink }}" alt="Adriana" class="host-avatar host-avatar-left" width="56" height="56" loading="lazy">
+    {{ end }}
+    {{ with $alvaroImg }}
+    <img src="{{ .RelPermalink }}" alt="Álvaro" class="host-avatar host-avatar-right" width="56" height="56" loading="lazy">
+    {{ end }}
+  </div>
+  <div class="episode-hosts-info">
+    <p class="episode-hosts-heading">Un episodio de <strong>Dímelo con Manzanas</strong></p>
+    <p class="episode-hosts-bio">Presentado por <strong>Adriana y Álvaro</strong>. Exploramos ideas complejas desglosadas en explicaciones sencillas para toda América Latina.</p>
+    <a href="{{ "/author/adriana-y-alvaro/" | relURL }}" class="episode-hosts-link">Conoce a los anfitriones →</a>
+  </div>
+</div>

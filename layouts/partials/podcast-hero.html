@@ -1,0 +1,30 @@
+<section class="podcast-hero" aria-label="Bienvenida a Dímelo con Manzanas">
+  <div class="podcast-hero-content">
+    <div class="podcast-hero-badge">
+      <span class="podcast-hero-badge-dot"></span>
+      <span>Podcast en Español</span>
+    </div>
+    <h1 class="podcast-hero-title">Ideas complejas explicadas con peras y manzanas</h1>
+    <p class="podcast-hero-desc">
+      Acompaña a <strong>Adriana y Álvaro</strong> a desglosar los avances de la inteligencia artificial, la tecnología y la ciencia en explicaciones claras, humanas y accesibles para toda América Latina.
+    </p>
+    <div class="podcast-hero-actions">
+      {{ with .Site.Params.spotifyShow }}
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-spotify">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.502 17.31c-.216.353-.675.467-1.028.25-2.816-1.72-6.36-2.11-10.536-1.157-.404.092-.81-.16-.902-.564-.092-.403.16-.81.564-.902 4.568-1.043 8.49-.603 11.652 1.344.353.217.467.675.25 1.029zm1.468-3.262c-.272.441-.85.582-1.291.31-3.224-1.982-8.139-2.553-11.954-1.395-.497.151-1.026-.135-1.177-.633-.151-.497.135-1.026.633-1.177 4.356-1.322 9.774-.683 13.48 1.595.44.272.581.85.309 1.29zm.126-3.41c-3.867-2.296-10.245-2.508-13.929-1.39-.594.18-1.222-.16-1.402-.754-.18-.594.16-1.222.754-1.402 4.238-1.286 11.281-1.036 15.727 1.603.535.318.71 1.01.392 1.545-.317.535-1.01.71-1.542.398z"/>
+        </svg>
+        <span>Escuchar en Spotify</span>
+      </a>
+      {{ end }}
+      <a href="{{ "/categories/episodio/" | relURL }}" class="hero-btn hero-btn-episodes">
+        <i class="fa fa-headphones" aria-hidden="true"></i>
+        <span>Ver todos los episodios</span>
+      </a>
+      <a href="{{ "/index.xml" | relURL }}" class="hero-btn hero-btn-rss" title="Feed RSS del Podcast" aria-label="Feed RSS del Podcast">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+        <span>RSS</span>
+      </a>
+    </div>
+  </div>
+</section>

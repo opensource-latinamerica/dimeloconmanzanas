@@ -6,7 +6,26 @@
         </a>
     </h1>
 
-    <!-- Meta section completely removed to hide author -->
+    {{ if eq .template_type "single" }}
+    <div class="episode-meta-bar">
+        <span class="episode-meta-item">
+            <i class="fa fa-calendar-days" aria-hidden="true"></i>
+            {{ .ctx.PublishDate.Format "02/01/2006" }}
+        </span>
+        <span class="episode-meta-item">
+            <i class="fa fa-clock" aria-hidden="true"></i>
+            {{ .ctx.ReadingTime }} min de lectura
+        </span>
+        {{ with .ctx.Params.categories }}
+            {{ range . }}
+            {{ $urlValue := replace . " " "-" | lower }}
+            <a href="{{ printf "/categories/%s/" $urlValue | relURL }}" class="episode-meta-category">
+                <i class="fa fa-folder-open" aria-hidden="true"></i> {{ . | title }}
+            </a>
+            {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
 
     {{ if or (eq .template_type "single") (.ctx.Params.noSummary) }}
         {{ if and (gt .ctx.WordCount .ctx.Site.Params.tocMinWordCount ) (.ctx.Params.toc) }}
@@ -15,6 +34,12 @@
         {{ end }}
 
         {{ .ctx.Content }}
+
+        {{ if eq .template_type "single" }}
+            {{ partial "share-bar.html" .ctx }}
+            {{ partial "episode-host-footer.html" .ctx }}
+            {{ partial "episode-nav.html" .ctx }}
+        {{ end }}
     {{ else }}
         {{ .ctx.Summary }}
 

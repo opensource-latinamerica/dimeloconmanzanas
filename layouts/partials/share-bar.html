@@ -1,0 +1,66 @@
+<div class="share-bar-container" aria-label="Compartir este episodio">
+  <div class="share-bar-heading">
+    <span class="share-bar-icon">🍎</span>
+    <span class="share-bar-title">¿Te gustó este episodio? Compártelo con alguien que lo disfrute:</span>
+  </div>
+  <div class="share-bar-buttons">
+    <a href="https://api.whatsapp.com/send?text={{ printf "Escucha este episodio de Dímelo con Manzanas: %s %s" .Title .Permalink | urlquery }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="share-btn share-btn-whatsapp"
+       aria-label="Compartir en WhatsApp">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.301-.776.978-.952 1.179-.176.2-.351.226-.652.075-1.921-.96-3.176-1.705-4.44-3.876-.334-.575.334-.533.956-1.777.105-.21.053-.393-.026-.543-.08-.15-.676-1.63-.927-2.234-.244-.588-.493-.508-.677-.517-.175-.009-.376-.01-.577-.01-.2 0-.527.075-.802.375-.276.3-1.053 1.03-1.053 2.511s1.079 2.911 1.229 3.112c.15.2 2.122 3.24 5.141 4.544 2.138.924 2.973.992 4.043.834.652-.096 1.78-.727 2.03-1.428.251-.702.251-1.303.176-1.428-.075-.125-.276-.2-.577-.35zM12.04 2C6.516 2 2.028 6.485 2.028 12c0 1.97.574 3.805 1.564 5.358L2 22l4.808-1.542A9.956 9.956 0 0 0 12.04 22c5.523 0 10.01-4.485 10.01-10S17.563 2 12.04 2z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+
+    <a href="https://twitter.com/intent/tweet?text={{ printf "Escuchando «%s» en @conmanzanas_lat" .Title | urlquery }}&url={{ .Permalink | urlquery }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="share-btn share-btn-x"
+       aria-label="Compartir en X">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+      <span>Compartir en X</span>
+    </a>
+
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink | urlquery }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="share-btn share-btn-linkedin"
+       aria-label="Compartir en LinkedIn">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+      </svg>
+      <span>LinkedIn</span>
+    </a>
+
+    <button type="button" class="share-btn share-btn-copy" onclick="copyEpisodeLink(this)" data-url="{{ .Permalink }}" aria-label="Copiar enlace del episodio">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+      <span class="copy-text">Copiar enlace</span>
+    </button>
+  </div>
+</div>
+
+<script>
+function copyEpisodeLink(btn) {
+  var url = btn.getAttribute('data-url') || window.location.href;
+  navigator.clipboard.writeText(url).then(function() {
+    var textEl = btn.querySelector('.copy-text');
+    var originalText = textEl.textContent;
+    textEl.textContent = '¡Copiado!';
+    btn.classList.add('copied');
+    setTimeout(function() {
+      textEl.textContent = originalText;
+      btn.classList.remove('copied');
+    }, 2200);
+  }).catch(function() {
+    prompt('Copia este enlace:', url);
+  });
+}
+</script>

@@ -27,6 +27,13 @@
   {{ .Scratch.Set "image" (.Params.featuredImage | absURL) }}
 {{ else if .Params.mp4videoImage }}
   {{ .Scratch.Set "image" (.Params.mp4videoImage | absURL) }}
+{{ else if .Site.Params.logo }}
+  {{ $logo := resources.Get .Site.Params.logo }}
+  {{ if $logo }}
+    {{ .Scratch.Set "image" $logo.Permalink }}
+  {{ else }}
+    {{ .Scratch.Set "image" (.Site.Params.logo | absURL) }}
+  {{ end }}
 {{ else }}
   {{ .Scratch.Set "image" (printf "https://www.gravatar.com/avatar/%s?size=200" (md5 .Site.Params.gravatarEMail)) }}
 {{ end }}
@@ -71,6 +78,9 @@
 
     {{ template "_internal/opengraph.html" . }}
     <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{ with .Scratch.Get "image" }}
+    <meta property="og:image" content="{{ . }}">
+    {{ end }}
 
     {{ partial "favicon.html" . }}
 

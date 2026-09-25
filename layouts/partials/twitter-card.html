@@ -1,0 +1,14 @@
+{{- $title := .Title | default .Site.Title -}}
+{{- $description := .Description | default (.Summary | plainify | chomp) | default .Site.Params.description -}}
+{{- $image := .Scratch.Get "image" -}}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{ with $image }}
+<meta name="twitter:image" content="{{ . }}">
+<meta name="twitter:image:alt" content="{{ $title }}">
+{{ end }}
+{{ with .Site.Params.twitterSite }}
+<meta name="twitter:site" content="{{ . }}">
+{{ end }}
