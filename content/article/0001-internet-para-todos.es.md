@@ -90,9 +90,7 @@ La tecnología y las computadoras son herramientas extraordinarias diseñadas pa
 
 ### 📚 Enlaces de Referencia y Fuentes de Estudio
 
-* *Navegación Digital: Red, Seguridad y Comunicación*[57].
-* *How to teach your child computer science skills at home* – BBC Bitesize[58].
-* *Computational Thinking For Kids | Why is it Important?* – CodaKid[59].
-* *Computer Science for Kids | The Ultimate Guide for Parents* – CodaKid[60].
-* *Introducción a las ciencias computacionales* – Texto académico fundamental[61].
-* *The Internet For Dummies (12th Edition)* – Guía esencial de conexión y ciberseguridad[62].
+* [**How to teach computer skills at home** – BBC Bitesize](https://www.bbc.co.uk/bitesize/articles/zjky239)
+* [**Computer Science for Kids | The Ultimate Guide for Parents** – CodaKid](https://codakid.com/blog/preparing-kids-for-the-future/computer-science-for-kids/)
+* [**Libro: Introducción a la ciencia de la computación** – Amazon México](https://www.amazon.com.mx/Introduccion-ciencia-computacion-Introduction-Computer/dp/9706862854)
+* [**Libro: Internet for Dummies** – John R. Levine (Amazon México)](https://www.amazon.com.mx/Internet-Dummies-John-R-Levine/dp/0764506749/)
