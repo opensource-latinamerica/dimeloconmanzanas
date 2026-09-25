@@ -54,7 +54,7 @@
     {{ .Scratch.Set "title" (.Title) }}
 {{- end -}}
 
-<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="{{ .Site.Language.Lang }}">
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="{{ .Site.Language.Lang }}" data-theme="{{ .Site.Params.colorTheme | default "dark" }}">
 
 <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">

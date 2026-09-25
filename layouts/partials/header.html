@@ -94,46 +94,13 @@
             </li>
             {{ end }}
             <li class="menu-search-item">
-                <button type="button" class="header-search-btn" onclick="openSearchModal()" aria-label="Buscar en el podcast (Ctrl+K)">
-                    <i class="fa fa-magnifying-glass" aria-hidden="true"></i>
-                    <span>Buscar</span>
-                    <kbd class="search-kbd">⌘K</kbd>
-                </button>
-            </li>
-            <li class="menu-theme-item">
-                <button type="button" class="header-theme-btn" id="theme-toggle-btn" onclick="toggleColorTheme()" aria-label="Cambiar tema de color" title="Alternar entre modo día y noche">
-                    <span class="theme-icon-sun" aria-hidden="true">☀️</span>
-                    <span class="theme-icon-moon" aria-hidden="true">🌙</span>
-                    <span class="theme-label" id="theme-toggle-label">Modo</span>
-                </button>
+                <a href="javascript:void(0)" onclick="openSearchModal()" role="button" aria-label="Buscar en el podcast (Ctrl+K)">
+                    <i class="fa fa-magnifying-glass" aria-hidden="true"></i> {{ i18n "search" | default "Buscar" }}
+                </a>
             </li>
         </ul>
     </div>
     {{ end }}
-
-    <script>
-    function toggleColorTheme() {
-      var html = document.documentElement;
-      var current = html.getAttribute('data-theme') || 'light';
-      var next = current === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('dcm_theme', next);
-      updateThemeButton(next);
-    }
-
-    function updateThemeButton(theme) {
-      var btn = document.getElementById('theme-toggle-btn');
-      if (!btn) return;
-      var isDark = theme === 'dark';
-      btn.setAttribute('aria-pressed', isDark);
-      btn.setAttribute('title', isDark ? 'Cambiar a modo día (Huerto Soleado)' : 'Cambiar a modo noche (Noche Frutal)');
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var current = document.documentElement.getAttribute('data-theme') || 'light';
-      updateThemeButton(current);
-    });
-    </script>
 
 
 
