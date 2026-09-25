@@ -1,36 +1,30 @@
-<style>
-    .logo {
-        max-height: 150px;
-        margin-top: 20px;
-        border-radius: 15px;
-    }
-</style>
-<header>
+<header class="site-header">
     <a id="back-to-top-button" href="#" aria-label="Volver arriba">
         <i class="fas fa-angle-up" aria-hidden="true"></i>
     </a>
 
-    <div class="container">
-        <div class="title-container">
+    <div class="container header-container">
+        <div class="title-container brand-lockup">
             {{ if .Site.Params.logo }}
                 {{ $logo := resources.Get .Site.Params.logo }}
                 {{ if $logo }}
-                <a href="{{ .Site.BaseURL }}" aria-label="{{ .Site.Title }}">
-                    <img src="{{ $logo.RelPermalink }}" alt="Dímelo con manzanas - Podcast" class="logo">
+                <a href="{{ .Site.BaseURL }}" class="brand-logo-link" aria-label="{{ .Site.Title }}">
+                    <img src="{{ $logo.RelPermalink }}" alt="{{ .Site.Title }} - Podcast" class="logo brand-logo-img">
                 </a>
                 {{ end }}
-            {{ else }}
-            <h1 class="title">
-                <a href="{{ .Site.BaseURL }}">
-                    {{ .Site.Title }}
-                </a>
-            </h1>
             {{ end }}
-            {{ if .Site.Params.showSubtitle }}
-            <h2 class="subtitle">
-                {{ .Site.Params.subtitle }}
-            </h2>
-            {{ end }}
+            <div class="brand-text">
+                <div class="brand-badge">
+                    <span class="brand-badge-dot" aria-hidden="true"></span>
+                    <span>Podcast</span>
+                </div>
+                <div class="brand-title">
+                    <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+                </div>
+                <p class="brand-tagline">
+                    {{ if .Site.Params.author }}Con {{ .Site.Params.author }}{{ else if .Site.Params.description }}{{ .Site.Params.description }}{{ else }}Ideas complejas explicadas de forma sencilla{{ end }}
+                </p>
+            </div>
         </div>
 
         {{ with .Site.Params.spotifyShow }}
@@ -65,13 +59,15 @@
         </div>
         {{ end }}
 
-        <nav aria-label="Redes sociales">
+        {{ if .Site.Params.socialMediaLinks }}
+        <nav aria-label="Redes sociales" class="header-social-nav">
             <ul>
                 {{ range .Site.Params.socialMediaLinks }}
                 <li><a href="{{ .link }}" target="_blank" rel="{{ .rel }}"><em class="{{ .icon }}"></em></a></li>
                 {{ end }}
             </ul>
         </nav>
+        {{ end }}
     </div>
 </header>
 

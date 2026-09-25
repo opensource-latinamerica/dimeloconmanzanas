@@ -126,8 +126,137 @@ body.mostafa-hugo-theme {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.mostafa-hugo-theme header {
+/* ==========================================================================
+   HEADER & BRAND LOCKUP REDESIGN
+   ========================================================================== */
+.mostafa-hugo-theme header,
+header.site-header {
   background-color: var(--bg-page) !important;
+  background-image: 
+    radial-gradient(ellipse 600px 240px at 15% 45%, rgba(255, 159, 28, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 200px at 85% 55%, rgba(255, 77, 109, 0.05) 0%, transparent 70%) !important;
+  border-bottom: 1px solid var(--border-main) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  padding: 18px 50px !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  position: relative;
+}
+
+[data-theme="light"] .mostafa-hugo-theme header,
+[data-theme="light"] header.site-header {
+  background-image: 
+    radial-gradient(ellipse 600px 240px at 15% 45%, rgba(255, 159, 28, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 200px at 85% 55%, rgba(255, 77, 109, 0.06) 0%, transparent 70%) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+}
+
+.mostafa-hugo-theme header .container.header-container,
+.mostafa-hugo-theme header .container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  gap: 24px !important;
+}
+
+/* Brand Lockup: Logo + Text */
+.brand-lockup {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+}
+
+.brand-logo-link {
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  line-height: 0 !important;
+  border-radius: 18px !important;
+}
+
+.logo.brand-logo-img,
+.logo {
+  width: 88px !important;
+  height: 88px !important;
+  max-height: 88px !important;
+  object-fit: cover !important;
+  margin: 0 !important;
+  border-radius: 18px !important;
+  border: 2px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 8px 24px rgba(255, 159, 28, 0.22), 0 2px 8px rgba(0, 0, 0, 0.45) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+[data-theme="light"] .logo.brand-logo-img,
+[data-theme="light"] .logo {
+  border: 2px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 6px 20px rgba(238, 184, 64, 0.28), 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+
+.brand-logo-link:hover .brand-logo-img,
+.logo:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 12px 32px rgba(255, 159, 28, 0.36), 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Brand Text Content */
+.brand-text {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 4px !important;
+}
+
+.brand-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background-color: var(--accent-honey-orange-soft) !important;
+  color: var(--accent-honey-orange) !important;
+  padding: 3px 10px !important;
+  border-radius: 500px !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.8px !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+}
+
+.brand-badge-dot {
+  width: 6px !important;
+  height: 6px !important;
+  background-color: var(--accent-leaf-green) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 8px var(--accent-leaf-green) !important;
+}
+
+.brand-title {
+  margin: 0 !important;
+  font-size: 1.65rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.brand-title a {
+  color: var(--text-main) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.brand-title a:hover {
+  color: var(--accent-honey-orange) !important;
+}
+
+.brand-tagline {
+  margin: 0 !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.4 !important;
 }
 
 .mostafa-hugo-theme .navigation {
@@ -141,14 +270,6 @@ body.mostafa-hugo-theme {
 .mostafa-hugo-theme .navigation .pages ul li.active a {
   color: var(--accent-apple-red) !important;
   font-weight: 700;
-}
-
-.mostafa-hugo-theme header .title a {
-  color: var(--text-main) !important;
-}
-
-.mostafa-hugo-theme header .subtitle {
-  color: var(--text-secondary) !important;
 }
 
 .mostafa-hugo-theme article {
@@ -367,47 +488,59 @@ pre {
 
 /* Header Show Widget & Follow Button */
 .header-spotify {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  max-width: 420px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  width: 100% !important;
+  max-width: 410px !important;
+  margin: 0 !important;
+  padding: 4px !important;
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border-main) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
+}
+
+.header-spotify:hover {
+  border-color: var(--border-strong) !important;
+  box-shadow: var(--shadow-hover) !important;
 }
 
 .header-spotify iframe {
-  width: 100%;
-  max-width: 420px;
-  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  border-radius: 12px !important;
+  display: block !important;
+  margin: 0 !important;
 }
 
 .spotify-follow-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #1DB954;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background-color: #1DB954 !important;
   color: #FFFFFF !important;
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 10px 22px;
-  border-radius: 500px;
+  font-family: system-ui, -apple-system, sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  padding: 10px 22px !important;
+  border-radius: 500px !important;
   text-decoration: none !important;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+  box-shadow: 0 4px 14px rgba(29, 185, 84, 0.35) !important;
+  white-space: nowrap !important;
 }
 
 .spotify-follow-button:hover {
-  background-color: #1ed760;
-  transform: translateY(-2px);
+  background-color: #1ed760 !important;
+  transform: translateY(-2px) !important;
   color: #FFFFFF !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 20px rgba(29, 185, 84, 0.5) !important;
 }
 
 .spotify-follow-button svg {
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
 }
 
 /* ==========================================================================
@@ -1683,29 +1816,36 @@ pre {
 
 /* 3. Tablets Portrait & Mobile (< 800px) */
 @media (max-width: 800px) {
-  .mostafa-hugo-theme header {
-    padding: 0 24px 1.5rem !important;
+  .mostafa-hugo-theme header,
+  header.site-header {
+    padding: 16px 20px 1.25rem !important;
     flex-direction: column !important;
     align-items: center !important;
   }
 
+  .mostafa-hugo-theme header .container.header-container,
   .mostafa-hugo-theme header .container {
     flex-direction: column !important;
     align-items: center !important;
     width: 100% !important;
+    gap: 16px !important;
   }
 
+  .brand-lockup,
   .mostafa-hugo-theme header .title-container {
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
-    margin-right: 0 !important;
-    margin-bottom: 0.5rem !important;
-    text-align: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    text-align: left !important;
+    gap: 16px !important;
   }
 
   .header-spotify {
     max-width: 100% !important;
     justify-content: center !important;
-    margin: 12px auto 16px !important;
+    margin: 0 auto !important;
   }
 
   .mostafa-hugo-theme .navigation {
@@ -1931,13 +2071,36 @@ pre {
 
 /* 5. Mobile Phones (< 480px) */
 @media (max-width: 480px) {
-  .mostafa-hugo-theme header {
-    padding: 0 16px 1.25rem !important;
+  .mostafa-hugo-theme header,
+  header.site-header {
+    padding: 14px 14px 1rem !important;
   }
 
+  .brand-lockup,
+  .mostafa-hugo-theme header .title-container {
+    gap: 12px !important;
+  }
+
+  .logo.brand-logo-img,
   .logo {
-    max-height: 110px !important;
-    margin-top: 15px !important;
+    width: 68px !important;
+    height: 68px !important;
+    max-height: 68px !important;
+    border-radius: 14px !important;
+    margin: 0 !important;
+  }
+
+  .brand-title {
+    font-size: 1.25rem !important;
+  }
+
+  .brand-tagline {
+    font-size: 0.78rem !important;
+  }
+
+  .brand-badge {
+    font-size: 0.68rem !important;
+    padding: 2px 8px !important;
   }
 
   .mostafa-hugo-theme .navigation {
