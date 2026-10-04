@@ -1,0 +1,28 @@
+# Registro oficial de episodios del podcast "Dímelo con Manzanas"
+#
+# REGLA PARA AGENTES:
+# - Antes de editar cualquier archivo de episodio en 'content/article/', consulta este archivo.
+# - Los episodios con 'status: published' o con 'spotify_url' definida son ESTRICTAMENTE DE SOLO LECTURA.
+# - Solo los episodios en 'status: draft' o sin 'spotify_url' pueden ser editados o actualizados.
+
+episodes:
+  - number: "0001"
+    title: "Internet para Todos: De Postales Digitales a la Seguridad Online"
+    file: "content/article/0001-internet-para-todos.es.md"
+    status: "published"
+    spotify_url: "https://open.spotify.com/episode/5cnL9GTKLhuqMMsWGiiymM"
+    published_date: "2025-10-16"
+
+  - number: "0002"
+    title: "Inteligencia Artificial y Salud Mental: ¿Compañía Real o Espejismo Digital?"
+    file: "content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md"
+    status: "published"
+    spotify_url: "https://open.spotify.com/episode/2p7D87O0k7lGne83xtWqvD"
+    published_date: "2026-07-30"
+
+  - number: "0003"
+    title: "Inteligencia Artificial y Rendición Cognitiva: El Gimnasio Mental en Pausa"
+    file: "content/article/0003-inteligencia-artificial-y-rendicion-cognitiva.es.md"
+    status: "draft"
+    spotify_url: null
+    created_date: "2026-10-04"
