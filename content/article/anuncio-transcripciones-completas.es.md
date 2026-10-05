@@ -32,13 +32,13 @@ Por eso, tomamos la decisión de hacer las transcripciones de nuestros episodios
 
 ---
 
-### 🛠️ Generación Automática desde el Audio Real con Whisper
+### 🎙️ Fidelidad y Veracidad: Desde el Audio Real
 
-Una duda común al ver transcripciones en la web es si están generadas artificialmente o si reflejan con exactitud lo que se dijo en cabina. En *Dímelo con Manzanas* seguimos una política de veracidad inquebrantable:
+Una duda común al ver transcripciones en la web es si están generadas de forma artificial o si reflejan con exactitud lo que se dijo en la charla. En *Dímelo con Manzanas* seguimos una política de veracidad clara:
 
-* **Cero transcripciones sintéticas o inventadas**: Cada transcripción proviene directamente del archivo de audio real grabado durante la sesión.
-* **Procesamiento automatizado con Whisper**: Implementamos una herramienta local y abierta basada en `faster-whisper` (optimizada con cuantización `int8` sobre contenedores Podman/Docker). Esto nos permite transcribir el audio en español con marcas de tiempo precisas segundo a segundo, sin depender de nubes propietarias y garantizando la privacidad de las grabaciones.
-* **Archivo Raw Descargable**: Además de leer la transcripción en el blog, los oyentes pueden descargar el archivo `.txt` original con las marcas de tiempo exactas para sus propios análisis o proyectos de accesibilidad.
+* **Fidelidad absoluta al audio grabado**: Cada transcripción proviene directamente del archivo de audio real grabado durante la sesión.
+* **Marcas de tiempo segundo a segundo**: Cada línea incluye el momento exacto para que puedas acompañar tu escucha o saltar directamente a la explicación que necesites repasar.
+* **Disponible para leer y descargar**: En cada publicación de episodio encontrarás la transcripción desplegable y la opción de descargar el archivo de texto para tus propios apuntes o proyectos de accesibilidad.
 
 ---
 
@@ -49,7 +49,7 @@ Compartir el proceso abierto forma parte del espíritu de nuestro proyecto. Así
 1. **Curaduría e Investigación Académica**: Seleccionamos temas de frontera tecnológica y exploramos publicaciones de instituciones líderes (como el MIT, Stanford o la Wharton School).
 2. **Estructuración con Manzanas**: Diseñamos los capítulos traduciendo conceptos abstractos a metáforas cotidianas y analogías visuales que cualquiera pueda disfrutar.
 3. **Grabación en Cabina**: Adriana y Álvaro graban la conversación de forma cercana, amena y espontánea.
-4. **Procesamiento de Audio y Transcripción Automática**: El audio master se procesa a través de nuestro pipeline de Whisper en `tools/whisper/`, generando el registro textual con marcas de tiempo.
-5. **Publicación Abierta**: El episodio se lanza en Spotify, mientras que en [conmanzanas.lat](https://conmanzanas.lat) se publican las notas completas, el reproductor embebido, las fichas interactivas de los estudios científicos citados y la transcripción íntegra descargable.
+4. **Procesamiento de Audio y Transcripción Automática**: El audio final se procesa de forma automatizada para generar el registro textual íntegro con sus marcas de tiempo.
+5. **Publicación Abierta**: El episodio se distribuye en plataformas de streaming, mientras que en la web se publican las notas completas, el reproductor embebido, las fichas interactivas de los estudios científicos citados y la transcripción completa.
 
 ¡Esperamos que esta nueva herramienta enriquezca su experiencia de aprendizaje! Si tienes comentarios, sugerencias o ideas sobre cómo seguir mejorando el podcast, no dudes en escribirnos a través del buzón de la comunidad al final de cada página.

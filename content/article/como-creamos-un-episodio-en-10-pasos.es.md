@@ -69,11 +69,11 @@ Mientras se afina el audio, preparamos la casa digital del episodio en [conmanza
 
 ---
 
-### Paso 7: Transcripción automática desde el archivo de audio
-Con el audio master finalizado, entra en acción nuestro pipeline automatizado de código abierto en `tools/whisper/`:
-* Procesamos el audio real mediante modelos locales de Whisper (`faster-whisper` optimizado con cuantización `int8` sobre Podman/Docker).
-* Generamos el archivo de texto raw (`.txt`) con marcas de tiempo precisas segundo a segundo.
-* **Cero alucinaciones**: La transcripción refleja 100% las palabras que salieron de cabina, sin texto inventado ni filtros artificiales, y queda disponible para descarga libre en `static/transcripts/`.
+### Paso 7: Generación de la transcripción a partir del audio
+Con el audio finalizado, generamos la transcripción directa de la grabación:
+* La transcripción se obtiene de manera automática a partir de la pista de voz real, capturando fielmente lo conversado en cabina.
+* Incluye marcas de tiempo para que puedas ubicar cualquier momento de la charla con exactitud.
+* **Cero texto inventado**: Refleja fielmente las palabras de la conversación y queda disponible para consultar directamente en el artículo o descargar en archivo de texto.
 
 ---
 
