@@ -23,7 +23,9 @@
   - `{{< manzana title="Analogía con Manzanas: ..." >}}`: Al menos una analogía visual cotidiana.
   - `{{< transcripcion titulo="..." badge="..." descargar="..." >}}`: Transcripción accesible enlazando al archivo en `static/transcripts/`.
   - `{{< estudio ... >}}`: Ficha interactiva para citas de investigaciones académicas.
-- **Taxonomía estricta**: Frontmatter con `categories: ["episodio"]` (minúsculas) y `author: "Manzaneros"`.
+- **Taxonomía estricta y etiquetas dinámicas**:
+  - Frontmatter obligatorio con `categories: ["episodio"]` (minúsculas) y `author: "Manzaneros"`.
+  - Las etiquetas (`tags`) **NUNCA son fijas ni genéricas**: deben crearse a la medida de cada entrega (de 3 a 5 tags en kebab-case, ej: `["ciberseguridad", "pensamiento-critico"]`).
 - **Auditoría automatizada obligatoria**: Ningún episodio se considerará completado sin haber ejecutado exitosamente el auditor editorial:
   ```bash
   python3 .agents/skills/Con-Manzanas-Publisher/scripts/audit_episode.py <ruta-al-episodio>

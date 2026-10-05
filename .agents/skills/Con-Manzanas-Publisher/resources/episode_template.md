@@ -2,7 +2,7 @@
 title: "00XX - [Título Atractivo y Claro Explicado con Manzanas]"
 date: YYYY-MM-DDTHH:MM:SS-06:00
 draft: false
-tags: ["tecnologia", "ciencia", "educacion"]
+tags: ["[etiqueta-1]", "[etiqueta-2]", "[etiqueta-3]"] # Personalizar según los temas centrales del episodio (3 a 5 tags en kebab-case, ej: ciberseguridad, salud-mental, algoritmos)
 categories: ["episodio"]
 author: "Manzaneros"
 ---

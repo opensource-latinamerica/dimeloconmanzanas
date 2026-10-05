@@ -13,6 +13,7 @@ Transform raw podcast transcripts and research portfolios from Gemini Notebook i
 - **Tone & Style**: Direct, accessible, human-centric Latin American Spanish. Eliminate all introductory corporate AI jargon (e.g., "En el dinámico mundo de hoy", "adentrémonos").
 - **Core Strategy**: Even when deep technical data or comprehensive reference sheets are supplied, the body sections must remain short, punchy, and highly scannable. Use visual tables or callouts instead of long paragraphs to keep reading time low.
 - **Repository Safety**: Never edit published episodes with `status: published` or existing `spotify_url`. Always register new episodes in `.agents/episodes.yaml`.
+- **Dynamic Tags (Taxonomía)**: Tags are **NEVER hardcoded or generic**. They must be dynamically generated and tailored to the specific topics of each episode (3 to 5 lowercase kebab-case tags, e.g. `["ciberseguridad", "pensamiento-critico", "educacion"]`). The only fixed taxonomy property is `categories: ["episodio"]`.
 
 ## Input Parameters
 - `{{EPISODE_TRANSCRIPT}}`: Spoken dialogue between Adriana and Álvaro.
@@ -42,7 +43,7 @@ title: "00XX - [Compelling Title Spoken with Manzanas]"
 date: YYYY-MM-DDTHH:MM:SS-06:00
 draft: false
 categories: ["episodio"]
-tags: ["Tag1", "Tag2"]
+tags: ["[tema-central-1]", "[tema-central-2]", "[tema-central-3]"]
 author: "Manzaneros"
 ---
 

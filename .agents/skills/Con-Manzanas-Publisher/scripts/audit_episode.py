@@ -138,7 +138,23 @@ def audit_episode(file_path, manifest=None):
     else:
         warnings.append(f"Se recomienda 'author: \"Manzaneros\"' (actual: '{author}')")
 
-    # 4. Conteo de Palabras y Tiempo de Lectura
+    # 4. Validación de Etiquetas (Tags) Dinámicas
+    tags = fm.get("tags", [])
+    if isinstance(tags, str):
+        tags = [tags]
+    if not tags:
+        errors.append("Falta el campo 'tags' en el frontmatter o está vacío.")
+    else:
+        placeholders = {"tag1", "tag2", "[etiqueta-1]", "[etiqueta-2]", "[etiqueta-3]", "[tema-central-1]", "[tema-central-2]"}
+        found_placeholders = [t for t in tags if str(t).lower().strip() in placeholders or str(t).startswith("[")]
+        if found_placeholders:
+            errors.append(f"Las etiquetas contienen placeholders de plantilla: {found_placeholders}. Deben personalizarse según la temática del episodio.")
+        elif len(tags) < 2:
+            warnings.append(f"Se recomiendan entre 3 y 5 etiquetas temáticas (actual: {len(tags)}).")
+        else:
+            passes.append(f"Etiquetas temáticas personalizadas ({len(tags)}): {', '.join(tags)}")
+
+    # 5. Conteo de Palabras y Tiempo de Lectura
     word_count = calculate_editorial_word_count(body)
     est_reading_time = round(word_count / 200, 1)
 

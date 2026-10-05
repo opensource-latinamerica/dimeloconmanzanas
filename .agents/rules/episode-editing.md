@@ -16,6 +16,7 @@ Antes de leer o intentar modificar cualquier archivo de episodio en `content/art
 
 3. **Flujo Obligatorio de Publicación (`con-manzanas-publisher`)**:
    - Todo nuevo episodio debe redactarse siguiendo la habilidad `.agents/skills/Con-Manzanas-Publisher/SKILL.md` y su plantilla canónica `.agents/skills/Con-Manzanas-Publisher/resources/episode_template.md`.
+   - Las etiquetas (`tags`) deben ser personalizadas y únicas para cada entrega (3 a 5 tags en kebab-case representativas del tema), evitando etiquetas genéricas o placeholders de plantilla.
    - Se debe validar el cumplimiento del artículo ejecutando:
      ```bash
      python3 .agents/skills/Con-Manzanas-Publisher/scripts/audit_episode.py <ruta-al-episodio>
