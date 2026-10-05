@@ -88,6 +88,18 @@ La tecnología y las computadoras son herramientas extraordinarias diseñadas pa
 
 ---
 
+### 🎙️ Transcripción Completa del Episodio
+
+A continuación puedes consultar la transcripción íntegra de la conversación o descargar el archivo de texto con las marcas de tiempo.
+
+{{< transcripcion 
+    titulo="Transcripción Completa: Episodio 0001" 
+    badge="Texto Íntegro · Audio Real" 
+    descargar="/transcripts/0001-internet-para-todos.txt" >}}
+{{< /transcripcion >}}
+
+---
+
 ### 📚 Enlaces de Referencia y Fuentes de Estudio
 
 * [**How to teach computer skills at home** – BBC Bitesize](https://www.bbc.co.uk/bitesize/articles/zjky239)
