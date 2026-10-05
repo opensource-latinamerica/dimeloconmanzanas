@@ -14,6 +14,7 @@
 # - spotify_url: Enlace al reproductor oficial de Spotify (o null si es borrador)
 # - published_date / created_date: Fecha de publicación o creación (ISO 8601 YYYY-MM-DD)
 # - transcript_file: Ubicación del archivo de texto (.txt) con la transcripción completa oficial
+# - spotify_description: Texto de descripción y notas del show para configurar el episodio en Spotify
 
 episodes:
   - number: "0001"
@@ -35,10 +36,40 @@ episodes:
     transcript_file: "static/transcripts/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.txt"
 
   - number: "0003"
-    title: "Inteligencia Artificial y Rendición Cognitiva: El Gimnasio Mental en Pausa"
+    title: "0003 - ¿Tu Cerebro en Pausa? Inteligencia Artificial y Rendición Cognitiva"
     file: "content/article/0003-inteligencia-artificial-y-rendicion-cognitiva.es.md"
     author: "Adriana y Álvaro"
     status: "draft"
     spotify_url: null
     transcript_file: "static/transcripts/0003-inteligencia-artificial-y-rendicion-cognitiva.txt"
     created_date: "2026-10-04"
+    spotify_description: |
+      ¿Usar inteligencia artificial nos hace más eficientes o está apagando silenciosamente nuestra capacidad para pensar por nosotros mismos?
+
+      En este episodio de "Dímelo con Manzanas", Adriana y Álvaro analizan a fondo el fenómeno de la "rendición cognitiva" (Cognitive Surrender): el proceso por el cual delegamos nuestro juicio normativo, ético y analítico en algoritmos elocuentes.
+
+      Respaldados en investigaciones empíricas de la Escuela Wharton y el MIT, examinamos el surgimiento del "Sistema 3" (cognición externa artificial), por qué la coherencia sintáctica desactiva nuestra vigilancia epistémica y cómo el dogma del diseño sin fricción explota la naturaleza de nuestro cerebro como "avaro cognitivo".
+
+      Además, exploramos soluciones reales como la "fricción cognitiva estructurada", el juicio comparativo y cómo usar la IA como un Abogado del Diablo para fortalecer nuestro gimnasio mental en lugar de apagarlo.
+
+      ⏱️ Capítulos y Marcas de Tiempo:
+      00:00 - Introducción: ¿Qué es la Rendición Cognitiva?
+      01:22 - La metáfora del exoesqueleto: Músculos que se atrofian
+      02:13 - Descarga cognitiva estratégica vs. Rendición cognitiva
+      03:25 - El Sistema 3 (Wharton): Elocuencia vs. verdad empírica
+      04:54 - Ilusión de comprensión y atajos de confianza
+      06:40 - La rana hervida en las aulas: De resumir a delegar la mente
+      08:12 - Testimonios: Sentirse "sin mente" y la pérdida del artesano
+      08:34 - Evidencia neurocientífica (MIT): Hipocampo y economía metabólica
+      10:35 - El dogma del diseño sin fricción: El cerebro como "avaro cognitivo"
+      12:43 - Fricción cognitiva estructurada: Usar la IA como Abogado del Diablo
+      14:52 - Medir el esfuerzo mental: Pupilas, FNIRS y entropía ocular
+      17:15 - Soluciones prácticas: Zonas libres de IA y juicio comparativo
+      19:15 - Reflexión final: "El resultado no examinado de la IA no merece ser aceptado"
+
+      🍎 Analogía Clave: El Tractor Autónomo en el Manzanar.
+
+      📖 Lee el artículo completo, las fichas interactivas de estudios científicos y la transcripción íntegra en:
+      https://conmanzanas.lat/article/0003-inteligencia-artificial-y-rendicion-cognitiva/
+
+      Presentado por Adriana y Álvaro. Síguenos y comparte tus reflexiones con nosotros.
