@@ -95,3 +95,7 @@ Si deseas profundizar en las investigaciones y reportes en los que se basó este
 1. **Manifest Registration**: Add the new episode entry to `.agents/episodes.yaml` with `status: draft`.
 2. **Text Density Check**: Ensure total body word count stays between **700 and 900 words** to guarantee the 3–5 minute reading cap.
 3. **Scrub AI Jargon**: Eliminate repetitive phrasing, generic intros, or overly corporate wording.
+4. **Automated Audit Execution**: Run the auditor script to verify all constraints pass:
+   ```bash
+   python3 .agents/skills/Con-Manzanas-Publisher/scripts/audit_episode.py content/article/00XX-<slug>.es.md
+   ```

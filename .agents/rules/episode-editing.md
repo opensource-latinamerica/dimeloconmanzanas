@@ -13,3 +13,10 @@ Antes de leer o intentar modificar cualquier archivo de episodio en `content/art
 2. **Episodios Nuevos o en Borrador (`status: draft` o sin `spotify_url`)**:
    - Solo se permite modificar, enriquecer o generar contenido para episodios que figuren con `status: draft` o cuyo `spotify_url` sea `null` (como el Episodio 3).
    - Cuando se cree un nuevo episodio, se debe registrar en `.agents/episodes.yaml` con su estado correspondiente.
+
+3. **Flujo Obligatorio de Publicación (`con-manzanas-publisher`)**:
+   - Todo nuevo episodio debe redactarse siguiendo la habilidad `.agents/skills/Con-Manzanas-Publisher/SKILL.md` y su plantilla canónica `.agents/skills/Con-Manzanas-Publisher/resources/episode_template.md`.
+   - Se debe validar el cumplimiento del artículo ejecutando:
+     ```bash
+     python3 .agents/skills/Con-Manzanas-Publisher/scripts/audit_episode.py <ruta-al-episodio>
+     ```
