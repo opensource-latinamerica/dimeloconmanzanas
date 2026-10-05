@@ -12,6 +12,7 @@ episodes:
     status: "published"
     spotify_url: "https://open.spotify.com/episode/5cnL9GTKLhuqMMsWGiiymM"
     published_date: "2025-10-16"
+    transcript_file: "static/transcripts/0001-internet-para-todos.txt"
 
   - number: "0002"
     title: "Inteligencia Artificial y Salud Mental: ¿Compañía Real o Espejismo Digital?"

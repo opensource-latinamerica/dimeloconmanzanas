@@ -32,13 +32,17 @@ Por eso, tomamos la decisión de hacer las transcripciones de nuestros episodios
 
 ---
 
-### 🎙️ Fidelidad y Veracidad: Desde el Audio Real
+### 🎙️ Fidelidad y Veracidad: Preferimos la Verdad antes que la Ficción
 
-Una duda común al ver transcripciones en la web es si están generadas de forma artificial o si reflejan con exactitud lo que se dijo en la charla. En *Dímelo con Manzanas* seguimos una política de veracidad clara:
+Una duda común al ver transcripciones en la web es si están generadas de forma artificial o si reflejan con exactitud lo que se dijo en la charla. En *Dímelo con Manzanas* seguimos una política de veracidad clara: **preferimos la verdad pura sobre datos ficticios o diálogos retocados**. Y eso viene con una pequeña advertencia:
 
 * **Fidelidad absoluta al audio grabado**: Cada transcripción proviene directamente del archivo de audio real grabado durante la sesión.
 * **Marcas de tiempo segundo a segundo**: Cada línea incluye el momento exacto para que puedas acompañar tu escucha o saltar directamente a la explicación que necesites repasar.
 * **Disponible para leer y descargar**: En cada publicación de episodio encontrarás la transcripción desplegable y la opción de descargar el archivo de texto para tus propios apuntes o proyectos de accesibilidad.
+
+> 🍎 **Una disculpa de antemano (y una invitación a reírte con nosotros):**  
+> Al transcribir el audio íntegro y sin filtros cosméticos, si en cabina nos trabamos con un trabalenguas científico, soltamos una risotada a destiempo o se nos escapa algún tropezón o una mala palabra espontánea... ¡ahí va a quedar inmortalizada con su respectivo segundo en el cronómetro! 😅  
+> No somos inteligencias artificiales calculando la respuesta matemáticamente impecable: somos personas de carne y hueso apasionadas por la divulgación. Así que si encuentras un desliz o un momento cómico en la transcripción, no te asustes: ríete con nosotros, tómalo como la prueba irrefutable de que fue 100% humano y disfruta la conversación al natural.
 
 ---
 

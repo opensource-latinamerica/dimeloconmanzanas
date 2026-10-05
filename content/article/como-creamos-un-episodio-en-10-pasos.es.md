@@ -1,17 +1,17 @@
 ---
 title: "Cómo Nace un Episodio: Nuestro Flujo Creativo y Técnico de 10 Pasos"
-date: 2026-10-04T17:40:00-06:00
+date: 2025-10-15T18:00:00-05:00
 draft: false
 tags: ["detras-de-camaras", "produccion", "metodologia", "comunidad", "podcast"]
 categories: ["anuncio"]
-author: "Adriana y Alvaro"
+author: "Manzaneros"
 ---
 
 Muchos oyentes nos preguntan qué ocurre antes de que un episodio llegue a sus audífonos y a este blog. Hoy abrimos las puertas de nuestra cocina creativa y técnica para compartir el proceso de 10 pasos con el que damos vida a *Dímelo con Manzanas*.
 
 <!--more-->
 
-Adriana y Álvaro te cuentan en detalle cómo transformamos artículos científicos densos y temas complejos en conversaciones accesibles, transparentes y amenas.
+Desde el equipo de Manzaneros te contamos en detalle cómo transformamos artículos científicos densos y temas complejos en conversaciones accesibles, transparentes y amenas.
 
 En *Dímelo con Manzanas* no creemos en los atajos ni en generar contenido en serie sin alma. Aunque nuestro proceso no es una línea recta —frecuentemente vamos y venimos entre fases cuando una analogía necesita madurar o descubrimos un nuevo dato—, estos diez pasos representan la brújula que guía cada entrega.
 
@@ -45,7 +45,7 @@ Aquí comienza la traducción pedagógica. Diseñamos la arquitectura conceptual
 
 ### Paso 4: Grabación en cabina
 Llega el momento de encender los micrófonos. Aunque tenemos una estructura clara del Paso 3, no leemos un guion rígido palabra por palabra:
-* Buscamos una conversación viva, espontánea y cercana entre Adriana y Álvaro.
+* Buscamos una conversación viva, espontánea y cercana entre los manzaneros.
 * Dejamos espacio para el humor, la sorpresa y las reflexiones personales.
 * La química y la calidez humana son las que convierten la teoría en una charla entre amigos.
 

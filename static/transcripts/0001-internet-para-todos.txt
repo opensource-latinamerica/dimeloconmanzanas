@@ -1,0 +1,119 @@
+[0.00s -> 4.88s]  Bienvenidos y bienvenidas a Dímelo con Manzanas, este es nuestro primer episodio y
+[4.88s -> 9.48s]  estoy súper emocionada de estar aquí junto a Álvaro, bueno y a mis perritos pero
+[9.48s -> 14.96s]  ellos no hablan tanto como Álvaro. Hoy vamos a explorar como quien dice la base
+[14.96s -> 20.40s]  de todo, qué es realmente el internet pero explicado de una manera que no de dolor
+[20.40s -> 25.92s]  de cabeza. Piensa que el internet es como una oficina postal mundial, tu
+[25.92s -> 31.04s]  computadora, tu teléfono son tu casa ¿no? y los sitios web serían pues esas
+[31.04s -> 35.04s]  tiendas o bibliotecas digitales a las que quieres ir a curiosar.
+[35.04s -> 41.72s]  Sí justo Adriana, yo siempre uso esa analogía con mi mamá, allá en Chile mira
+[41.72s -> 47.04s]  ella decía cómo que mandaste un documento por internet y quien lo lleva un
+[47.04s -> 53.32s]  cartero invisible, entonces yo le decía imagina que tu correo electrónico es
+[53.32s -> 59.16s]  una carta que viaja por todas las redes del mundo hasta llegar a cualquier sitio
+[59.16s -> 64.24s]  casi como si todos tuviera conectado por cables y satélites tipo una red de
+[64.24s -> 72.04s]  carreteras pero para datos y ojo mucha gente confunde internet con la web pero
+[72.04s -> 77.04s]  aunque parezcan lo mismo no es lo mismo. Ay si mira eso me vive pasa en mi
+[77.04s -> 81.60s]  trabajo todo el tiempo porque no es lo mismo el internet es la infraestructura
+[81.60s -> 86.36s]  o sea la red de carreteras global por la que circulan los datos y luego está la
+[86.36s -> 90.56s]  worldwide web como el centro comercial donde están los sitios bonitos, las
+[90.56s -> 96.16s]  recetas, los memes, la tienda online de croquetas para perros, todo eso funciona
+[96.16s -> 101.44s]  en internet pero no es todo lo que existe en él. Exacto es como si la web fuese
+[101.44s -> 107.92s]  solo una parte de ese gran correo y hubiera otras cosas, correo electrónico,
+[107.92s -> 113.96s]  transferencia de archivos, chats pero a ver antes de que se vuelva una sopa de
+[113.96s -> 118.60s]  conceptos Adriana yo digo que lo importante es usar el pensamiento
+[118.60s -> 124.16s]  computacional y no, no tienes que ser ingeniero para eso. Totalmente lo que pasa
+[124.16s -> 128.68s]  es que a veces escuchas pensamiento computacional y ya te imaginas programando
+[128.68s -> 134.08s]  súper complicado pero no es solo pensar en cómo partir un problema en
+[134.08s -> 140.44s]  pedacitos y ver lo que realmente importa si lo piensas es la manera más natural de
+[140.44s -> 143.76s]  abordar este lío digital en el que estamos todos metidos.
+[143.76s -> 149.20s]  Si y justo ahí entre el tema de la abstracción como ver el bosque y no
+[149.20s -> 154.16s]  perderte entre los árboles no si entiendes la diferencia entre internet y la
+[154.16s -> 159.80s]  web ya avanzaste muchísimo es como ubicar tu casa exacta antes de mandar una
+[159.80s -> 167.72s]  carta nueva celanda donde el internet sería todo el sistema postal pero tú
+[167.72s -> 173.76s]  decides si mandas una carta un paquete o si solo vas al gusón a mirar me encanta y
+[173.76s -> 177.76s]  bueno hablando de mandar cosas de ahí viene la magia de los correos
+[177.76s -> 182.52s]  electrónicos que si te parece es lo que nos lleva directo a la siguiente
+[182.52s -> 190.52s]  parada de este viaje digital sí claro el correo electrónico o email todavía es
+[190.52s -> 195.72s]  como el abuelo sabio de internet fue una de las primeras cosas que la gente
+[195.72s -> 203.56s]  usó y aunque ahora hay miles de apps el correo sigue ahí la dirección es como
+[203.56s -> 211.72s]  tu propia dirección postal digital primero tu nombre de usuario luego el
+[211.72s -> 221.04s]  arroba y finalmente el vecindario que sería el dominio como gmail.com o
+[221.04s -> 228.76s]  hotmail.com hay las viejas pero no obsoletas cuentas de hotmail
+[228.76s -> 234.52s]  yo tengo una claro pero volviendo el correo electrónico evita muchos apuros y
+[234.52s -> 238.92s]  es útil tanto en el trabajo como en la familia lo curioso es cómo esa
+[238.92s -> 244.36s]  comunicación evolucionó tan rápido no empezamos con los correos y de pronto ya
+[244.36s -> 249.48s]  estábamos en chats que respondían al segundo si mira a mí me tocó todo ese
+[249.48s -> 254.68s]  cambio pasar del correo que era como esperar que llegara la carta de tu
+[254.68s -> 261.48s]  abuelita o sea podía tomarlo suyo a los mensajes instantáneos tipo icq o
+[261.48s -> 268.88s]  messenger luego whatsapp telegram y ni te cuento todo lo demás un mensaje
+[268.88s -> 277.24s]  y pum aparecen en la otra pantalla y si hablamos de grupos eso ya es como una
+[277.24s -> 282.92s]  sala llena de gente que habla al mismo tiempo o gritando por memes depende del
+[282.92s -> 287.72s]  grupo y los foros que existieron plataformas de ese tipo en las que
+[287.72s -> 291.92s]  alguien pudiera aprender astronomía y otros temas gracias a uno de esos
+[291.92s -> 295.84s]  sitios lo bueno era que siempre había alguien moderando y filtrando los
+[295.84s -> 300.64s]  mensajes para que no todo terminar en un caos completo o comentarios fuera del
+[300.64s -> 305.12s]  lugar que nunca faltaban o las clásicas respuestas incorrectas de yahoo
+[305.12s -> 310.96s]  answers es verdad los foros y las distas de correo fomentaban comunidades
+[310.96s -> 315.68s]  brutales pero tenían sus propias reglas como no enviar mensajes fuera de
+[315.68s -> 323.20s]  tema y como no el lenguaje de los chats cambió todo abreviaturas por
+[323.20s -> 330.12s]  todos lados lol xd caritas
+[330.12s -> 334.72s]  a veces mis sobrinos me escriben y yo tengo que preguntarle a google que quisieron
+[334.72s -> 342.48s]  decir y no sé si a ti te pasa que ves emoticones extraños y te quedas como y
+[342.48s -> 347.16s]  esto qué significa me pasa todo el tiempo pero también hace que la
+[347.16s -> 350.96s]  comunicación sea más divertida aunque bueno hay que tener cuidado porque a
+[350.96s -> 355.72s]  veces esas abreviaturas se cuelan en correos formales o te equivocas y mandas un
+[355.72s -> 360.80s]  jiji al jefe por reflejo hoy qué horror oye pero eso también nos muestra cómo
+[360.80s -> 365.28s]  cambiaron las reglas todo se hace más rápido más distendido a veces pero
+[365.28s -> 370.52s]  también abre la puerta a otros problemillas por ejemplo esas amenazas
+[370.52s -> 377.08s]  que siempre están al acecho virus spam phishing así como que en cualquier
+[377.08s -> 381.04s]  foro chat o correo uno tiene que andar pila
+[381.04s -> 387.68s]  ui si la parte menos divertida de este ecosistema digital te parece si entramos
+[387.68s -> 392.16s]  ya de lleno a cómo cuidarnos porque a veces hasta yo me he visto tentada a
+[392.16s -> 397.52s]  abrir un correo que ya después pensé mejor lo hubiera dejado en la bandeja
+[397.52s -> 399.96s]  de spam
+[400.64s -> 407.72s]  qué tema la seguridad es como vivir en una ciudad gigante
+[407.72s -> 417.16s]  puedes ir a cualquier lado pero ojo hay zonas seguras y otras que bueno mejor
+[417.16s -> 422.04s]  ni pasar por ahí los tres principales peligros a los que hay que estar
+[422.04s -> 428.56s]  atentos son los virus el phishing y el spam
+[428.60s -> 431.80s]  empecemos por los virus
+[431.80s -> 438.88s]  un virus en informática es como el refriado que ando buscando a quien pegarle
+[438.88s -> 446.52s]  a veces se mete en un programa y cuando lo abres esas te infecta
+[446.52s -> 453.64s]  puede hasta grabar tus contraseñas o vigilar lo que te cleas y el spyware
+[453.76s -> 460.32s]  ese es más útil recopila información sobre lo que haces y lo manda a quien sabe
+[460.32s -> 467.86s]  quién lo peor es que a veces incluso viene disfrazado en juegos gratuitos o en
+[467.86s -> 474.04s]  protectores de pantalla bonitos eso da miedo sinceramente y a veces uno
+[474.04s -> 480.36s]  piensa bueno vino de mi jefe seguro que es confiable y le das clic pero puede
+[480.36s -> 485.40s]  que el correo de tu jefe haya sido hackeado y ahora te manden a ti el
+[485.40s -> 489.56s]  virus yo ya tengo grabada la regla de oro
+[489.56s -> 495.08s]  archivo sospechoso aunque sea de alguien conocido no se abre sin preguntar
+[495.08s -> 500.24s]  primero así debe ser adri el phishing también me ha querido agarrar un
+[500.24s -> 506.40s]  par de veces eso de que te llega un correo que parece de tu banco de esos
+[506.40s -> 512.88s]  superurgentes que tienes que entrar a un enlace y poner tu contraseña ya porque si
+[512.88s -> 516.60s]  no te suspenden la cuenta
+[516.60s -> 523.96s]  mira a mí casi me agarran como uno que te juro era igualito al portal del banco
+[523.96s -> 532.32s]  ponían mi nombre y todo pero cuando vi el enlace peculiar ya fue como
+[532.60s -> 535.56s]  esto no cuadra
+[535.56s -> 542.04s]  siempre hay que revisar la dirección del remitente no dar clic si tienes dudas y
+[542.04s -> 547.96s]  si quieres estar seguro mejor entra tú mismo al sitio escribiendo la dirección
+[547.96s -> 553.76s]  nunca desde el enlace del email y ni hablar del spam que es el pan de cada día
+[553.76s -> 559.68s]  esos mensajes que llegan en masa sólo para que compres hagas clic o peor aún
+[559.68s -> 565.60s]  caigas en algún timo lo cansado es que aunque los filtros han mejorado muchísimo
+[565.60s -> 570.96s]  todavía se cuela alguno que otro por cierto sabías que de la tarifa
+[570.96s -> 575.84s]  mensual que muchos pagamos por internet una parte se destina sólo a combatir el
+[575.84s -> 582.88s]  spam quien lo diría si es una locura los filtros modernos usan inteligencia
+[582.88s -> 589.20s]  artificial y todos los trucos posibles como buscar palabras raras
+[589.20s -> 597.52s]  viagra herencia millonaria te ganaste un crucero ese tipo de cosas
+[597.52s -> 604.32s]  pero siempre digo que el primer filtro eres tú mismo si algo te parece sospechoso
+[604.32s -> 609.92s]  lo más seguro es no abrirlo y denunciarlo si es posible
+[609.92s -> 617.36s]  como dice mi colega de seguridad informática todo es vulnerable todo
+[617.68s -> 624.40s]  y por eso es clave seguir aprendiendo eso y para terminar diría que la seguridad
+[624.40s -> 630.60s]  online es una responsabilidad compartida ni los expertos pueden con todo pero
+[630.60s -> 634.52s]  todos podemos aprender hábitos sencillos para navegar con más
+[634.52s -> 640.76s]  tranquilidad en esta ciudad digital ya lo creo así que agradecemos que no hay
+[640.76s -> 645.36s]  han acompañado hoy en los próximos episodios vamos a entrar en temas aún
+[645.36s -> 651.24s]  más práctico como contraseña segura como identificar noticias falsa y cómo
+[651.24s -> 654.12s]  sacarle el jugo a la web para aprender cualquier cosa
+[654.12s -> 659.24s]  alabro gracias por compartir tantas anécdotas y tips y muchas gracias a todos
+[659.24s -> 664.28s]  por ser parte de este viaje digital nos escuchamos en la próxima vale nos
+[664.28s -> 672.28s]  vemos adri y a quienes nos escuchan no olviden sigan preguntando sigan
+[672.28s -> 674.28s]  cuidándose
+[674.28s -> 677.28s]  chao chao
