@@ -42,14 +42,6 @@ Una duda común al ver transcripciones en la web es si están generadas de forma
 
 ---
 
-### 🎙️ Detrás de Cámaras: El Flujo de Creación de un Episodio
-
-Compartir el proceso abierto forma parte del espíritu de nuestro proyecto. Así nace cada entrega de *Dímelo con Manzanas*:
-
-1. **Curaduría e Investigación Académica**: Seleccionamos temas de frontera tecnológica y exploramos publicaciones de instituciones líderes (como el MIT, Stanford o la Wharton School).
-2. **Estructuración con Manzanas**: Diseñamos los capítulos traduciendo conceptos abstractos a metáforas cotidianas y analogías visuales que cualquiera pueda disfrutar.
-3. **Grabación en Cabina**: Adriana y Álvaro graban la conversación de forma cercana, amena y espontánea.
-4. **Procesamiento de Audio y Transcripción Automática**: El audio final se procesa de forma automatizada para generar el registro textual íntegro con sus marcas de tiempo.
-5. **Publicación Abierta**: El episodio se distribuye en plataformas de streaming, mientras que en la web se publican las notas completas, el reproductor embebido, las fichas interactivas de los estudios científicos citados y la transcripción completa.
+¿Tienes curiosidad por conocer todo el camino que recorre un episodio antes de ver la luz? Puedes leer nuestra guía detallada: [Cómo Nace un Episodio: Nuestro Flujo Creativo y Técnico de 10 Pasos](/article/como-creamos-un-episodio-en-10-pasos/).
 
 ¡Esperamos que esta nueva herramienta enriquezca su experiencia de aprendizaje! Si tienes comentarios, sugerencias o ideas sobre cómo seguir mejorando el podcast, no dudes en escribirnos a través del buzón de la comunidad al final de cada página.
