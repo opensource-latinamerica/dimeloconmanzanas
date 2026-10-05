@@ -42,7 +42,9 @@
             {{ end }}
         {{ end }}
     </div>
+    {{ if or (in .ctx.Params.categories "episodio") (findRE "^[0-9]+" .ctx.Title) }}
     {{ partial "podcast-platforms.html" .ctx }}
+    {{ end }}
     {{ end }}
 
     {{ if or (eq .template_type "single") (.ctx.Params.noSummary) }}
@@ -64,10 +66,17 @@
         {{ .ctx.Summary }}
 
         <div class="episode-card-action">
+            {{ if in .ctx.Params.categories "episodio" }}
             <a href="{{ .ctx.Permalink }}" class="episode-card-listen-btn">
                 <span class="play-icon-circle"><i class="fa fa-play" aria-hidden="true"></i></span>
                 <span>Escuchar y leer notas</span>
             </a>
+            {{ else }}
+            <a href="{{ .ctx.Permalink }}" class="episode-card-listen-btn episode-card-read-btn">
+                <span class="play-icon-circle"><i class="fa fa-newspaper" aria-hidden="true"></i></span>
+                <span>Leer publicación</span>
+            </a>
+            {{ end }}
         </div>
     {{ end }}
 

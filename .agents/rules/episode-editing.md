@@ -2,7 +2,7 @@
 
 ## Fuente de Verdad: `.agents/episodes.yaml`
 
-Antes de leer o intentar modificar cualquier archivo de episodio en `content/article/`, el agente **DEBE** consultar obligatoriamente el archivo de registro [`.agents/episodes.yaml`](file:///home/alvaro/code/dimeloconmanzanas/.agents/episodes.yaml).
+Antes de leer o intentar modificar cualquier archivo de episodio en `content/article/`, el agente **DEBE** consultar obligatoriamente el archivo de registro `.agents/episodes.yaml`.
 
 ## Restricciones Estrictas de Modificación
 
@@ -12,4 +12,4 @@ Antes de leer o intentar modificar cualquier archivo de episodio en `content/art
 
 2. **Episodios Nuevos o en Borrador (`status: draft` o sin `spotify_url`)**:
    - Solo se permite modificar, enriquecer o generar contenido para episodios que figuren con `status: draft` o cuyo `spotify_url` sea `null` (como el Episodio 3).
-   - Cuando se cree un nuevo episodio, se debe registrar en [`.agents/episodes.yaml`](file:///home/alvaro/code/dimeloconmanzanas/.agents/episodes.yaml) con su estado correspondiente.
+   - Cuando se cree un nuevo episodio, se debe registrar en `.agents/episodes.yaml` con su estado correspondiente.

@@ -134,6 +134,18 @@ Cuidemos nuestro gimnasio mental, ejercitemos nuestra capacidad de dudar y mante
 
 ---
 
+### 🎙️ Transcripción Completa del Episodio
+
+A continuación puedes consultar la transcripción íntegra generada mediante nuestro pipeline de reconocimiento de voz automático con Whisper a partir del audio real, o descargar el archivo de texto en bruto con las marcas de tiempo.
+
+{{< transcripcion 
+    titulo="Transcripción Completa: Episodio 0003" 
+    badge="Texto Íntegro · Audio Real vía Whisper" 
+    descargar="/transcripts/0003-inteligencia-artificial-y-rendicion-cognitiva.txt" >}}
+{{< /transcripcion >}}
+
+---
+
 ### 📚 Enlaces de Referencia y Estudio Científico
 
 Para profundizar en las investigaciones académicas, reportes institucionales y análisis especializados en los que se apoya este episodio:

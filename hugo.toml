@@ -15,14 +15,19 @@ enableRobotsTXT = true
     weight = 10
 
   [[menus.main]]
-    name = "Autores"
-    url = "/author/adriana-y-alvaro/"
+    name = "Episodios"
+    url = "/categories/episodio/"
     weight = 20
 
   [[menus.main]]
-    name = "Episodios"
-    url = "/categories/episodio/"
+    name = "Noticias"
+    url = "/categories/anuncio/"
     weight = 30
+
+  [[menus.main]]
+    name = "Manzaneros"
+    url = "/manzaneros/"
+    weight = 40
 
 [params]
     logo = "image_1758312870445.webp"

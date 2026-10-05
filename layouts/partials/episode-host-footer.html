@@ -1,7 +1,8 @@
 {{- $adrianaImg := resources.Get "adriana.webp" -}}
 {{- $alvaroImg := resources.Get "alvaro.webp" -}}
+{{- $isEpisode := or (in .Params.categories "episodio") (findRE "^[0-9]+" .Title) -}}
 
-<div class="episode-hosts-card" aria-label="Acerca de los anfitriones">
+<div class="episode-hosts-card" aria-label="{{ if $isEpisode }}Acerca de los anfitriones{{ else }}Acerca de Dímelo con Manzanas{{ end }}">
   <div class="episode-hosts-avatars">
     {{ with $adrianaImg }}
     <img src="{{ .RelPermalink }}" alt="Adriana" class="host-avatar host-avatar-left" width="56" height="56" loading="lazy">
@@ -11,8 +12,17 @@
     {{ end }}
   </div>
   <div class="episode-hosts-info">
+    {{ if $isEpisode }}
     <p class="episode-hosts-heading">Un episodio de <strong>Dímelo con Manzanas</strong></p>
     <p class="episode-hosts-bio">Presentado por <strong>Adriana y Álvaro</strong>. Exploramos ideas complejas desglosadas en explicaciones sencillas para toda América Latina.</p>
-    <a href="{{ "/author/adriana-y-alvaro/" | relURL }}" class="episode-hosts-link">Conoce a los anfitriones →</a>
+    <a href="{{ "/manzaneros/" | relURL }}" class="episode-hosts-link">Conoce a los manzaneros →</a>
+    {{ else }}
+    <p class="episode-hosts-heading"><strong>Dímelo con Manzanas</strong> · El proyecto</p>
+    <p class="episode-hosts-bio">Impulsado por <strong>Adriana, Álvaro y la comunidad de Manzaneros</strong>. Explicamos tecnología, ciencia e inteligencia artificial con manzanas para toda América Latina.</p>
+    <div class="episode-hosts-actions">
+      <a href="{{ "/categories/episodio/" | relURL }}" class="episode-hosts-link">🎙️ Explorar episodios</a>
+      <a href="{{ "/manzaneros/" | relURL }}" class="episode-hosts-link" style="margin-left: 12px;">🍎 Conoce al equipo →</a>
+    </div>
+    {{ end }}
   </div>
 </div>

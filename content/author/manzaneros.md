@@ -1,11 +1,15 @@
 ---
-title: "Adriana y Alvaro"
+title: "Manzaneros"
+url: "/manzaneros/"
+aliases:
+  - "/author/adriana-y-alvaro/"
+  - "/author/manzaneros/"
 date: 2025-10-15T09:00:00-05:00
 draft: false
 excludefromindex: true
 ---
 
-"Dímelo con Manzanas" es presentado por Adriana y Alvaro.
+Conoce a los **Manzaneros**, el equipo y las voces detrás de *Dímelo con Manzanas*. Aquí reunimos a quienes hacen posible cada explicación sencilla de ideas complejas.
 
 ## Adriana
 

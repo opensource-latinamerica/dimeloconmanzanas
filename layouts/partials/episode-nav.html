@@ -1,26 +1,88 @@
-{{- $prev := .PrevInSection -}}
-{{- $next := .NextInSection -}}
+{{- $isEpisode := or (in .Params.categories "episodio") (findRE "^[0-9]+" .Title) -}}
 
-{{- if or $prev $next -}}
-<nav class="episode-nav-container" aria-label="Navegación entre episodios">
-  <div class="episode-nav-wrapper">
-    {{ with $prev }}
-    <a href="{{ .Permalink }}" class="episode-nav-card episode-nav-prev" rel="prev">
-      <span class="episode-nav-direction">← Episodio anterior</span>
-      <span class="episode-nav-title">{{ .Title }}</span>
-    </a>
-    {{ else }}
-    <div class="episode-nav-card episode-nav-empty"></div>
-    {{ end }}
+{{- if $isEpisode -}}
+  {{- $curr := . -}}
+  {{- $prevEp := false -}}
+  {{- $nextEp := false -}}
+  {{- $allEps := where .Site.RegularPages "Params.categories" "intersect" (slice "episodio") -}}
+  {{- $allEps = sort $allEps "Date" "asc" -}}
+  {{- range $i, $ep := $allEps -}}
+    {{- if eq $ep.RelPermalink $curr.RelPermalink -}}
+      {{- if gt $i 0 -}}
+        {{- $prevEp = index $allEps (sub $i 1) -}}
+      {{- end -}}
+      {{- if lt (add $i 1) (len $allEps) -}}
+        {{- $nextEp = index $allEps (add $i 1) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
 
-    {{ with $next }}
-    <a href="{{ .Permalink }}" class="episode-nav-card episode-nav-next" rel="next">
-      <span class="episode-nav-direction">Siguiente episodio →</span>
-      <span class="episode-nav-title">{{ .Title }}</span>
-    </a>
-    {{ else }}
-    <div class="episode-nav-card episode-nav-empty"></div>
-    {{ end }}
-  </div>
-</nav>
+  {{- if or $prevEp $nextEp -}}
+  <nav class="episode-nav-container" aria-label="Navegación entre episodios">
+    <div class="episode-nav-wrapper">
+      {{ with $prevEp }}
+      <a href="{{ .Permalink }}" class="episode-nav-card episode-nav-prev" rel="prev">
+        <span class="episode-nav-direction">← Episodio anterior</span>
+        <span class="episode-nav-title">{{ .Title }}</span>
+      </a>
+      {{ else }}
+      <div class="episode-nav-card episode-nav-empty"></div>
+      {{ end }}
+
+      {{ with $nextEp }}
+      <a href="{{ .Permalink }}" class="episode-nav-card episode-nav-next" rel="next">
+        <span class="episode-nav-direction">Siguiente episodio →</span>
+        <span class="episode-nav-title">{{ .Title }}</span>
+      </a>
+      {{ else }}
+      <div class="episode-nav-card episode-nav-empty"></div>
+      {{ end }}
+    </div>
+  </nav>
+  {{- end -}}
+
+{{- else -}}
+  {{- $curr := . -}}
+  {{- $prevPost := false -}}
+  {{- $nextPost := false -}}
+  {{- $allPosts := where (where .Site.RegularPages "Section" "article") "Params.categories" "intersect" (slice "anuncio") -}}
+  {{- $allPosts = sort $allPosts "Date" "asc" -}}
+  {{- range $i, $p := $allPosts -}}
+    {{- if eq $p.RelPermalink $curr.RelPermalink -}}
+      {{- if gt $i 0 -}}
+        {{- $prevPost = index $allPosts (sub $i 1) -}}
+      {{- end -}}
+      {{- if lt (add $i 1) (len $allPosts) -}}
+        {{- $nextPost = index $allPosts (add $i 1) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  <nav class="episode-nav-container" aria-label="Navegación entre publicaciones">
+    <div class="episode-nav-wrapper">
+      {{ with $prevPost }}
+      <a href="{{ .Permalink }}" class="episode-nav-card episode-nav-prev" rel="prev">
+        <span class="episode-nav-direction">← Publicación anterior</span>
+        <span class="episode-nav-title">{{ .Title }}</span>
+      </a>
+      {{ else }}
+      <a href="{{ "/categories/episodio/" | relURL }}" class="episode-nav-card episode-nav-prev">
+        <span class="episode-nav-direction">🎙️ Catálogo del Podcast</span>
+        <span class="episode-nav-title">Explorar todos los episodios</span>
+      </a>
+      {{ end }}
+
+      {{ with $nextPost }}
+      <a href="{{ .Permalink }}" class="episode-nav-card episode-nav-next" rel="next">
+        <span class="episode-nav-direction">Siguiente publicación →</span>
+        <span class="episode-nav-title">{{ .Title }}</span>
+      </a>
+      {{ else }}
+      <a href="{{ "/categories/episodio/" | relURL }}" class="episode-nav-card episode-nav-next">
+        <span class="episode-nav-direction">🎙️ Catálogo del Podcast</span>
+        <span class="episode-nav-title">Explorar todos los episodios</span>
+      </a>
+      {{ end }}
+    </div>
+  </nav>
 {{- end -}}

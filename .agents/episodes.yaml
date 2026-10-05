@@ -25,4 +25,5 @@ episodes:
     file: "content/article/0003-inteligencia-artificial-y-rendicion-cognitiva.es.md"
     status: "draft"
     spotify_url: null
+    transcript_file: "static/transcripts/0003-inteligencia-artificial-y-rendicion-cognitiva.txt"
     created_date: "2026-10-04"

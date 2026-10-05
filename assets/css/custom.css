@@ -954,6 +954,17 @@ pre {
   border-color: #1DB954;
 }
 
+.share-btn-site {
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.share-btn-site.copied {
+  background: #1DB954;
+  border-color: #1DB954;
+}
+
 /* ==========================================================================
    EPISODE HOSTS MINI-FOOTER
    ========================================================================== */
@@ -1016,6 +1027,14 @@ pre {
 
 .episode-hosts-link:hover {
   text-decoration: underline !important;
+}
+
+.episode-hosts-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 6px;
 }
 
 /* ==========================================================================
@@ -2261,4 +2280,192 @@ pre {
 .mostafa-hugo-theme .navigation .pages ul li.active a {
   color: var(--accent-apple-red) !important;
   font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   ACCESSIBLE EPISODE TRANSCRIPT COMPONENT
+   ========================================================================== */
+.transcripcion-container {
+  margin: 2.2rem 0;
+  border: 1px solid var(--border-main);
+  border-radius: 12px;
+  background-color: var(--bg-surface-alt);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transcripcion-container:hover {
+  border-color: var(--accent-apple-red);
+}
+
+.transcripcion-details {
+  width: 100%;
+}
+
+.transcripcion-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  cursor: pointer;
+  user-select: none;
+  background: var(--bg-surface-alt);
+  transition: background 0.2s ease;
+  list-style: none;
+}
+
+.transcripcion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.transcripcion-summary:hover {
+  background: rgba(255, 75, 75, 0.04);
+}
+
+.transcripcion-summary:focus-visible {
+  outline: 2px solid var(--accent-apple-red);
+  outline-offset: -2px;
+}
+
+.transcripcion-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.transcripcion-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.transcripcion-summary-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.transcripcion-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+
+.transcripcion-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent-apple-red);
+}
+
+.transcripcion-summary-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.transcripcion-hint {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.transcripcion-chevron {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+details[open] .transcripcion-chevron {
+  transform: rotate(180deg);
+}
+
+.transcripcion-body {
+  padding: 1.4rem 1.6rem;
+  border-top: 1px solid var(--border-main);
+  background: var(--bg-surface);
+}
+
+.transcripcion-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px dashed var(--border-main);
+}
+
+.transcripcion-dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-main);
+  border-radius: 6px;
+  padding: 6px 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.transcripcion-dl-btn:hover {
+  color: var(--accent-apple-red);
+  border-color: var(--accent-apple-red);
+  background: rgba(255, 75, 75, 0.08);
+}
+
+.transcripcion-content {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-main);
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+.transcripcion-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transcripcion-content::-webkit-scrollbar-track {
+  background: var(--bg-surface-alt);
+  border-radius: 3px;
+}
+
+.transcripcion-content::-webkit-scrollbar-thumb {
+  background: var(--border-main);
+  border-radius: 3px;
+}
+
+.transcripcion-content::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-apple-red);
+}
+
+.transcripcion-content p {
+  margin-bottom: 0.85rem;
+}
+
+.transcripcion-content p strong {
+  color: var(--accent-apple-red);
+}
+
+.transcripcion-line {
+  font-family: var(--font-family-monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem !important;
+  color: var(--text-main);
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .transcripcion-summary {
+    padding: 0.9rem 1rem;
+  }
+  .transcripcion-hint {
+    display: none;
+  }
+  .transcripcion-body {
+    padding: 1rem 1.1rem;
+  }
 }

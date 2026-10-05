@@ -1,10 +1,11 @@
-<div class="episode-reactions-container" aria-label="Reacciones del episodio">
+{{- $isEpisode := or (in .Params.categories "episodio") (findRE "^[0-9]+" .Title) -}}
+<div class="episode-reactions-container" aria-label="{{ if $isEpisode }}Reacciones del episodio{{ else }}Reacciones de la publicación{{ end }}">
   <div class="episode-reactions-card">
     <div class="reactions-text">
       <span class="reactions-icon" aria-hidden="true">🍎</span>
       <div class="reactions-copy">
-        <h4 class="reactions-title">¿Te sirvió esta explicación?</h4>
-        <p class="reactions-subtitle">Regálale unas manzanas al episodio para apoyar a los creadores</p>
+        <h4 class="reactions-title">{{ if $isEpisode }}¿Te sirvió esta explicación?{{ else }}¿Te pareció útil esta publicación?{{ end }}</h4>
+        <p class="reactions-subtitle">{{ if $isEpisode }}Regálale unas manzanas al episodio para apoyar a los creadores{{ else }}Regálale unas manzanas a esta publicación para apoyar al equipo{{ end }}</p>
       </div>
     </div>
 
@@ -14,7 +15,7 @@
               id="give-apple-btn" 
               onclick="giveApple(this)" 
               data-page-id="{{ .File.UniqueID | default .Permalink | md5 }}"
-              aria-label="Dar una manzana a este episodio">
+              aria-label="{{ if $isEpisode }}Dar una manzana a este episodio{{ else }}Dar una manzana a esta publicación{{ end }}">
         <span class="apple-btn-icon" aria-hidden="true">🍎</span>
         <span class="apple-btn-label">Regalar manzana</span>
         <span class="apple-btn-count" id="apple-count-display" aria-live="polite">0</span>
