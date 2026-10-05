@@ -1,4 +1,4 @@
-{{- $titulo := .Get "titulo" | default "Explicado con Manzanas" -}}
+{{- $titulo := .Get "titulo" | default (.Get "title" | default "Explicado con Manzanas") -}}
 {{- $badge := .Get "badge" | default "Analogía" -}}
 
 <aside class="manzana-callout" role="note" aria-label="{{ $titulo }}">

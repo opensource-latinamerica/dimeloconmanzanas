@@ -4,87 +4,84 @@ date: 2025-10-16T08:00:00-05:00
 draft: false
 tags: ["internet", "seguridad", "computacion"]
 categories: ["episodio"]
-author: "Adriana y Alvaro"
+author: "Manzaneros"
 ---
 
-Explora cómo funciona el internet usando analogías sencillas, aprende el rol del pensamiento computacional para entender la web y descubre cómo mantenerte seguro entre correos, chats y amenazas digitales.
+Explora cómo funciona internet con analogías cotidianas, descubre el pensamiento computacional para entender la red y aprende a protegerte entre correos, chats y amenazas digitales.
 
 <!--more-->
 
 {{< spotify "https://open.spotify.com/episode/5cnL9GTKLhuqMMsWGiiymM" >}}
 
-Adriana y Álvaro explican conceptos clave usando ejemplos, anécdotas y un lenguaje ameno y práctico para navegar la red con seguridad y pensamiento crítico.
+Presentado por **Adriana y Álvaro**. Conceptos clave explicados con ejemplos visuales, anécdotas y un lenguaje cercano para navegar la red con criterio, seguridad y pensamiento crítico.
 
 <!--transcript-->
 
-## Capítulo 1: La Gran Red y la Brújula del Pensamiento Computacional
+## Capítulo 1: La Gran Red y el Pensamiento Computacional
 
-Para entender el mundo digital sin perderse en el lenguaje técnico, es fundamental diferenciar dos conceptos que a menudo se confunden: la **Internet** y la **World Wide Web (WWW)**. La Internet es la infraestructura física global, la inmensa red de computadoras interconectadas que se comunican entre sí. Por su parte, la World Wide Web es la capa de información multimedia e hipervinculada (páginas web, sitios de compras, juegos y redes) que viaja sobre esa infraestructura.
+Para entender el mundo digital sin enredos técnicos, conviene aclarar una confusión frecuente: **Internet** y la **World Wide Web (WWW)** no son lo mismo. Internet es la infraestructura física global: cables submarinos, servidores y antenas que conectan equipos en todo el planeta. La Web, en cambio, es la información que viaja encima: páginas, videos, tiendas y plataformas que consultas a diario.
 
-Para navegar esta red con habilidad, no se requiere ser programador, sino desarrollar el **Pensamiento Computacional (CT)**, una metodología lógica para resolver problemas complejos de forma eficiente. Este pensamiento se apoya en cuatro pilares fundamentales:
+Para movernos con soltura no hace falta ser ingenieros, sino ejercitar el **pensamiento computacional**, un método lógico para resolver problemas dividido en cuatro pilares:
 
-1. **Descomposición:** Consiste en dividir un problema grande o abrumador en partes pequeñas y manejables.
-2. **Reconocimiento de Patrones:** Identificar similitudes o tendencias repetitivas para resolver situaciones basándose en experiencias previas.
-3. **Abstracción:** Centrarse únicamente en los datos relevantes e ignorar los detalles innecesarios para "ver el panorama general".
-4. **Algoritmos:** Diseñar una serie de pasos e instrucciones ordenadas y precisas para llegar a una solución replicable.
+1. **Descomposición:** Dividir un desafío complejo en partes pequeñas y abordables.
+2. **Reconocimiento de patrones:** Identificar tendencias repetitivas para resolver situaciones con base en experiencias previas.
+3. **Abstracción:** Filtrar los detalles accesorios para enfocarnos en lo fundamental.
+4. **Algoritmos:** Trazar una serie ordenada de pasos precisos para llegar a una solución replicable.
 
 ---
 
 ## Capítulo 2: De las Postales Digitales a la Arquitectura del Chat
 
-La comunicación digital ha evolucionado vertiginosamente. El **correo electrónico (e-mail)** representa la correspondencia oficial digital, donde cada dirección se compone de un nombre de usuario único y un dominio específico separados por el símbolo `@`. Con el tiempo, la necesidad de inmediatez dio paso a la **mensajería instantánea (IM)** y los entornos de chat en tiempo real.
+La correspondencia moderna comenzó con el **correo electrónico**, donde cada buzón se identifica mediante un usuario y dominio separados por `@`. Con el tiempo, la inmediatez dio paso a la mensajería instantánea y los canales de conversación en tiempo real.
 
-Detrás de cada mensaje o página que consultamos en la computadora, existe una arquitectura técnica de comunicación basada en el **modelo Cliente-Servidor**. En este sistema, la computadora del usuario (cliente) solicita datos a una computadora remota (servidor) mediante reglas estandarizadas o protocolos:
+Detrás de cada mensaje interactivo opera el **modelo Cliente-Servidor**: tu dispositivo (cliente) solicita datos a una computadora remota (servidor) mediante protocolos estandarizados:
 
-* **TCP/IP:** Administra el envío y direccionamiento de los paquetes de datos por la red.
-* **HTTP / HTTPS:** Regula la transferencia de documentos de hipertexto en la Web, añadiendo cifrado de seguridad en el caso de HTTPS.
-* **SMTP y POP/IMAP:** Gestionan el envío y la recepción de correos electrónicos entre servidores y clientes.
+* **TCP/IP:** Empaqueta y encamina los paquetes de datos para que lleguen intactos a su destino.
+* **HTTP y HTTPS:** Gobiernan la transferencia de páginas web, sumando cifrado seguro en HTTPS.
+* **SMTP e IMAP:** Coordinan el despacho y almacenamiento de correos electrónicos.
 
 ---
 
 {{< manzana titulo="Analogía con Manzanas: El Correo de las Manzanas y la Ciudad Digital" badge="Analogía Clave" >}}
 Imagina que quieres enviarle un canasto de **manzanas frescas** a un amigo que vive al otro lado del país:
 
-* **La Internet** es el sistema de autopistas, puentes, camiones y oficinas postales. Es la infraestructura física que permite que los paquetes se muevan de un punto a otro.
-* **La Web** es el contenido del paquete: la carta de saludo, las fotos de la cosecha y las manzanas listas para consumir que tu amigo disfruta al abrir la caja.
-* **La Ciberseguridad** es el candado del canasto y la precaución de no entregarle tu caja de manzanas a un desconocido en la carretera que lleva un uniforme falso de cartero.
+* **La Internet** es el sistema de autopistas, camiones y oficinas postales: la infraestructura física que mueve los paquetes.
+* **La Web** es el contenido de la encomienda: la carta de saludo, las recetas y las manzanas listas que tu amigo saborea al abrir la caja.
+* **La Ciberseguridad** es el candado de la caja y la precaución de no entregarle tus manzanas a un desconocido en la ruta con un uniforme falso de cartero.
 {{< /manzana >}}
 
 ---
 
-## Capítulo 3: Ciberseguridad: Navegando con Cuidado en la Ciudad Digital
+## Capítulo 3: Ciberseguridad: Navegando en la Ciudad Digital
 
-Navegar por la red es muy parecido a caminar por una gran ciudad: no hay que tener miedo, sino precaución, sentido común y hábitos de protección. Entre los principales riesgos digitales se encuentran:
+Navegar por la red se parece a caminar por una gran urbe: no requiere miedo, sino atención, sentido común y buenos hábitos. Los principales riesgos a identificar son:
 
-* **Malware y Virus:** Programas maliciosos que se adjuntan a archivos ejecutables y pueden registrar lo que tecleas o dañar tu computadora. Se propagan frecuentemente mediante archivos adjuntos no solicitados.
-* **Phishing:** Correos o mensajes engañosos que suplantan a instituciones legítimas (como bancos) para pescar información confidencial, claves o números de tarjetas.
-* **Spyware y Adware:** Software espía que recopila tus hábitos de navegación sin tu consentimiento para enviarte anuncios emergentes masivos (*pop-ups*).
-* **Spam:** Correo masivo no solicitado que saturaba los servidores e impone costos de procesamiento.
-* **Riesgos en Wi-Fi Público:** Redes abiertas en cafeterías o aeropuertos donde terceros pueden interceptar la información enviada si la conexión no está cifrada (*Wi-Fi spoofing*).
+* **Malware y virus:** Programas maliciosos diseñados para dañar dispositivos o registrar pulsaciones, transmitidos comúnmente por archivos adjuntos dudosos.
+* **Phishing:** Mensajes fraudulentos que suplantan a entidades bancarias o servicios populares para pescar contraseñas y datos sensibles.
+* **Spyware y adware:** Software espía que rastrea hábitos de consumo o satura la navegación con publicidad invasiva.
+* **Redes Wi-Fi públicas:** Puntos abiertos en cafeterías o terminales donde terceros pueden interceptar información no cifrada.
 
-**Reglas de oro para la seguridad digital:**
-
-1. Crea contraseñas complejas mezclando mayúsculas, minúsculas, números y símbolos (evitando palabras de diccionario) o utiliza un gestor de contraseñas seguro como KeePass.
-2. Nunca abras enlaces ni archivos adjuntos sospechosos en correos electrónicos.
-3. Mantén actualizados el sistema operativo, el antivirus y el cortafuegos (*firewall*) de tu computadora.
+**Reglas de oro de protección digital:**
+1. Emplea contraseñas robustas y únicas, preferentemente organizadas en un gestor confiable.
+2. Desconfía de archivos o vínculos inesperados, incluso si provienen de contactos conocidos.
+3. Mantén actualizados el sistema operativo, el navegador y las herramientas de seguridad.
 
 ---
 
 ## Capítulo 4: Ciudadanía Digital y Educación en Familia
 
-El entorno digital exige formar a niños y jóvenes como **ciudadanos digitales responsables**. La enseñanza de las ciencias computacionales en casa no requiere necesariamente estar frente a una pantalla; se puede fomentar el pensamiento lógico mediante juegos de mesa como el ajedrez o juegos de deducción como *Guess Who?*, que ejercitan la estrategia de **búsqueda binaria**.
+Formar a niños y jóvenes como ciudadanos digitales conscientes no exige pasar horas frente a la pantalla. El razonamiento lógico puede cultivarse en el hogar con juegos de mesa como el ajedrez o *Adivina Quién*, que ponen en práctica la búsqueda binaria y la deducción.
 
-Para garantizar un entorno seguro en el hogar y las escuelas, la mejor estrategia no es solo aplicar filtros automáticos, sino establecer **contratos familiares y reglas claras de uso**:
-
-* Proteger la privacidad personal no revelando nombres completos, escuelas ni direcciones en perfiles públicos o salas de chat.
-* Fomentar el pensamiento crítico para dudar de ofertas "demasiado buenas para ser verdad" y verificar la veracidad de la información en línea.
-* Balancear el tiempo de pantalla con actividades físicas, familiares y creativas al aire libre.
+Más allá de los filtros automáticos, la mejor protección familiar proviene de acuerdos transparentes:
+* Cuidar la privacidad: evitar compartir nombres completos, colegios o ubicaciones en plataformas abiertas.
+* Desarrollar sentido crítico: sospechar de ofertas "demasiado buenas para ser verdad" y verificar fuentes antes de compartir.
+* Fomentar el equilibrio: alternar el tiempo de pantallas con convivencia, lectura y actividades al aire libre.
 
 ---
 
 ## Conclusión de Adriana y Álvaro
 
-La tecnología y las computadoras son herramientas extraordinarias diseñadas para expandir nuestro conocimiento, conectar a las personas y resolver problemas de la vida cotidiana. Sin embargo, la seguridad, la empatía y la capacidad de discernimiento son cualidades estrictamente humanas que ningún programa puede reemplazar. La clave de una vida digital saludable reside en usar la red para potenciar nuestras habilidades y aprender de forma constante, manteniendo siempre el control consciente sobre nuestras herramientas tecnológicas.
+La tecnología existe para amplificar el potencial humano, tender puentes entre personas y resolver retos reales. Sin embargo, el criterio ético, la empatía y el discernimiento son facultades exclusivamente humanas que ningún algoritmo puede reemplazar. Una vida digital plena consiste en utilizar las herramientas digitales a nuestro favor con curiosidad y responsabilidad, manteniendo siempre el control de nuestra atención.
 
 ---
 
@@ -105,4 +102,4 @@ A continuación puedes consultar la transcripción íntegra de la conversación 
 * [**How to teach computer skills at home** – BBC Bitesize](https://www.bbc.co.uk/bitesize/articles/zjky239)
 * [**Computer Science for Kids | The Ultimate Guide for Parents** – CodaKid](https://codakid.com/blog/preparing-kids-for-the-future/computer-science-for-kids/)
 * [**Libro: Introducción a la ciencia de la computación** – Amazon México](https://www.amazon.com.mx/Introduccion-ciencia-computacion-Introduction-Computer/dp/9706862854)
-* [**Libro: Internet for Dummies** – John R. Levine (Amazon México)](https://www.amazon.com.mx/Internet-Dummies-John-R-Levine/dp/0764506749/)
+* [**Libro: Internet for Dummies** – John R. Levine](https://www.amazon.com.mx/Internet-Dummies-John-R-Levine/dp/0764506749/)
