@@ -4,6 +4,15 @@
 # - Antes de editar cualquier archivo de episodio en 'content/article/', consulta este archivo.
 # - Los episodios con 'status: published' o con 'spotify_url' definida son ESTRICTAMENTE DE SOLO LECTURA.
 # - Solo los episodios en 'status: draft' o sin 'spotify_url' pueden ser editados o actualizados.
+#
+# ESTRUCTURA DE CADA EPISODIO:
+# - number: Identificador de 4 dígitos del episodio (ej: "0001", "0002")
+# - title: Título descriptivo del episodio
+# - file: Ubicación del archivo de definición / contenido editorial en Markdown (ej: "content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md" para el episodio 2)
+# - status: "published" (publicado / inmutable) | "draft" (borrador editable)
+# - spotify_url: Enlace al reproductor oficial de Spotify (o null si es borrador)
+# - published_date / created_date: Fecha de publicación o creación (ISO 8601 YYYY-MM-DD)
+# - transcript_file: Ubicación del archivo de texto (.txt) con la transcripción completa oficial
 
 episodes:
   - number: "0001"
@@ -20,6 +29,7 @@ episodes:
     status: "published"
     spotify_url: "https://open.spotify.com/episode/2p7D87O0k7lGne83xtWqvD"
     published_date: "2026-07-30"
+    transcript_file: "static/transcripts/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.txt"
 
   - number: "0003"
     title: "Inteligencia Artificial y Rendición Cognitiva: El Gimnasio Mental en Pausa"
