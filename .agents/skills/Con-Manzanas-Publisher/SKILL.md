@@ -16,7 +16,7 @@ Transform raw podcast transcripts and research portfolios from Gemini Notebook i
 - **Dynamic Tags (Taxonomía)**: Tags are **NEVER hardcoded or generic**. They must be dynamically generated and tailored to the specific topics of each episode (3 to 5 lowercase kebab-case tags, e.g. `["ciberseguridad", "pensamiento-critico", "educacion"]`). The only fixed taxonomy property is `categories: ["episodio"]`.
 
 ## Input Parameters
-- `{{EPISODE_TRANSCRIPT}}`: Spoken dialogue between Adriana and Álvaro.
+- `{{EPISODE_TRANSCRIPT}}`: Spoken dialogue between the speakers (los manzaneros).
 - `{{SOURCE_CATALOG}}`: Curated list of original URLs, research posts, and PDF documents.
 - `{{METADATA}}`: YAML Front Matter properties (Title, Date, Episode Number, Tags).
 
@@ -44,14 +44,14 @@ date: YYYY-MM-DDTHH:MM:SS-06:00
 draft: false
 categories: ["episodio"]
 tags: ["[tema-central-1]", "[tema-central-2]", "[tema-central-3]"]
-author: "Manzaneros"
+author: "[Autor(es) o Presentadores según la definición en episodes.yaml]"
 ---
 
 [Insert a 2-sentence captivating hook paragraph explaining what is broken down in this episode.]
 
 <!--more-->
 
-Presentado por **Adriana y Álvaro**. [Breve contexto de la conversación].
+Presentado por **[Nombre(s) de los autores / presentadores]**. [Breve contexto de la conversación].
 
 ## Capítulo 1: [Short Title]
 [Concise text breakdown.]
@@ -60,7 +60,7 @@ Presentado por **Adriana y Álvaro**. [Breve contexto de la conversación].
 [A crystal-clear, text-efficient analogy using apples or everyday concepts.]
 {{< /manzana >}}
 
-## Conclusión de Adriana y Álvaro
+## Conclusión de [Nombre(s) de los autores / presentadores]
 [Párrafo de cierre cálido y reflexivo.]
 
 ---

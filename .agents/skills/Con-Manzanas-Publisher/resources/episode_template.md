@@ -4,14 +4,14 @@ date: YYYY-MM-DDTHH:MM:SS-06:00
 draft: false
 tags: ["[etiqueta-1]", "[etiqueta-2]", "[etiqueta-3]"] # Personalizar según los temas centrales del episodio (3 a 5 tags en kebab-case, ej: ciberseguridad, salud-mental, algoritmos)
 categories: ["episodio"]
-author: "Manzaneros"
+author: "[Autor(es) o Presentadores según la definición en episodes.yaml]"
 ---
 
 [Párrafo inicial cautivador de 2 o 3 oraciones que expone el problema o la pregunta central del episodio sin rodeos corporativos ni introducciones genéricas].
 
 <!--more-->
 
-Presentado por **Adriana y Álvaro**. [Una o dos oraciones que sitúan la conversación y el dilema humano detrás del concepto técnico].
+Presentado por **[Nombre(s) de los autores / presentadores]**. [Una o dos oraciones que sitúan la conversación y el dilema humano detrás del concepto técnico].
 
 ## Capítulo 1: [Nombre Corto y Descriptivo]
 
@@ -29,7 +29,7 @@ Presentado por **Adriana y Álvaro**. [Una o dos oraciones que sitúan la conver
 
 [Recomendaciones o pautas concretas para los oyentes frente a esta tecnología o situación].
 
-## Conclusión de Adriana y Álvaro
+## Conclusión de [Nombre(s) de los autores / presentadores]
 
 [Párrafo de cierre cálido y reflexivo que recalca el valor del criterio humano, la empatía y el aprendizaje continuo].
 

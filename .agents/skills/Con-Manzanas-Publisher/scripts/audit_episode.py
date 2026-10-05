@@ -113,6 +113,15 @@ def audit_episode(file_path, manifest=None):
     warnings = []
     passes = []
 
+    manifest_ep = None
+    if manifest and "episodes" in manifest:
+        ep_num_match = re.search(r"^0*([0-9]+)", path.name)
+        ep_num = ep_num_match.group(1) if ep_num_match else None
+        for ep in manifest.get("episodes", []):
+            if str(ep.get("number", "")).lstrip("0") == ep_num or ep.get("file", "").endswith(path.name):
+                manifest_ep = ep
+                break
+
     # 1. Validación de Formato de Título
     title = str(fm.get("title", ""))
     if re.match(r"^[0-9]{4}\s*-\s*.+", title):
@@ -131,12 +140,15 @@ def audit_episode(file_path, manifest=None):
     else:
         errors.append("Falta la categoría obligatoria: 'episodio'")
 
-    # 3. Validación de Autoría
-    author = str(fm.get("author", ""))
-    if author in ["Manzaneros", "Adriana y Alvaro", "Adriana y Álvaro"]:
-        passes.append(f"Autor válido: '{author}'")
+    # 3. Validación de Autoría Dinámica (según la definición del episodio)
+    author = str(fm.get("author", "")).strip()
+    manifest_author = str(manifest_ep.get("author", "")).strip() if manifest_ep and manifest_ep.get("author") else None
+    if not author:
+        errors.append("Falta el campo 'author' en el frontmatter del episodio.")
+    elif manifest_author and author.lower() != manifest_author.lower():
+        warnings.append(f"El autor en frontmatter ('{author}') no coincide con la definición del manifiesto ('{manifest_author}').")
     else:
-        warnings.append(f"Se recomienda 'author: \"Manzaneros\"' (actual: '{author}')")
+        passes.append(f"Autor definido para el episodio: '{author}'")
 
     # 4. Validación de Etiquetas (Tags) Dinámicas
     tags = fm.get("tags", [])
@@ -193,16 +205,10 @@ def audit_episode(file_path, manifest=None):
 
     # 8. Verificación en .agents/episodes.yaml
     if manifest and "episodes" in manifest:
-        ep_num_match = re.search(r"^0*([0-9]+)", path.name)
-        ep_num = ep_num_match.group(1) if ep_num_match else None
-        found_in_manifest = False
-        for ep in manifest.get("episodes", []):
-            if str(ep.get("number", "")).lstrip("0") == ep_num or ep.get("file", "").endswith(path.name):
-                found_in_manifest = True
-                status = ep.get("status", "desconocido")
-                passes.append(f"Registrado en .agents/episodes.yaml (Estado: {status})")
-                break
-        if not found_in_manifest:
+        if manifest_ep:
+            status = manifest_ep.get("status", "desconocido")
+            passes.append(f"Registrado en .agents/episodes.yaml (Estado: {status})")
+        else:
             errors.append(f"El episodio {path.name} NO está registrado en .agents/episodes.yaml")
 
     # Imprimir resultados

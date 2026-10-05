@@ -4,7 +4,7 @@ date: 2026-10-04T15:00:00-06:00
 draft: false
 tags: ["inteligencia-artificial", "salud-mental", "neurociencia", "educacion", "pensamiento-critico"]
 categories: ["episodio"]
-author: "Manzaneros"
+author: "Adriana y Álvaro"
 ---
 
 ¿Alguna vez has sentido que un chatbot te entiende mejor que muchas personas o que dependes de él para ordenar tus pensamientos? En este episodio desglosamos con manzanas cómo la interacción con IA generativa puede apagar nuestra vigilancia epistémica y poner en pausa nuestro gimnasio mental.

@@ -4,7 +4,7 @@ date: 2025-10-16T08:00:00-05:00
 draft: false
 tags: ["internet", "seguridad", "computacion"]
 categories: ["episodio"]
-author: "Manzaneros"
+author: "Adriana y Álvaro"
 ---
 
 Explora cómo funciona internet con analogías cotidianas, descubre el pensamiento computacional para entender la red y aprende a protegerte entre correos, chats y amenazas digitales.

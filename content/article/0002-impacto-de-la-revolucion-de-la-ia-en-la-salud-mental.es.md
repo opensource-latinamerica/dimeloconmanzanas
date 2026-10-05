@@ -4,7 +4,7 @@ date: 2026-07-30T13:51:57-06:00
 draft: false
 tags: ["inteligencia-artificial", "salud-mental", "psicologia", "tecnologia"]
 categories: ["episodio"]
-author: "Manzaneros"
+author: "Adriana y Álvaro"
 ---
 
 ¿Alguna vez has sentido que una inteligencia artificial te entiende mejor que muchas personas? En este episodio desglosamos con manzanas cómo los chatbots están transformando nuestras emociones, nuestros vínculos afectivos y nuestra salud mental.

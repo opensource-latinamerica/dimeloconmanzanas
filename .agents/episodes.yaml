@@ -9,6 +9,7 @@
 # - number: Identificador de 4 dígitos del episodio (ej: "0001", "0002")
 # - title: Título descriptivo del episodio
 # - file: Ubicación del archivo de definición / contenido editorial en Markdown (ej: "content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md" para el episodio 2)
+# - author: Nombre del autor o presentadores definidos para el episodio (ej: "Manzaneros", "Adriana y Alvaro", o con invitados)
 # - status: "published" (publicado / inmutable) | "draft" (borrador editable)
 # - spotify_url: Enlace al reproductor oficial de Spotify (o null si es borrador)
 # - published_date / created_date: Fecha de publicación o creación (ISO 8601 YYYY-MM-DD)
@@ -18,6 +19,7 @@ episodes:
   - number: "0001"
     title: "Internet para Todos: De Postales Digitales a la Seguridad Online"
     file: "content/article/0001-internet-para-todos.es.md"
+    author: "Adriana y Álvaro"
     status: "published"
     spotify_url: "https://open.spotify.com/episode/5cnL9GTKLhuqMMsWGiiymM"
     published_date: "2025-10-16"
@@ -26,6 +28,7 @@ episodes:
   - number: "0002"
     title: "Inteligencia Artificial y Salud Mental: ¿Compañía Real o Espejismo Digital?"
     file: "content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md"
+    author: "Adriana y Álvaro"
     status: "published"
     spotify_url: "https://open.spotify.com/episode/2p7D87O0k7lGne83xtWqvD"
     published_date: "2026-07-30"
@@ -34,6 +37,7 @@ episodes:
   - number: "0003"
     title: "Inteligencia Artificial y Rendición Cognitiva: El Gimnasio Mental en Pausa"
     file: "content/article/0003-inteligencia-artificial-y-rendicion-cognitiva.es.md"
+    author: "Adriana y Álvaro"
     status: "draft"
     spotify_url: null
     transcript_file: "static/transcripts/0003-inteligencia-artificial-y-rendicion-cognitiva.txt"
