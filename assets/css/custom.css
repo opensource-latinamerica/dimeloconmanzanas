@@ -434,6 +434,61 @@ pre {
 }
 
 /* ==========================================================================
+   INLINE CODE & KEYBOARD SHORTCUTS (ACCESSIBLE HIGH-CONTRAST)
+   ========================================================================== */
+:not(pre) > code {
+  font-family: var(--font-family-monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace) !important;
+  font-size: 0.88em !important;
+  padding: 0.2em 0.45em !important;
+  margin: 0 0.2em !important;
+  background-color: var(--bg-surface-elevated, #262238) !important;
+  color: var(--accent-honey-orange, #FF9F1C) !important;
+  border: 1px solid var(--border-strong, #493F64) !important;
+  border-radius: 6px !important;
+  word-break: break-word;
+  white-space: normal;
+  display: inline-block;
+  vertical-align: baseline;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] :not(pre) > code {
+  background-color: #F3EFEA !important;
+  color: #C0392B !important;
+  border-color: #D6CEC4 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+  font-family: var(--font-family-monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace) !important;
+  display: inline-block;
+  padding: 0.18em 0.5em;
+  font-size: 0.84em;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-main, #F4F1DE) !important;
+  background-color: var(--bg-surface-elevated, #262238) !important;
+  border: 1px solid var(--border-strong, #493F64) !important;
+  border-bottom: 2px solid var(--border-strong, #493F64) !important;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0 0.15em;
+  vertical-align: baseline;
+}
+
+[data-theme="light"] kbd {
+  background-color: #FFFFFF !important;
+  color: #2D3748 !important;
+  border-color: #CBD5E0 !important;
+  border-bottom: 2px solid #A0AEC0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+a:hover > :not(pre) > code {
+  border-color: var(--accent-apple-red) !important;
+}
+
+/* ==========================================================================
    AUTHOR CARD COMPONENT
    ========================================================================== */
 .author-card-flex {

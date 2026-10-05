@@ -25,7 +25,7 @@ Por eso, tomamos la decisión de hacer las transcripciones de nuestros episodios
    Queremos que cualquier persona, incluyendo oyentes con discapacidad auditiva o personas sordas, pueda disfrutar y aprender con cada uno de los temas que desglosamos.
 
 2. **Facilidad de Estudio y Búsqueda**:  
-   ¿Recuerdas una frase, un autor o una analogía genial pero no sabes en qué minuto exacto del podcast lo dijimos? Con las transcripciones de texto completo, basta con presionar `Ctrl + F` (o `Cmd + F`) en tu navegador para encontrar al instante conceptos clave como *"loros estocásticos"*, *"vigilancia epistémica"* o *"TCP/IP"*.
+   ¿Recuerdas una frase, un autor o una analogía genial pero no sabes en qué minuto exacto del podcast lo dijimos? Con las transcripciones de texto completo, basta con presionar `Ctrl + F` (o `Cmd + F` en Mac) en tu navegador para encontrar al instante conceptos clave como *"loros estocásticos"*, *"vigilancia epistémica"* o *"TCP/IP"*.
 
 3. **Lectura Acompañada (*Read-Along*)**:  
    Muchos de ustedes nos escuchan mientras conducen, caminan o entrenan, pero al llegar a casa o a la oficina desean repasar con calma las referencias académicas o citar partes de la conversación.
