@@ -49,3 +49,9 @@
   - Queda prohibido realizar modificaciones manuales desde consolas web o CLI sin que queden inmediatamente reflejadas y parametrizadas en los scripts ejecutables dentro de `tools/` y en sus plantillas canónicas JSON/YAML.
 - **Idempotencia y Parametrización**:
   - Todos los scripts operativos deben ser idempotentes (capaces de ejecutarse repetidamente sin romper el estado) y aceptar parámetros configurables (`--profile`, `--bucket`, `--region`) sin credenciales hardcodeadas.
+
+## Política de Submódulos y Temas Hugo (Inmutabilidad de themes/)
+- **Principio Rector**: Los contenidos dentro de `themes/` son submódulos Git externos ([`.agents/rules/theme-submodules.md`](.agents/rules/theme-submodules.md)).
+- **Prohibición Estricta**: **NUNCA modificar, editar, agregar ni borrar archivos dentro de `themes/`**.
+- **Precedencia Hugo (Lookup Order)**: Toda personalización, override de plantilla, shortcode, estilo CSS, script o recurso estático debe implementarse en los directorios raíz (`layouts/`, `assets/`, `static/`, `archetypes/`). Hugo prioriza automáticamente los archivos de la raíz sobre los del submódulo sin romper el repositorio upstream.
+
