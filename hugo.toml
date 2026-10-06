@@ -52,7 +52,7 @@ enableRobotsTXT = true
 [params.podcast]
     author = "Adriana y Álvaro"
     ownerName = "Álvaro Soto"
-    ownerEmail = "contacto@conmanzanas.lat"
+    ownerEmail = "alsotoes@gmail.com"
     category = "Technology"
     secondaryCategory = "Education"
     explicit = "no"
