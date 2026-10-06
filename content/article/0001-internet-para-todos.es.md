@@ -11,7 +11,7 @@ author: "Adriana y Álvaro"
 
 <!--more-->
 
-{{< spotify "https://open.spotify.com/episode/5cnL9GTKLhuqMMsWGiiymM" >}}
+{{< spotify "https://open.spotify.com/episode/5Rk2ToQ2DBoipLKphv3XuY" >}}
 
 Presentado por **Adriana y Álvaro**. Conceptos clave explicados con ejemplos cotidianos para navegar la red con criterio, seguridad y pensamiento crítico.
 

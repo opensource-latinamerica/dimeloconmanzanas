@@ -11,7 +11,7 @@ author: "Adriana y Álvaro"
 
 <!--more-->
 
-{{< spotify "https://open.spotify.com/episode/2p7D87O0k7lGne83xtWqvD" >}}
+{{< spotify "https://open.spotify.com/episode/2I51RDYdFgsniTH99cuh9G" >}}
 
 Presentado por **Adriana y Álvaro**. Un análisis reflexivo sobre los riesgos del apego algorítmico, respaldado en el estudio clínico *Mentes en crisis* y testimonios reales.
 

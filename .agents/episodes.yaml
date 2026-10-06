@@ -4,7 +4,7 @@ episodes:
   file: content/article/0001-internet-para-todos.es.md
   author: Adriana y Álvaro
   status: published
-  spotify_url: https://open.spotify.com/episode/5cnL9GTKLhuqMMsWGiiymM
+  spotify_url: https://open.spotify.com/episode/5Rk2ToQ2DBoipLKphv3XuY
   published_date: '2025-10-16'
   transcript_file: static/transcripts/0001-internet-para-todos.txt
   audio_url: https://conmanzanas.s3.amazonaws.com/episodes/0001-0001.mp3
@@ -69,7 +69,7 @@ episodes:
   file: content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md
   author: Adriana y Álvaro
   status: published
-  spotify_url: https://open.spotify.com/episode/2p7D87O0k7lGne83xtWqvD
+  spotify_url: https://open.spotify.com/episode/2I51RDYdFgsniTH99cuh9G
   published_date: '2026-07-30'
   transcript_file: static/transcripts/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.txt
   audio_url: https://conmanzanas.s3.amazonaws.com/episodes/0002-0002.m4a
