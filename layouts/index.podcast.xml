@@ -59,14 +59,17 @@
       {{- $audioDuration := or $matchedEp.audio_duration $page.Params.audio_duration "15:00" -}}
       {{- $author := or $matchedEp.author $page.Params.author "Adriana y Álvaro" -}}
 
+      {{- $richDesc := replaceRE "(\\b\\d{2}:\\d{2}\\s*-[^\n\r]+)" "$1  " $desc -}}
+      {{- $richDesc = replaceRE "(https://[^\\s<]+)" "<$1>" $richDesc -}}
       <item>
         <title>{{ $title }}</title>
         <link>{{ $page.Permalink }}</link>
         <pubDate>{{ $page.Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
         <guid isPermaLink="false">{{ printf "dimeloconmanzanas-ep-%s" $epNum }}</guid>
-        <description>{{ printf "<![CDATA[%s]]>" $desc | safeHTML }}</description>
+        <description>{{ printf "<![CDATA[%s]]>" ($desc | plainify) | safeHTML }}</description>
+        <content:encoded>{{ printf "<![CDATA[%s]]>" ($richDesc | markdownify) | safeHTML }}</content:encoded>
         <itunes:title>{{ $title }}</itunes:title>
-        <itunes:summary>{{ printf "<![CDATA[%s]]>" $desc | safeHTML }}</itunes:summary>
+        <itunes:summary>{{ printf "<![CDATA[%s]]>" ($desc | plainify) | safeHTML }}</itunes:summary>
         <itunes:author>{{ $author }}</itunes:author>
         {{ with $epNum }}
         <itunes:episode>{{ int . }}</itunes:episode>
