@@ -120,8 +120,16 @@ aws s3api put-public-access-block \
     --profile "$ADMIN_PROFILE"
 echo -e "${GREEN}✓ Block Public Access configurado.${RESET}"
 
+# Habilitar Versioning
+echo -e "⚙️  Habilitando S3 Versioning para resiliencia y protección contra eliminación accidental..."
+aws s3api put-bucket-versioning \
+    --bucket "$BUCKET_NAME" \
+    --versioning-configuration Status=Enabled \
+    --profile "$ADMIN_PROFILE"
+echo -e "${GREEN}✓ S3 Versioning activado.${RESET}"
+
 # Aplicar Bucket Policy
-echo -e "⚙️  Aplicando política de lectura pública para 'episodes/*'..."
+echo -e "⚙️  Aplicando política de lectura pública para 'episodes/*' con TLS/HTTPS forzado..."
 BUCKET_POLICY_FILE="${SCRIPT_DIR}/bucket-policy.json"
 # Asegurar que el archivo de política tenga el nombre del bucket correcto
 sed -i "s|arn:aws:s3:::.*\/episodes\/\*|arn:aws:s3:::${BUCKET_NAME}/episodes/*|g" "$BUCKET_POLICY_FILE"
@@ -157,7 +165,7 @@ IAM_POLICY_FILE="${SCRIPT_DIR}/iam-policy-podcaster.json"
 
 # Asegurar que el archivo de política tenga el nombre del bucket correcto
 sed -i "s|arn:aws:s3:::[^\/\"]*\"|arn:aws:s3:::${BUCKET_NAME}\"|g" "$IAM_POLICY_FILE"
-sed -i "s|arn:aws:s3:::[^\/\"]*\/\*|arn:aws:s3:::${BUCKET_NAME}/*|g" "$IAM_POLICY_FILE"
+sed -i "s|arn:aws:s3:::[^\/\"]*\/episodes\/\*|arn:aws:s3:::${BUCKET_NAME}/episodes/*|g" "$IAM_POLICY_FILE"
 
 if aws iam get-policy --policy-arn "$POLICY_ARN" --profile "$ADMIN_PROFILE" 2>/dev/null; then
     echo -e "${GREEN}✓ La política IAM ya existe (${POLICY_ARN}).${RESET}"

@@ -2,6 +2,21 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "EnforceTLSRequestsOnly",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::conmanzanas",
+        "arn:aws:s3:::conmanzanas/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false"
+        }
+      }
+    },
+    {
       "Sid": "PublicPodcastEpisodeRead",
       "Effect": "Allow",
       "Principal": "*",

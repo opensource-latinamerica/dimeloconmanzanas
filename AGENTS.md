@@ -31,3 +31,14 @@
   python3 .agents/skills/Con-Manzanas-Publisher/scripts/audit_episode.py <ruta-al-episodio>
   ```
 - **Registro en manifiesto**: Todo episodio nuevo debe registrarse de inmediato en `.agents/episodes.yaml` con `status: draft`.
+
+## Política de Seguridad: Hardening y Menor Privilegio (Least Privilege)
+- **Principio Rector**: Toda infraestructura, bucket S3, rol IAM, endpoint o URL web debe seguir estrictamente el Principio de Menor Privilegio ([`.agents/rules/security-hardening.md`](.agents/rules/security-hardening.md)).
+- **Almacenamiento y Nube**:
+  - Perfiles operativos (como `podcaster`) tienen prohibidos los permisos de eliminación (`DeleteObject`, `DeleteBucket`) y alteración de configuraciones. Sus permisos de escritura están confinados a prefijos exactos (`arn:aws:s3:::conmanzanas/episodes/*`).
+  - El acceso anónimo público está limitado con exclusividad a `s3:GetObject` en `/episodes/*`. Listar el bucket (`ListBucket`), la raíz o directorios privados está estrictamente bloqueado.
+  - Cifrado en tránsito forzado: toda política de bucket debe incluir denegación explícita (`Effect: Deny`) si la solicitud no viaja por HTTPS (`aws:SecureTransport: false`).
+  - Resiliencia obligatoria: buckets de entrega multimedia deben mantener S3 Versioning habilitado.
+- **URLs Web y Navegación**:
+  - **HTTPS 100% obligatorio**: Toda URL expuesta en el sitio web, feed RSS (`podcast.xml`), metadatos o enlaces debe usar `https://`. Queda prohibido el uso de `http://` en texto claro.
+  - Enlaces externos deben implementar `rel="noopener noreferrer"`.
