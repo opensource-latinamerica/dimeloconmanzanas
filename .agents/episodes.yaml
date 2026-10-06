@@ -28,7 +28,7 @@ episodes:
     spotify_url: "https://open.spotify.com/episode/5cnL9GTKLhuqMMsWGiiymM"
     published_date: "2025-10-16"
     transcript_file: "static/transcripts/0001-internet-para-todos.txt"
-    audio_url: "https://TU-BUCKET-S3.s3.amazonaws.com/episodes/0001-internet-para-todos.mp3"
+    audio_url: "https://conmanzanas.s3.amazonaws.com/episodes/0001-internet-para-todos.mp3"
     audio_bytes: 10834211
     audio_duration: "11:17"
     podcast_description: |
@@ -67,7 +67,7 @@ episodes:
     spotify_url: "https://open.spotify.com/episode/2p7D87O0k7lGne83xtWqvD"
     published_date: "2026-07-30"
     transcript_file: "static/transcripts/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.txt"
-    audio_url: "https://TU-BUCKET-S3.s3.amazonaws.com/episodes/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.mp3"
+    audio_url: "https://conmanzanas.s3.amazonaws.com/episodes/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.mp3"
     audio_bytes: 27892150
     audio_duration: "29:03"
     podcast_description: |
@@ -106,7 +106,7 @@ episodes:
     spotify_url: null
     transcript_file: "static/transcripts/0003-inteligencia-artificial-y-rendicion-cognitiva.txt"
     created_date: "2026-10-04"
-    audio_url: "https://TU-BUCKET-S3.s3.amazonaws.com/episodes/0003-inteligencia-artificial-y-rendicion-cognitiva.mp3"
+    audio_url: "https://conmanzanas.s3.amazonaws.com/episodes/0003-inteligencia-artificial-y-rendicion-cognitiva.mp3"
     audio_bytes: 19825410
     audio_duration: "20:39"
     podcast_description: |

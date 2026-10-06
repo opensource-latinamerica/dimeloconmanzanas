@@ -47,7 +47,7 @@ El perfil `podcaster` requiere permisos de **privilegios mínimos** para interac
         "s3:ListBucket",
         "s3:GetBucketLocation"
       ],
-      "Resource": "arn:aws:s3:::TU-BUCKET-PODCAST"
+      "Resource": "arn:aws:s3:::conmanzanas"
     },
     {
       "Sid": "PodcasterObjectManagement",
@@ -57,13 +57,13 @@ El perfil `podcaster` requiere permisos de **privilegios mínimos** para interac
         "s3:GetObject",
         "s3:DeleteObject"
       ],
-      "Resource": "arn:aws:s3:::TU-BUCKET-PODCAST/*"
+      "Resource": "arn:aws:s3:::conmanzanas/*"
     }
   ]
 }
 ```
 
-> **Nota**: Reemplaza `TU-BUCKET-PODCAST` con el nombre real de tu bucket.
+> **Nota**: Reemplaza `conmanzanas` con el nombre real de tu bucket.
 
 ### B. Pasos para crear el perfil `podcaster` en AWS:
 
@@ -114,7 +114,7 @@ En la consola de S3 -> Tu bucket -> Pestaña **Permissions** -> **Block public a
 * (O vía CLI):
   ```bash
   aws s3api put-public-access-block \
-    --bucket TU-BUCKET-PODCAST \
+    --bucket conmanzanas \
     --public-access-block-configuration "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=false,RestrictPublicBuckets=false" \
     --profile deployer
   ```
@@ -131,7 +131,7 @@ Permite a cualquier cliente HTTP (Spotify, Apple Podcasts, navegadores) descarga
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::TU-BUCKET-PODCAST/episodes/*"
+      "Resource": "arn:aws:s3:::conmanzanas/episodes/*"
     }
   ]
 }
@@ -140,7 +140,7 @@ Permite a cualquier cliente HTTP (Spotify, Apple Podcasts, navegadores) descarga
 * Aplicar vía CLI:
   ```bash
   aws s3api put-bucket-policy \
-    --bucket TU-BUCKET-PODCAST \
+    --bucket conmanzanas \
     --policy file://tools/podcast/bucket-policy.json \
     --profile deployer
   ```
@@ -169,7 +169,7 @@ Esencial para que reproductores web (reproductores HTML5 en navegadores o Spotif
 * Aplicar vía CLI:
   ```bash
   aws s3api put-bucket-cors \
-    --bucket TU-BUCKET-PODCAST \
+    --bucket conmanzanas \
     --cors-configuration file://tools/podcast/cors-policy.json \
     --profile deployer
   ```
@@ -185,11 +185,11 @@ Una vez configurado tu bucket y perfil `podcaster`, sube el audio con un solo co
 python3 tools/podcast/upload_audio.py \
     --episode 0003 \
     --file /ruta/al/archivo-0003.mp3 \
-    --bucket TU-BUCKET-PODCAST
+    --bucket conmanzanas
 ```
 
 El script automáticamente:
-1. Sube el `.mp3` a `s3://TU-BUCKET-PODCAST/episodes/0003-<archivo>.mp3` usando `--profile podcaster`.
+1. Sube el `.mp3` a `s3://conmanzanas/episodes/0003-<archivo>.mp3` usando `--profile podcaster`.
 2. Calcula el tamaño exacto en bytes (`audio_bytes`).
 3. Extrae la duración estimada desde la transcripción Whisper o parámetro `--duration`.
 4. Actualiza `.agents/episodes.yaml` con la nueva `audio_url`.
