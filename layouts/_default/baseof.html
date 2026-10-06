@@ -57,6 +57,14 @@
 <html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="{{ .Site.Language.Lang }}" data-theme="{{ .Site.Params.colorTheme | default "dark" }}">
 
 <head prefix="og: http://ogp.me/ns#">
+    <script>
+        (function() {
+            var saved = localStorage.getItem('dcm_theme');
+            if (saved && (saved === 'dark' || saved === 'light' || saved === 'tropical')) {
+                document.documentElement.setAttribute('data-theme', saved);
+            }
+        })();
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="siteBaseUrl" content="{{ .Site.BaseURL }}">
