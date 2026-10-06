@@ -42,3 +42,10 @@
 - **URLs Web y Navegación**:
   - **HTTPS 100% obligatorio**: Toda URL expuesta en el sitio web, feed RSS (`podcast.xml`), metadatos o enlaces debe usar `https://`. Queda prohibido el uso de `http://` en texto claro.
   - Enlaces externos deben implementar `rel="noopener noreferrer"`.
+
+## Política de Infraestructura: Reproducibilidad Obligatoria por Scripts
+- **Principio Rector**: Toda infraestructura en la nube, bucket, política de seguridad, usuario IAM, endpoint o configuración externa **DEBE ser 100% reproducible mediante scripts automatizados y versionados** ([`.agents/rules/infrastructure-reproducibility.md`](.agents/rules/infrastructure-reproducibility.md)).
+- **Cero Cambios Manuales Huérfanos**:
+  - Queda prohibido realizar modificaciones manuales desde consolas web o CLI sin que queden inmediatamente reflejadas y parametrizadas en los scripts ejecutables dentro de `tools/` y en sus plantillas canónicas JSON/YAML.
+- **Idempotencia y Parametrización**:
+  - Todos los scripts operativos deben ser idempotentes (capaces de ejecutarse repetidamente sin romper el estado) y aceptar parámetros configurables (`--profile`, `--bucket`, `--region`) sin credenciales hardcodeadas.
