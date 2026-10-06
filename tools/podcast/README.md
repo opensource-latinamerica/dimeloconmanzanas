@@ -4,62 +4,200 @@ Este módulo gestiona la distribución automatizada de episodios de audio para e
 
 ---
 
-## 1. Arquitectura de Distribución
+## 1. Arquitectura de Distribución y Permisos
 
 ```
-1. Audio .mp3  ──>  AWS S3 Bucket (Público / CloudFront)
-2. episodes.yaml ──> Registra audio_url, bytes y duration
-3. git push     ──> GitHub Actions compila Hugo y genera https://conmanzanas.lat/podcast.xml
-4. Spotify      ──> Lee podcast.xml y actualiza catálogo automáticamente
+┌─────────────────────────────────────────────────────────────┐
+│ 1. Creador / Agente (Perfil IAM: 'podcaster')               │
+│    Permisos: Subir, listar y gestionar .mp3 en S3           │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ aws s3 cp (upload_audio.py)
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│ 2. AWS S3 Bucket (p. ej. 'dimeloconmanzanas-audio')         │
+│    Permisos del Bucket:                                     │
+│    - Lectura pública en 'episodes/*' (para Spotify y oyentes)│
+│    - CORS habilitado (para reproductores web y streaming)   │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ Streaming vía <enclosure>
+                               ▼
+┌──────────────────────────────┬──────────────────────────────┐
+│ 3. Hugo Engine (podcast.xml) │ 4. Agregadores (Spotify, etc)│
+│    Genera feed RSS estándar  │    Leen podcast.xml y        │
+│    en conmanzanas.lat        │    reproducen audio de S3    │
+└──────────────────────────────┴──────────────────────────────┘
 ```
 
 ---
 
-## 2. Configuración del Bucket en AWS S3
+## 2. Configuración del Perfil IAM `podcaster`
 
-1. Crea tu bucket en AWS S3 (ej: `dimeloconmanzanas-audio`).
-2. Desactiva el bloqueo de acceso público para objetos si vas a servir las descargas directas desde S3 (o configura una distribución en CloudFront).
-3. Agrega la siguiente política de bucket para permitir la lectura pública de los episodios:
+El perfil `podcaster` requiere permisos de **privilegios mínimos** para interactuar exclusivamente con tu bucket de podcast.
+
+### A. Archivo de Política IAM: [`iam-policy-podcaster.json`](iam-policy-podcaster.json)
 
 ```json
 {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "PublicReadGetObject",
+      "Sid": "PodcasterBucketManagement",
       "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::TU-BUCKET-S3/episodes/*"
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::TU-BUCKET-PODCAST"
+    },
+    {
+      "Sid": "PodcasterObjectManagement",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": "arn:aws:s3:::TU-BUCKET-PODCAST/*"
     }
   ]
 }
 ```
 
+> **Nota**: Reemplaza `TU-BUCKET-PODCAST` con el nombre real de tu bucket.
+
+### B. Pasos para crear el perfil `podcaster` en AWS:
+
+1. **Crear el usuario IAM**:
+   * En la consola de AWS -> **IAM** -> **Users** -> **Create user** -> Nombre: `podcaster`.
+   * (O vía CLI con `--profile deployer`):
+     ```bash
+     aws iam create-user --user-name podcaster --profile deployer
+     ```
+
+2. **Crear y adjuntar la política**:
+   * Reemplaza el nombre de tu bucket en `iam-policy-podcaster.json`.
+   * Crea la política en IAM:
+     ```bash
+     aws iam create-policy \
+       --policy-name DimeloConManzanasPodcasterPolicy \
+       --policy-document file://tools/podcast/iam-policy-podcaster.json \
+       --profile deployer
+     ```
+   * Adjunta la política al usuario `podcaster`:
+     ```bash
+     aws iam attach-user-policy \
+       --user-name podcaster \
+       --policy-arn arn:aws:iam::TU_ACCOUNT_ID:policy/DimeloConManzanasPodcasterPolicy \
+       --profile deployer
+     ```
+
+3. **Generar Access Keys y configurar el perfil local**:
+   * Genera las credenciales en la consola de IAM para el usuario `podcaster`.
+   * En tu terminal local, configura el perfil:
+     ```bash
+     aws configure --profile podcaster
+     # Ingresa tu AWS Access Key ID
+     # Ingresa tu AWS Secret Access Key
+     # Default region name: us-east-1 (o tu región preferida)
+     # Default output format: json
+     ```
+
 ---
 
-## 3. Subir un Episodio y Actualizar Metadatos
+## 3. Configuración de Permisos del Bucket S3
 
-Ejecuta el script de automatización:
+Para que Spotify, Apple Podcasts y los oyentes puedan reproducir los audios, el bucket debe permitir la descarga pública directa y solicitudes de streaming (HTTP Range requests).
+
+### A. Desactivar "Block Public Access" (Específico para Bucket Policy)
+En la consola de S3 -> Tu bucket -> Pestaña **Permissions** -> **Block public access (bucket settings)**:
+* Desmarca **"Block all public access"** (específicamente desmarca las opciones relacionadas con Bucket Policies públicas).
+* (O vía CLI):
+  ```bash
+  aws s3api put-public-access-block \
+    --bucket TU-BUCKET-PODCAST \
+    --public-access-block-configuration "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=false,RestrictPublicBuckets=false" \
+    --profile deployer
+  ```
+
+### B. Aplicar Política de Bucket: [`bucket-policy.json`](bucket-policy.json)
+Permite a cualquier cliente HTTP (Spotify, Apple Podcasts, navegadores) descargar y reproducir los audios bajo la ruta `episodes/*`:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicPodcastEpisodeRead",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::TU-BUCKET-PODCAST/episodes/*"
+    }
+  ]
+}
+```
+
+* Aplicar vía CLI:
+  ```bash
+  aws s3api put-bucket-policy \
+    --bucket TU-BUCKET-PODCAST \
+    --policy file://tools/podcast/bucket-policy.json \
+    --profile deployer
+  ```
+
+### C. Configuración CORS para Streaming Web: [`cors-policy.json`](cors-policy.json)
+Esencial para que reproductores web (reproductores HTML5 en navegadores o Spotify Web) puedan hacer peticiones `Range` sin bloqueos de origen cruzado:
+
+```json
+[
+  {
+    "AllowedHeaders": ["*"],
+    "AllowedMethods": ["GET", "HEAD"],
+    "AllowedOrigins": ["*"],
+    "ExposeHeaders": [
+      "ETag",
+      "Content-Length",
+      "Content-Type",
+      "Content-Range",
+      "Accept-Ranges"
+    ],
+    "MaxAgeSeconds": 3600
+  }
+]
+```
+
+* Aplicar vía CLI:
+  ```bash
+  aws s3api put-bucket-cors \
+    --bucket TU-BUCKET-PODCAST \
+    --cors-configuration file://tools/podcast/cors-policy.json \
+    --profile deployer
+  ```
+
+---
+
+## 4. Subir un Episodio y Actualizar Metadatos
+
+Una vez configurado tu bucket y perfil `podcaster`, sube el audio con un solo comando:
 
 ```bash
 # Ejemplo: Subir episodio 3 usando el perfil por defecto 'podcaster'
 python3 tools/podcast/upload_audio.py \
     --episode 0003 \
     --file /ruta/al/archivo-0003.mp3 \
-    --bucket TU-BUCKET-S3
+    --bucket TU-BUCKET-PODCAST
 ```
 
-El script:
-* Sube el `.mp3` a `s3://TU-BUCKET-S3/episodes/0003-<nombre>.mp3` usando `--profile podcaster` por defecto.
-* Calcula el tamaño exacto en bytes (`audio_bytes`).
-* Extrae la duración estimada desde la transcripción Whisper o parámetro `--duration`.
-* Actualiza `.agents/episodes.yaml` automáticamente.
-* Recompila `public/podcast.xml` con Hugo.
+El script automáticamente:
+1. Sube el `.mp3` a `s3://TU-BUCKET-PODCAST/episodes/0003-<archivo>.mp3` usando `--profile podcaster`.
+2. Calcula el tamaño exacto en bytes (`audio_bytes`).
+3. Extrae la duración estimada desde la transcripción Whisper o parámetro `--duration`.
+4. Actualiza `.agents/episodes.yaml` con la nueva `audio_url`.
+5. Recompila `public/podcast.xml` con Hugo.
 
 ---
 
-## 4. Conectar el Feed en Spotify for Podcasters (Paso Único)
+## 5. Conectar el Feed en Spotify for Podcasters (Paso Único)
 
 Solo una vez debes registrar la URL del feed:
 1. Inicia sesión en [podcasters.spotify.com](https://podcasters.spotify.com).
@@ -68,4 +206,4 @@ Solo una vez debes registrar la URL del feed:
    ```
    https://conmanzanas.lat/podcast.xml
    ```
-4. A partir de ese momento, cualquier cambio que hagas en `.agents/episodes.yaml` se sincroniza automáticamente con Spotify al hacer `git push`.
+4. A partir de ese momento, cualquier cambio que hagas en `.agents/episodes.yaml` se sincroniza automáticamente con Spotify al hacer `git push origin main`.

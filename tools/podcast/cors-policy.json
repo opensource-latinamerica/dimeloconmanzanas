@@ -1,0 +1,22 @@
+[
+  {
+    "AllowedHeaders": [
+      "*"
+    ],
+    "AllowedMethods": [
+      "GET",
+      "HEAD"
+    ],
+    "AllowedOrigins": [
+      "*"
+    ],
+    "ExposeHeaders": [
+      "ETag",
+      "Content-Length",
+      "Content-Type",
+      "Content-Range",
+      "Accept-Ranges"
+    ],
+    "MaxAgeSeconds": 3600
+  }
+]
