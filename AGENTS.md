@@ -56,3 +56,13 @@
 - **Prohibición Estricta**: **NUNCA modificar, editar, agregar ni borrar archivos dentro de `themes/`**.
 - **Precedencia Hugo (Lookup Order)**: Toda personalización, override de plantilla, shortcode, estilo CSS, script o recurso estático debe implementarse en los directorios raíz (`layouts/`, `assets/`, `static/`, `archetypes/`). Hugo prioriza automáticamente los archivos de la raíz sobre los del submódulo sin romper el repositorio upstream.
 
+## Política de Distribución y Metadatos de Podcast RSS
+- **Principio Rector**: Todo episodio y metadato en el feed `podcast.xml` debe cumplir estrictamente con los estándares de Apple Podcasts, Spotify y PodcastIndex ([`.agents/rules/podcast-distribution.md`](.agents/rules/podcast-distribution.md)).
+- **MIME Types Dinámicos**: Tipos MIME explícitos y precisos (`audio/x-m4a` para `.m4a` y `audio/mpeg` para `.mp3`) con pesos en bytes y duraciones cronometradas reales.
+- **Jerarquía de Tres Niveles de Descripción**:
+  - `<description>`: Resumen universal formateado en texto plano.
+  - `<itunes:summary>`: Texto plano sanitizado (`plainify`, sin etiquetas HTML, max 4,000 chars) para Apple Podcasts.
+  - `<content:encoded>`: HTML enriquecido para Spotify con saltos de línea explícitos (`<br>`) en marcas de tiempo `00:00 - ...` e hipervínculos clickeables y seguros (`rel="noopener noreferrer"`).
+- **Insignias y Recursos de Marca**: Las insignias de plataformas residen exclusivamente en `static/images/badges/` en formato `.svg` y `.png` limpios.
+
+
