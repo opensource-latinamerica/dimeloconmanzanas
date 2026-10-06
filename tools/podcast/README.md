@@ -165,21 +165,23 @@ Permite a cualquier cliente HTTP (Spotify, Apple Podcasts, navegadores) descarga
 Esencial para que reproductores web (reproductores HTML5 en navegadores o Spotify Web) puedan hacer peticiones `Range` sin bloqueos de origen cruzado:
 
 ```json
-[
-  {
-    "AllowedHeaders": ["*"],
-    "AllowedMethods": ["GET", "HEAD"],
-    "AllowedOrigins": ["*"],
-    "ExposeHeaders": [
-      "ETag",
-      "Content-Length",
-      "Content-Type",
-      "Content-Range",
-      "Accept-Ranges"
-    ],
-    "MaxAgeSeconds": 3600
-  }
-]
+{
+  "CORSRules": [
+    {
+      "AllowedHeaders": ["*"],
+      "AllowedMethods": ["GET", "HEAD"],
+      "AllowedOrigins": ["*"],
+      "ExposeHeaders": [
+        "ETag",
+        "Content-Length",
+        "Content-Type",
+        "Content-Range",
+        "Accept-Ranges"
+      ],
+      "MaxAgeSeconds": 3600
+    }
+  ]
+}
 ```
 
 * Aplicar vía CLI:
