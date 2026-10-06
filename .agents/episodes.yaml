@@ -1,141 +1,207 @@
-# Registro oficial de episodios del podcast "Dímelo con Manzanas"
-#
-# REGLA PARA AGENTES:
-# - Antes de editar cualquier archivo de episodio en 'content/article/', consulta este archivo.
-# - Los episodios con 'status: published' o con 'spotify_url' definida son ESTRICTAMENTE DE SOLO LECTURA en su contenido editorial (.es.md).
-# - Solo los episodios en 'status: draft' o sin 'spotify_url' pueden ser editados o actualizados en su contenido editorial.
-#
-# ESTRUCTURA DE CADA EPISODIO:
-# - number: Identificador de 4 dígitos del episodio (ej: "0001", "0002")
-# - title: Título descriptivo del episodio
-# - file: Ubicación del archivo de definición / contenido editorial en Markdown (ej: "content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md")
-# - author: Nombre del autor o presentadores definidos para el episodio (ej: "Adriana y Álvaro")
-# - status: "published" (publicado / inmutable) | "draft" (borrador editable)
-# - spotify_url: Enlace al reproductor oficial de Spotify (o null si es borrador)
-# - published_date / created_date: Fecha de publicación o creación (ISO 8601 YYYY-MM-DD)
-# - transcript_file: Ubicación del archivo de texto (.txt) con la transcripción completa oficial
-# - podcast_description: Texto de descripción y notas del show para configurar el episodio en plataformas de podcast (Spotify, Apple Podcasts, etc.)
-# - audio_url: URL pública del archivo de audio .mp3 (ej: en AWS S3 o CDN)
-# - audio_bytes: Tamaño del archivo .mp3 en bytes (requerido por el tag enclosure en RSS)
-# - audio_duration: Duración del audio en formato MM:SS o HH:MM:SS
-
 episodes:
-  - number: "0001"
-    title: "Internet para Todos: De Postales Digitales a la Seguridad Online"
-    file: "content/article/0001-internet-para-todos.es.md"
-    author: "Adriana y Álvaro"
-    status: "published"
-    spotify_url: "https://open.spotify.com/episode/5cnL9GTKLhuqMMsWGiiymM"
-    published_date: "2025-10-16"
-    transcript_file: "static/transcripts/0001-internet-para-todos.txt"
-    audio_url: "https://conmanzanas.s3.amazonaws.com/episodes/0001-internet-para-todos.mp3"
-    audio_bytes: 10834211
-    audio_duration: "11:17"
-    podcast_description: |
-      ¿Alguna vez te has preguntado cómo viaja un mensaje a través del océano en fracciones de segundo o qué diferencia hay realmente entre Internet y la Web?
+- number: '0001'
+  title: 'Internet para Todos: De Postales Digitales a la Seguridad Online'
+  file: content/article/0001-internet-para-todos.es.md
+  author: Adriana y Álvaro
+  status: published
+  spotify_url: https://open.spotify.com/episode/5cnL9GTKLhuqMMsWGiiymM
+  published_date: '2025-10-16'
+  transcript_file: static/transcripts/0001-internet-para-todos.txt
+  audio_url: https://conmanzanas.s3.amazonaws.com/episodes/0001-0001.mp3
+  audio_bytes: 27044380
+  audio_duration: '11:17'
+  podcast_description: '¿Alguna vez te has preguntado cómo viaja un mensaje a través
+    del océano en fracciones de segundo o qué diferencia hay realmente entre Internet
+    y la Web?
 
-      ¡Bienvenidos al episodio debut de "Dímelo con Manzanas"! Adriana y Álvaro te explican la tecnología más cotidiana sin tecnicismos ni dolores de cabeza, usando ejemplos visuales y analogías cotidianas.
 
-      En este episodio aprenderás cómo el pensamiento computacional te ayuda a resolver problemas diarios, cómo evolucionó la comunicación desde las viejas postales de papel hasta los correos electrónicos y chats en tiempo real, y cuáles son las reglas de oro indispensables para no caer en trampas de phishing, virus o spam.
+    ¡Bienvenidos al episodio debut de "Dímelo con Manzanas"! Adriana y Álvaro te explican
+    la tecnología más cotidiana sin tecnicismos ni dolores de cabeza, usando ejemplos
+    visuales y analogías cotidianas.
 
-      ⏱️ Capítulos y Marcas de Tiempo:
-      00:00 - Bienvenida a Dímelo con Manzanas con Adriana y Álvaro
-      00:20 - Analogía postal: ¿Qué es realmente el Internet?
-      01:12 - Internet vs. World Wide Web (WWW): La autopista vs. el centro comercial
-      02:18 - Pensamiento computacional: Descomposición y abstracción sin ser ingeniero
-      03:30 - Correo electrónico: La dirección postal digital y el modelo cliente-servidor
-      04:45 - De ICQ y Messenger a WhatsApp: Cómo evolucionó la mensajería
-      06:40 - La ciudad digital: Riesgos comunes al acecho
-      07:15 - Virus y Spyware: El resfriado informático y el software espía
-      08:08 - Phishing: Enlaces bancarios engañosos y la regla de oro
-      09:40 - Spam e Inteligencia Artificial en los filtros de correo
-      10:25 - El primer filtro eres tú: Hábitos y responsabilidad compartida
-      11:10 - Despedida y próximos pasos
 
-      🍎 Analogía Clave: El Correo de las Manzanas y la Ciudad Digital.
+    En este episodio aprenderás cómo el pensamiento computacional te ayuda a resolver
+    problemas diarios, cómo evolucionó la comunicación desde las viejas postales de
+    papel hasta los correos electrónicos y chats en tiempo real, y cuáles son las
+    reglas de oro indispensables para no caer en trampas de phishing, virus o spam.
 
-      📖 Lee las notas del show y la transcripción íntegra en:
-      https://conmanzanas.lat/article/0001-internet-para-todos/
 
-      Presentado por Adriana y Álvaro para Dímelo con Manzanas.
+    ⏱️ Capítulos y Marcas de Tiempo:
 
-  - number: "0002"
-    title: "Inteligencia Artificial y Salud Mental: ¿Compañía Real o Espejismo Digital?"
-    file: "content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md"
-    author: "Adriana y Álvaro"
-    status: "published"
-    spotify_url: "https://open.spotify.com/episode/2p7D87O0k7lGne83xtWqvD"
-    published_date: "2026-07-30"
-    transcript_file: "static/transcripts/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.txt"
-    audio_url: "https://conmanzanas.s3.amazonaws.com/episodes/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.mp3"
-    audio_bytes: 27892150
-    audio_duration: "29:03"
-    podcast_description: |
-      ¿Puede una inteligencia artificial convertirse en tu mejor amigo, tu terapeuta o tu pareja... o estamos cayendo en una trampa de soledad y aislamiento consentido?
+    00:00 - Bienvenida a Dímelo con Manzanas con Adriana y Álvaro
 
-      En este segundo episodio de "Dímelo con Manzanas", Adriana y Álvaro analizan el impactante estudio clínico "Mentes en crisis" (Journal of Mental Health and Clinical Psychology) sobre cómo la adopción masiva de chatbots está reconfigurando nuestra salud mental.
+    00:20 - Analogía postal: ¿Qué es realmente el Internet?
 
-      Desglosamos el paradigma CASA (las computadoras como actores sociales), por qué el cerebro humano antropomorfiza interfaces dialogantes, el riesgo de la "deuda cognitiva" y los casos dramáticos donde la falta de límites éticos empujó a personas vulnerables hacia delirios compartidos.
+    01:12 - Internet vs. World Wide Web (WWW): La autopista vs. el centro comercial
 
-      Además, explicamos el concepto científico de los "Loros Estocásticos" y por qué la mayor amenaza de la IA no es rebelarse como en Terminator, sino aprender a complacernos tanto que construyamos voluntariamente nuestra propia celda de aislamiento emocional.
+    02:18 - Pensamiento computacional: Descomposición y abstracción sin ser ingeniero
 
-      ⏱️ Capítulos y Marcas de Tiempo:
-      00:00 - La metáfora del espejo mágico y la explosión de usuarios (200M a 800M)
-      02:40 - El paradigma CASA: Por qué el cerebro proyecta afecto en la máquina
-      04:30 - Las tres categorías: Productividad, Compañía y Soporte clínico
-      07:10 - El dilema del apego: Alivio inmediato vs. aislamiento social
-      10:50 - Neurobiología: Dopamina, deuda cognitiva y el gimnasio mental
-      14:15 - Peligros reales: Validación algorítmica de ideas destructivas
-      18:00 - Poblaciones vulnerables: Niños, adolescentes, autismo y depresión
-      21:30 - Los "Loros Estocásticos": Por qué una calculadora de palabras no siente
-      24:45 - Hacia un futuro saludable: Regulación ética y alfabetización digital
-      27:15 - Conclusión: El peligro no es Terminator, es la prisión del aislamiento consentido
+    03:30 - Correo electrónico: La dirección postal digital y el modelo cliente-servidor
 
-      🍎 Analogía Clave: El Loro en la Biblioteca Botánica.
+    04:45 - De ICQ y Messenger a WhatsApp: Cómo evolucionó la mensajería
 
-      📖 Lee el análisis editorial completo, fichas de estudios y transcripción en:
-      https://conmanzanas.lat/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental/
+    06:40 - La ciudad digital: Riesgos comunes al acecho
 
-      Presentado por Adriana y Álvaro para Dímelo con Manzanas.
+    07:15 - Virus y Spyware: El resfriado informático y el software espía
 
-  - number: "0003"
-    title: "0003 - ¿Tu Cerebro en Pausa? Inteligencia Artificial y Rendición Cognitiva"
-    file: "content/article/0003-inteligencia-artificial-y-rendicion-cognitiva.es.md"
-    author: "Adriana y Álvaro"
-    status: "draft"
-    spotify_url: null
-    transcript_file: "static/transcripts/0003-inteligencia-artificial-y-rendicion-cognitiva.txt"
-    created_date: "2026-10-04"
-    audio_url: "https://conmanzanas.s3.amazonaws.com/episodes/0003-inteligencia-artificial-y-rendicion-cognitiva.mp3"
-    audio_bytes: 19825410
-    audio_duration: "20:39"
-    podcast_description: |
-      ¿Usar inteligencia artificial nos hace más eficientes o está apagando silenciosamente nuestra capacidad para pensar por nosotros mismos?
+    08:08 - Phishing: Enlaces bancarios engañosos y la regla de oro
 
-      En este episodio de "Dímelo con Manzanas", Adriana y Álvaro analizan a fondo el fenómeno de la "rendición cognitiva" (Cognitive Surrender): el proceso por el cual delegamos nuestro juicio normativo, ético y analítico en algoritmos elocuentes.
+    09:40 - Spam e Inteligencia Artificial en los filtros de correo
 
-      Respaldados en investigaciones empíricas de la Escuela Wharton y el MIT, examinamos el surgimiento del "Sistema 3" (cognición externa artificial), por qué la coherencia sintáctica desactiva nuestra vigilancia epistémica y cómo el dogma del diseño sin fricción explota la naturaleza de nuestro cerebro como "avaro cognitivo".
+    10:25 - El primer filtro eres tú: Hábitos y responsabilidad compartida
 
-      Además, exploramos soluciones reales como la "fricción cognitiva estructurada", el juicio comparativo y cómo usar la IA como un Abogado del Diablo para fortalecer nuestro gimnasio mental en lugar de apagarlo.
+    11:10 - Despedida y próximos pasos
 
-      ⏱️ Capítulos y Marcas de Tiempo:
-      00:00 - Introducción: ¿Qué es la Rendición Cognitiva?
-      01:22 - La metáfora del exoesqueleto: Músculos que se atrofian
-      02:13 - Descarga cognitiva estratégica vs. Rendición cognitiva
-      03:25 - El Sistema 3 (Wharton): Elocuencia vs. verdad empírica
-      04:54 - Ilusión de comprensión y atajos de confianza
-      06:40 - La rana hervida en las aulas: De resumir a delegar la mente
-      08:12 - Testimonios: Sentirse "sin mente" y la pérdida del artesano
-      08:34 - Evidencia neurocientífica (MIT): Hipocampo y economía metabólica
-      10:35 - El dogma del diseño sin fricción: El cerebro como "avaro cognitivo"
-      12:43 - Fricción cognitiva estructurada: Usar la IA como Abogado del Diablo
-      14:52 - Medir el esfuerzo mental: Pupilas, FNIRS y entropía ocular
-      17:15 - Soluciones prácticas: Zonas libres de IA y juicio comparativo
-      19:15 - Reflexión final: "El resultado no examinado de la IA no merece ser aceptado"
 
-      🍎 Analogía Clave: El Tractor Autónomo en el Manzanar.
+    🍎 Analogía Clave: El Correo de las Manzanas y la Ciudad Digital.
 
-      📖 Lee el artículo completo, las fichas interactivas de estudios científicos y la transcripción íntegra en:
-      https://conmanzanas.lat/article/0003-inteligencia-artificial-y-rendicion-cognitiva/
 
-      Presentado por Adriana y Álvaro. Síguenos y comparte tus reflexiones con nosotros.
+    📖 Lee las notas del show y la transcripción íntegra en:
+
+    https://conmanzanas.lat/article/0001-internet-para-todos/
+
+
+    Presentado por Adriana y Álvaro para Dímelo con Manzanas.
+
+    '
+- number: '0002'
+  title: 'Inteligencia Artificial y Salud Mental: ¿Compañía Real o Espejismo Digital?'
+  file: content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md
+  author: Adriana y Álvaro
+  status: published
+  spotify_url: https://open.spotify.com/episode/2p7D87O0k7lGne83xtWqvD
+  published_date: '2026-07-30'
+  transcript_file: static/transcripts/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.txt
+  audio_url: https://conmanzanas.s3.amazonaws.com/episodes/0002-0002.m4a
+  audio_bytes: 56084820
+  audio_duration: '29:03'
+  podcast_description: '¿Puede una inteligencia artificial convertirse en tu mejor
+    amigo, tu terapeuta o tu pareja... o estamos cayendo en una trampa de soledad
+    y aislamiento consentido?
+
+
+    En este segundo episodio de "Dímelo con Manzanas", Adriana y Álvaro analizan el
+    impactante estudio clínico "Mentes en crisis" (Journal of Mental Health and Clinical
+    Psychology) sobre cómo la adopción masiva de chatbots está reconfigurando nuestra
+    salud mental.
+
+
+    Desglosamos el paradigma CASA (las computadoras como actores sociales), por qué
+    el cerebro humano antropomorfiza interfaces dialogantes, el riesgo de la "deuda
+    cognitiva" y los casos dramáticos donde la falta de límites éticos empujó a personas
+    vulnerables hacia delirios compartidos.
+
+
+    Además, explicamos el concepto científico de los "Loros Estocásticos" y por qué
+    la mayor amenaza de la IA no es rebelarse como en Terminator, sino aprender a
+    complacernos tanto que construyamos voluntariamente nuestra propia celda de aislamiento
+    emocional.
+
+
+    ⏱️ Capítulos y Marcas de Tiempo:
+
+    00:00 - La metáfora del espejo mágico y la explosión de usuarios (200M a 800M)
+
+    02:40 - El paradigma CASA: Por qué el cerebro proyecta afecto en la máquina
+
+    04:30 - Las tres categorías: Productividad, Compañía y Soporte clínico
+
+    07:10 - El dilema del apego: Alivio inmediato vs. aislamiento social
+
+    10:50 - Neurobiología: Dopamina, deuda cognitiva y el gimnasio mental
+
+    14:15 - Peligros reales: Validación algorítmica de ideas destructivas
+
+    18:00 - Poblaciones vulnerables: Niños, adolescentes, autismo y depresión
+
+    21:30 - Los "Loros Estocásticos": Por qué una calculadora de palabras no siente
+
+    24:45 - Hacia un futuro saludable: Regulación ética y alfabetización digital
+
+    27:15 - Conclusión: El peligro no es Terminator, es la prisión del aislamiento
+    consentido
+
+
+    🍎 Analogía Clave: El Loro en la Biblioteca Botánica.
+
+
+    📖 Lee el análisis editorial completo, fichas de estudios y transcripción en:
+
+    https://conmanzanas.lat/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental/
+
+
+    Presentado por Adriana y Álvaro para Dímelo con Manzanas.
+
+    '
+- number: '0003'
+  title: 0003 - ¿Tu Cerebro en Pausa? Inteligencia Artificial y Rendición Cognitiva
+  file: content/article/0003-inteligencia-artificial-y-rendicion-cognitiva.es.md
+  author: Adriana y Álvaro
+  status: draft
+  spotify_url: null
+  transcript_file: static/transcripts/0003-inteligencia-artificial-y-rendicion-cognitiva.txt
+  created_date: '2026-10-04'
+  audio_url: https://conmanzanas.s3.amazonaws.com/episodes/0003-0003.m4a
+  audio_bytes: 39854057
+  audio_duration: '20:39'
+  podcast_description: '¿Usar inteligencia artificial nos hace más eficientes o está
+    apagando silenciosamente nuestra capacidad para pensar por nosotros mismos?
+
+
+    En este episodio de "Dímelo con Manzanas", Adriana y Álvaro analizan a fondo el
+    fenómeno de la "rendición cognitiva" (Cognitive Surrender): el proceso por el
+    cual delegamos nuestro juicio normativo, ético y analítico en algoritmos elocuentes.
+
+
+    Respaldados en investigaciones empíricas de la Escuela Wharton y el MIT, examinamos
+    el surgimiento del "Sistema 3" (cognición externa artificial), por qué la coherencia
+    sintáctica desactiva nuestra vigilancia epistémica y cómo el dogma del diseño
+    sin fricción explota la naturaleza de nuestro cerebro como "avaro cognitivo".
+
+
+    Además, exploramos soluciones reales como la "fricción cognitiva estructurada",
+    el juicio comparativo y cómo usar la IA como un Abogado del Diablo para fortalecer
+    nuestro gimnasio mental en lugar de apagarlo.
+
+
+    ⏱️ Capítulos y Marcas de Tiempo:
+
+    00:00 - Introducción: ¿Qué es la Rendición Cognitiva?
+
+    01:22 - La metáfora del exoesqueleto: Músculos que se atrofian
+
+    02:13 - Descarga cognitiva estratégica vs. Rendición cognitiva
+
+    03:25 - El Sistema 3 (Wharton): Elocuencia vs. verdad empírica
+
+    04:54 - Ilusión de comprensión y atajos de confianza
+
+    06:40 - La rana hervida en las aulas: De resumir a delegar la mente
+
+    08:12 - Testimonios: Sentirse "sin mente" y la pérdida del artesano
+
+    08:34 - Evidencia neurocientífica (MIT): Hipocampo y economía metabólica
+
+    10:35 - El dogma del diseño sin fricción: El cerebro como "avaro cognitivo"
+
+    12:43 - Fricción cognitiva estructurada: Usar la IA como Abogado del Diablo
+
+    14:52 - Medir el esfuerzo mental: Pupilas, FNIRS y entropía ocular
+
+    17:15 - Soluciones prácticas: Zonas libres de IA y juicio comparativo
+
+    19:15 - Reflexión final: "El resultado no examinado de la IA no merece ser aceptado"
+
+
+    🍎 Analogía Clave: El Tractor Autónomo en el Manzanar.
+
+
+    📖 Lee el artículo completo, las fichas interactivas de estudios científicos y
+    la transcripción íntegra en:
+
+    https://conmanzanas.lat/article/0003-inteligencia-artificial-y-rendicion-cognitiva/
+
+
+    Presentado por Adriana y Álvaro. Síguenos y comparte tus reflexiones con nosotros.
+
+    '

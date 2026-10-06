@@ -78,7 +78,15 @@
         {{- end -}}
 
         {{- if $audioUrl -}}
-        <enclosure url="{{ $audioUrl }}" length="{{ $audioBytes }}" type="audio/mpeg" />
+          {{- $mimeType := "audio/mpeg" -}}
+          {{- if or (strings.HasSuffix $audioUrl ".m4a") (strings.HasSuffix $audioUrl ".mp4") -}}
+            {{- $mimeType = "audio/x-m4a" -}}
+          {{- else if strings.HasSuffix $audioUrl ".ogg" -}}
+            {{- $mimeType = "audio/ogg" -}}
+          {{- else if strings.HasSuffix $audioUrl ".aac" -}}
+            {{- $mimeType = "audio/aac" -}}
+          {{- end -}}
+        <enclosure url="{{ $audioUrl }}" length="{{ $audioBytes }}" type="{{ $mimeType }}" />
         {{- end -}}
       </item>
     {{- end -}}
