@@ -900,6 +900,16 @@ a:hover > :not(pre) > code {
   gap: 5px;
 }
 
+.episode-card-meta .episode-meta-audio,
+.episode-meta-bar .episode-meta-audio {
+  color: var(--accent-leaf-green) !important;
+  font-weight: 700;
+  background-color: var(--accent-leaf-green-soft);
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 245, 212, 0.2);
+}
+
 .episode-card-listen-btn,
 .mostafa-hugo-theme article .content a.episode-card-listen-btn {
   display: inline-flex !important;
@@ -2524,3 +2534,61 @@ details[open] .transcripcion-chevron {
     padding: 1rem 1.1rem;
   }
 }
+
+/* ==========================================================================
+   ACCESSIBILITY ENHANCEMENTS (WCAG 2.2 AA/AAA)
+   ========================================================================== */
+
+/* 1. Skip-to-content Link */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 20px;
+  background-color: var(--accent-apple-red);
+  color: #FFFFFF !important;
+  padding: 12px 24px;
+  border-radius: 0 0 10px 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  z-index: 9999;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0;
+  outline: 3px solid var(--accent-honey-orange);
+  outline-offset: 2px;
+}
+
+/* 2. Visible Focus Rings */
+:focus-visible {
+  outline: 2px solid var(--accent-apple-red);
+  outline-offset: 3px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent-honey-orange);
+  outline-offset: 2px;
+}
+
+/* 3. Prefers-Reduced-Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .floating-apple {
+    display: none !important;
+  }
+}
+

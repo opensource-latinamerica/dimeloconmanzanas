@@ -24,14 +24,30 @@
         "name" .Site.Params.author
       )
       "sameAs" (slice (.Site.Params.spotifyShow | default "https://open.spotify.com/show/5e8y2Z7Tts9e5Llr7pxXo3"))
-      "webFeed" ("index.xml" | absURL)
+      "webFeed" ("podcast.xml" | absURL)
     )
   )
 | jsonify | safeJS }}
 </script>
 {{- else if and .IsPage (in .Params.categories "episodio") -}}
+{{- $rawManifest := readFile ".agents/episodes.yaml" -}}
+{{- $manifestData := transform.Unmarshal $rawManifest -}}
+{{- $episodesList := $manifestData.episodes -}}
+{{- $epNumMatch := findRE "^[0-9]+" .File.BaseFileName -}}
+{{- $epNum := "" -}}
+{{- if gt (len $epNumMatch) 0 -}}
+  {{- $epNum = index $epNumMatch 0 -}}
+{{- end -}}
+{{- $matchedEp := dict -}}
+{{- range $episodesList -}}
+  {{- if eq .number $epNum -}}
+    {{- $matchedEp = . -}}
+  {{- end -}}
+{{- end -}}
+{{- $audioUrl := or $matchedEp.audio_url .Params.audio_url -}}
+{{- $spotifyUrl := or $matchedEp.spotify_url "" -}}
 <script type="application/ld+json">
-{{ dict
+{{ $epDict := dict
   "@context" "https://schema.org"
   "@type" "PodcastEpisode"
   "name" .Title
@@ -45,7 +61,17 @@
     "name" .Site.Title
     "url" .Site.BaseURL
   )
-| jsonify | safeJS }}
+-}}
+{{- if $epNum -}}
+  {{- $epDict = merge $epDict (dict "episodeNumber" $epNum) -}}
+{{- end -}}
+{{- if $spotifyUrl -}}
+  {{- $epDict = merge $epDict (dict "sameAs" (slice $spotifyUrl)) -}}
+{{- end -}}
+{{- if $audioUrl -}}
+  {{- $epDict = merge $epDict (dict "associatedMedia" (dict "@type" "AudioObject" "contentUrl" $audioUrl "name" .Title)) -}}
+{{- end -}}
+{{ $epDict | jsonify | safeJS }}
 </script>
 {{- else if .IsPage -}}
 <script type="application/ld+json">
