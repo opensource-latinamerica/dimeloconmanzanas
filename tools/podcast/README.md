@@ -30,9 +30,25 @@ Este módulo gestiona la distribución automatizada de episodios de audio para e
 
 ---
 
-## 2. Configuración del Perfil IAM `podcaster`
+## 2. Aprovisionamiento Automático en un Solo Paso (`setup_aws_resources.sh`)
 
-El perfil `podcaster` requiere permisos de **privilegios mínimos** para interactuar exclusivamente con tu bucket de podcast.
+Puedes crear y validar todos los recursos (Bucket S3, Block Public Access, Bucket Policy, CORS, Usuario IAM `podcaster`, política IAM y configuración del perfil local) ejecutando un único comando con tu perfil administrador:
+
+```bash
+# Ejecutar con tu perfil administrador (ej: deployer, default, etc.)
+./tools/podcast/setup_aws_resources.sh --profile TU_PERFIL_ADMIN
+
+# Opcional: Especificar región si es distinta a us-east-1
+./tools/podcast/setup_aws_resources.sh --profile TU_PERFIL_ADMIN --bucket conmanzanas --region us-east-1
+```
+
+El script es **100% idempotente**: comprueba qué recursos ya existen y sólo crea o configura lo que haga falta, configurando automáticamente el perfil `podcaster` en tu máquina local.
+
+---
+
+## 3. Configuración Manual y Detalle de Permisos (Referencia)
+
+Si prefieres realizar los pasos manualmente o auditar las políticas:
 
 ### A. Archivo de Política IAM: [`iam-policy-podcaster.json`](iam-policy-podcaster.json)
 
