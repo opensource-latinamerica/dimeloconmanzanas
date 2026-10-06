@@ -12,12 +12,9 @@ Nuestra misión es democratizar el conocimiento y hacer que el aprendizaje sea a
 
 ### Dónde Escucharnos
 
-Puedes encontrar nuestros episodios en tu plataforma de podcast favorita:
+Puedes encontrar nuestros episodios en Spotify:
 
-- [Spotify](https://open.spotify.com/show/YOUR_SHOW_ID)
-- [Apple Podcasts](https://podcasts.apple.com/us/podcast/YOUR_PODCAST_NAME/idYOUR_PODCAST_ID)
-- [Google Podcasts](https://podcasts.google.com/feed/YOUR_RSS_FEED_URL)
-- [Anchor](https://anchor.fm/YOUR_USERNAME)
+- [Spotify](https://open.spotify.com/show/5e8y2Z7Tts9e5Llr7pxXo3)
 
 ### Temas que Exploramos
 
