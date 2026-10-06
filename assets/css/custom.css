@@ -119,11 +119,44 @@
   --shadow-hover: 0 10px 28px rgba(255, 51, 102, 0.16);
   --shadow-modal: 0 20px 50px rgba(30, 27, 75, 0.25);
 }
-/* Base Theme Color Integration */
-body.mostafa-hugo-theme {
+/* Base Theme Color Integration & Typography */
+:root {
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body.mostafa-hugo-theme,
+.mostafa-hugo-theme {
   background-color: var(--bg-page) !important;
   color: var(--text-main) !important;
+  font-family: var(--font-body) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4, h5, h6,
+.brand-title,
+.article-title,
+.podcast-hero-title,
+.manzana-title,
+.estudio-card-title,
+.reactions-title {
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.02em;
+}
+
+.brand-title a {
+  font-family: var(--font-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.podcast-hero-title {
+  font-family: var(--font-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.15 !important;
 }
 
 /* ==========================================================================
@@ -570,6 +603,15 @@ a:hover > :not(pre) > code {
   margin: 0 !important;
 }
 
+.header-spotify-embed-desktop {
+  width: 100% !important;
+  display: block !important;
+}
+
+.header-spotify-btn-mobile {
+  display: none !important;
+}
+
 .spotify-follow-button {
   display: inline-flex !important;
   align-items: center !important;
@@ -811,6 +853,48 @@ a:hover > :not(pre) > code {
 
 .platform-btn svg {
   flex-shrink: 0;
+}
+
+/* Official Spotify Podcast Badge */
+.platform-badge-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 0 !important;
+  border-radius: 7px !important;
+  overflow: hidden !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+  vertical-align: middle !important;
+  text-decoration: none !important;
+}
+
+.platform-badge-link:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 16px rgba(30, 215, 96, 0.35) !important;
+}
+
+.spotify-official-badge {
+  display: block !important;
+  height: 35px !important;
+  width: auto !important;
+  border-radius: 7px !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.spotify-badge-light {
+  display: none !important;
+}
+
+.spotify-badge-dark {
+  display: block !important;
+}
+
+[data-theme="light"] .spotify-badge-light {
+  display: block !important;
+}
+
+[data-theme="light"] .spotify-badge-dark {
+  display: none !important;
 }
 
 .platform-spotify:hover {
@@ -1927,9 +2011,23 @@ a:hover > :not(pre) > code {
   }
 
   .header-spotify {
-    max-width: 100% !important;
+    max-width: fit-content !important;
     justify-content: center !important;
-    margin: 0 auto !important;
+    margin: 6px auto 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .header-spotify-embed-desktop {
+    display: none !important;
+  }
+
+  .header-spotify-btn-mobile {
+    display: inline-flex !important;
+    padding: 8px 18px !important;
+    font-size: 0.88rem !important;
   }
 
   .mostafa-hugo-theme .navigation {
