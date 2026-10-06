@@ -1,0 +1,86 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" | safeHTML }}
+<rss version="2.0" 
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ .Site.Title }}</title>
+    <link>{{ .Site.BaseURL }}</link>
+    <language>{{ or .Site.Params.podcast.language "es-ES" }}</language>
+    <copyright>© {{ now.Year }} {{ or .Site.Params.podcast.author "Adriana y Álvaro" }}</copyright>
+    <atom:link href="{{ "podcast.xml" | absURL }}" rel="self" type="application/rss+xml" />
+    <description>{{ printf "<![CDATA[%s]]>" .Site.Params.description | safeHTML }}</description>
+    <itunes:summary>{{ printf "<![CDATA[%s]]>" .Site.Params.description | safeHTML }}</itunes:summary>
+    <itunes:author>{{ or .Site.Params.podcast.author "Adriana y Álvaro" }}</itunes:author>
+    <itunes:type>episodic</itunes:type>
+    <itunes:owner>
+      <itunes:name>{{ or .Site.Params.podcast.ownerName "Álvaro Soto" }}</itunes:name>
+      <itunes:email>{{ or .Site.Params.podcast.ownerEmail "contacto@conmanzanas.lat" }}</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>{{ or .Site.Params.podcast.explicit "no" }}</itunes:explicit>
+    <itunes:image href="{{ .Site.Params.podcast.image | absURL }}" />
+    <image>
+      <url>{{ .Site.Params.podcast.image | absURL }}</url>
+      <title>{{ .Site.Title }}</title>
+      <link>{{ .Site.BaseURL }}</link>
+    </image>
+    <itunes:category text="{{ or .Site.Params.podcast.category "Technology" }}" />
+    {{ with .Site.Params.podcast.secondaryCategory }}
+    <itunes:category text="{{ . }}" />
+    {{ end }}
+
+    {{- $rawManifest := readFile ".agents/episodes.yaml" -}}
+    {{- $manifestData := transform.Unmarshal $rawManifest -}}
+    {{- $episodesList := $manifestData.episodes -}}
+
+    {{- range where .Site.RegularPages "Params.categories" "intersect" (slice "episodio") -}}
+      {{- $page := . -}}
+      {{- $epNumMatch := findRE "^[0-9]+" $page.File.BaseFileName -}}
+      {{- $epNum := "" -}}
+      {{- if gt (len $epNumMatch) 0 -}}
+        {{- $epNum = index $epNumMatch 0 -}}
+      {{- end -}}
+      
+      {{- $matchedEp := dict -}}
+      {{- range $episodesList -}}
+        {{- if eq .number $epNum -}}
+          {{- $matchedEp = . -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $title := or $matchedEp.title $page.Title -}}
+      {{- $desc := or $matchedEp.podcast_description $page.Params.podcast_description $page.Summary -}}
+      {{- $audioUrl := or $matchedEp.audio_url $page.Params.audio_url -}}
+      {{- $audioBytes := or $matchedEp.audio_bytes $page.Params.audio_bytes 10000000 -}}
+      {{- $audioDuration := or $matchedEp.audio_duration $page.Params.audio_duration "15:00" -}}
+      {{- $author := or $matchedEp.author $page.Params.author "Adriana y Álvaro" -}}
+
+      <item>
+        <title>{{ $title }}</title>
+        <link>{{ $page.Permalink }}</link>
+        <pubDate>{{ $page.Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+        <guid isPermaLink="false">{{ printf "dimeloconmanzanas-ep-%s" $epNum }}</guid>
+        <description>{{ printf "<![CDATA[%s]]>" $desc | safeHTML }}</description>
+        <itunes:title>{{ $title }}</itunes:title>
+        <itunes:summary>{{ printf "<![CDATA[%s]]>" $desc | safeHTML }}</itunes:summary>
+        <itunes:author>{{ $author }}</itunes:author>
+        {{ with $epNum }}
+        <itunes:episode>{{ int . }}</itunes:episode>
+        {{ end }}
+        <itunes:episodeType>full</itunes:episodeType>
+        <itunes:explicit>no</itunes:explicit>
+        <itunes:duration>{{ $audioDuration }}</itunes:duration>
+
+        {{- with $matchedEp.transcript_file -}}
+          {{- $transcriptUrl := printf "/transcripts/%s" (path.Base .) | absURL -}}
+          <podcast:transcript url="{{ $transcriptUrl }}" type="text/plain" />
+        {{- end -}}
+
+        {{- if $audioUrl -}}
+        <enclosure url="{{ $audioUrl }}" length="{{ $audioBytes }}" type="audio/mpeg" />
+        {{- end -}}
+      </item>
+    {{- end -}}
+  </channel>
+</rss>

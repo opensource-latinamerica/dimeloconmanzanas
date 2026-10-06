@@ -2,19 +2,22 @@
 #
 # REGLA PARA AGENTES:
 # - Antes de editar cualquier archivo de episodio en 'content/article/', consulta este archivo.
-# - Los episodios con 'status: published' o con 'spotify_url' definida son ESTRICTAMENTE DE SOLO LECTURA.
-# - Solo los episodios en 'status: draft' o sin 'spotify_url' pueden ser editados o actualizados.
+# - Los episodios con 'status: published' o con 'spotify_url' definida son ESTRICTAMENTE DE SOLO LECTURA en su contenido editorial (.es.md).
+# - Solo los episodios en 'status: draft' o sin 'spotify_url' pueden ser editados o actualizados en su contenido editorial.
 #
 # ESTRUCTURA DE CADA EPISODIO:
 # - number: Identificador de 4 dígitos del episodio (ej: "0001", "0002")
 # - title: Título descriptivo del episodio
-# - file: Ubicación del archivo de definición / contenido editorial en Markdown (ej: "content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md" para el episodio 2)
-# - author: Nombre del autor o presentadores definidos para el episodio (ej: "Manzaneros", "Adriana y Alvaro", o con invitados)
+# - file: Ubicación del archivo de definición / contenido editorial en Markdown (ej: "content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md")
+# - author: Nombre del autor o presentadores definidos para el episodio (ej: "Adriana y Álvaro")
 # - status: "published" (publicado / inmutable) | "draft" (borrador editable)
 # - spotify_url: Enlace al reproductor oficial de Spotify (o null si es borrador)
 # - published_date / created_date: Fecha de publicación o creación (ISO 8601 YYYY-MM-DD)
 # - transcript_file: Ubicación del archivo de texto (.txt) con la transcripción completa oficial
 # - podcast_description: Texto de descripción y notas del show para configurar el episodio en plataformas de podcast (Spotify, Apple Podcasts, etc.)
+# - audio_url: URL pública del archivo de audio .mp3 (ej: en AWS S3 o CDN)
+# - audio_bytes: Tamaño del archivo .mp3 en bytes (requerido por el tag enclosure en RSS)
+# - audio_duration: Duración del audio en formato MM:SS o HH:MM:SS
 
 episodes:
   - number: "0001"
@@ -25,6 +28,9 @@ episodes:
     spotify_url: "https://open.spotify.com/episode/5cnL9GTKLhuqMMsWGiiymM"
     published_date: "2025-10-16"
     transcript_file: "static/transcripts/0001-internet-para-todos.txt"
+    audio_url: "https://TU-BUCKET-S3.s3.amazonaws.com/episodes/0001-internet-para-todos.mp3"
+    audio_bytes: 10834211
+    audio_duration: "11:17"
     podcast_description: |
       ¿Alguna vez te has preguntado cómo viaja un mensaje a través del océano en fracciones de segundo o qué diferencia hay realmente entre Internet y la Web?
 
@@ -61,6 +67,9 @@ episodes:
     spotify_url: "https://open.spotify.com/episode/2p7D87O0k7lGne83xtWqvD"
     published_date: "2026-07-30"
     transcript_file: "static/transcripts/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.txt"
+    audio_url: "https://TU-BUCKET-S3.s3.amazonaws.com/episodes/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.mp3"
+    audio_bytes: 27892150
+    audio_duration: "29:03"
     podcast_description: |
       ¿Puede una inteligencia artificial convertirse en tu mejor amigo, tu terapeuta o tu pareja... o estamos cayendo en una trampa de soledad y aislamiento consentido?
 
@@ -97,6 +106,9 @@ episodes:
     spotify_url: null
     transcript_file: "static/transcripts/0003-inteligencia-artificial-y-rendicion-cognitiva.txt"
     created_date: "2026-10-04"
+    audio_url: "https://TU-BUCKET-S3.s3.amazonaws.com/episodes/0003-inteligencia-artificial-y-rendicion-cognitiva.mp3"
+    audio_bytes: 19825410
+    audio_duration: "20:39"
     podcast_description: |
       ¿Usar inteligencia artificial nos hace más eficientes o está apagando silenciosamente nuestra capacidad para pensar por nosotros mismos?
 

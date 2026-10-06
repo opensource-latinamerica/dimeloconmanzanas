@@ -49,5 +49,24 @@ enableRobotsTXT = true
         [Languages.es.params]
             subtitle = "Explorando ideas complejas con explicaciones sencillas."
 
+[params.podcast]
+    author = "Adriana y Álvaro"
+    ownerName = "Álvaro Soto"
+    ownerEmail = "contacto@conmanzanas.lat"
+    category = "Technology"
+    secondaryCategory = "Education"
+    explicit = "no"
+    image = "podcast-cover.jpg"
+    language = "es-ES"
+
+[mediaTypes."application/podcast+xml"]
+    suffixes = ["xml"]
+
+[outputFormats.Podcast]
+    mediaType = "application/podcast+xml"
+    baseName = "podcast"
+    isPlainText = false
+    notAlternative = true
+
 [outputs]
-    home = [ "HTML", "RSS", "JSON" ]
+    home = [ "HTML", "RSS", "JSON", "Podcast" ]
