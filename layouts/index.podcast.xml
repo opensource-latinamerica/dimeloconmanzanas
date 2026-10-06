@@ -50,6 +50,9 @@
       {{- end -}}
 
       {{- $title := or $matchedEp.title $page.Title -}}
+      {{- if and $epNum (not (findRE "^[0-9]{4}\\s*-\\s*" $title)) -}}
+        {{- $title = printf "%s - %s" $epNum $title -}}
+      {{- end -}}
       {{- $desc := or $matchedEp.podcast_description $page.Params.podcast_description $page.Summary -}}
       {{- $audioUrl := or $matchedEp.audio_url $page.Params.audio_url -}}
       {{- $audioBytes := or $matchedEp.audio_bytes $page.Params.audio_bytes 10000000 -}}

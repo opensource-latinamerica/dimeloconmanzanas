@@ -30,6 +30,7 @@
   ```bash
   python3 .agents/skills/Con-Manzanas-Publisher/scripts/audit_episode.py <ruta-al-episodio>
   ```
+- **Formato Estricto de Título ('00XX - Título')**: Todos los títulos de episodios en el frontmatter (`content/article/`), en el manifiesto `.agents/episodes.yaml` y en el feed RSS (`podcast.xml`) **DEBEN** iniciar obligatoriamente con el prefijo numérico de 4 dígitos seguido de guion y espacio: `0001 - ...`, `0002 - ...`, `0003 - ...` ([`.agents/rules/episode-titling.md`](.agents/rules/episode-titling.md)).
 - **Registro en manifiesto**: Todo episodio nuevo debe registrarse de inmediato en `.agents/episodes.yaml` con `status: draft`.
 
 ## Política de Seguridad: Hardening y Menor Privilegio (Least Privilege)

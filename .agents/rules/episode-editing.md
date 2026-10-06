@@ -21,3 +21,7 @@ Antes de leer o intentar modificar cualquier archivo de episodio en `content/art
      ```bash
      python3 .agents/skills/Con-Manzanas-Publisher/scripts/audit_episode.py <ruta-al-episodio>
      ```
+
+4. **Nomenclatura Estricta de Títulos (`00XX - Título`)**:
+   - Todo título de episodio DEBE comenzar con el prefijo numérico de cuatro dígitos `00XX - ` (ej: `0001 - ...`, `0002 - ...`, `0003 - ...`).
+   - Aplica de manera idéntica en el frontmatter, en `.agents/episodes.yaml` y en el feed RSS `podcast.xml` ([`.agents/rules/episode-titling.md`](episode-titling.md)).

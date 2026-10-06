@@ -1,6 +1,6 @@
 episodes:
 - number: '0001'
-  title: 'Internet para Todos: De Postales Digitales a la Seguridad Online'
+  title: '0001 - Internet para Todos: De Postales Digitales a la Seguridad Online'
   file: content/article/0001-internet-para-todos.es.md
   author: Adriana y Álvaro
   status: published
@@ -65,7 +65,7 @@ episodes:
 
     '
 - number: '0002'
-  title: 'Inteligencia Artificial y Salud Mental: ¿Compañía Real o Espejismo Digital?'
+  title: '0002 - Inteligencia Artificial y Salud Mental: ¿Compañía Real o Espejismo Digital?'
   file: content/article/0002-impacto-de-la-revolucion-de-la-ia-en-la-salud-mental.es.md
   author: Adriana y Álvaro
   status: published
