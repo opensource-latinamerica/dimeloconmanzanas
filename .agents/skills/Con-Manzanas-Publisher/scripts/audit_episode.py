@@ -170,12 +170,12 @@ def audit_episode(file_path, manifest=None):
     word_count = calculate_editorial_word_count(body)
     est_reading_time = round(word_count / 200, 1)
 
-    if 650 <= word_count <= 950:
-        passes.append(f"Densidad de lectura óptima: {word_count} palabras (~{est_reading_time} min)")
-    elif word_count < 650:
-        warnings.append(f"Contenido breve: {word_count} palabras (~{est_reading_time} min). Meta recomendada: 700-900 palabras.")
+    if 300 <= word_count <= 550:
+        passes.append(f"Densidad de lectura ágil y óptima: {word_count} palabras (~{est_reading_time} min)")
+    elif word_count < 300:
+        warnings.append(f"Contenido muy breve: {word_count} palabras (~{est_reading_time} min). Meta recomendada: 350-500 palabras.")
     else:
-        warnings.append(f"Contenido extenso: {word_count} palabras (~{est_reading_time} min). El guardrail de la habilidad sugiere podar a 700-900 palabras.")
+        warnings.append(f"Contenido extenso: {word_count} palabras (~{est_reading_time} min). El guardrail sugiere podar a 350-500 palabras.")
 
     # 5. Shortcode Obligatorio: Analogía con Manzanas ({{< manzana >}})
     if re.search(r"\{\{<\s*manzana\b", body):

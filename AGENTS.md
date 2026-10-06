@@ -18,7 +18,7 @@
 
 ## Política de Publicación de Nuevos Episodios (Con-Manzanas-Publisher)
 - **Activación obligatoria de la habilidad**: Al redactar, estructurar o publicar un nuevo episodio de podcast, el agente **DEBE** activar y aplicar estrictamente la habilidad `con-manzanas-publisher` ([`.agents/skills/Con-Manzanas-Publisher/SKILL.md`](.agents/skills/Con-Manzanas-Publisher/SKILL.md)).
-- **Límite de lectura (Guardrail)**: El texto del artículo debe ser ágil y estructurado para leerse en **3 a 5 minutos** (límite estricto de **700 a 900 palabras** en el cuerpo editorial).
+- **Límite de lectura (Guardrail)**: El texto del artículo debe ser ágil, escaneable y estructurado para leerse en **1.5 a 2.5 minutos** (límite ágil de **350 a 500 palabras** en el cuerpo editorial).
 - **Uso obligatorio de shortcodes nativos**:
   - `{{< manzana title="Analogía con Manzanas: ..." >}}`: Al menos una analogía visual cotidiana.
   - `{{< transcripcion titulo="..." badge="..." descargar="..." >}}`: Transcripción accesible enlazando al archivo en `static/transcripts/`.

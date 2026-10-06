@@ -9,7 +9,7 @@ description: Transform raw podcast transcripts and research portfolios into cris
 Transform raw podcast transcripts and research portfolios from Gemini Notebook into crisp, high-impact blog posts formatted natively for the Hugo Mostafa Theme. 
 
 ## Structural Constraints
-- **Reading Time Guardrail**: The final blog post must be concise and tightly structured so that it **takes no more than 3 to 5 minutes to read** (under 700–900 words).
+- **Reading Time Guardrail**: The final blog post must be concise, punchy, and highly scannable so that it **takes no more than 1.5 to 2.5 minutes to read** (target 350–500 words).
 - **Tone & Style**: Direct, accessible, human-centric Latin American Spanish. Eliminate all introductory corporate AI jargon (e.g., "En el dinámico mundo de hoy", "adentrémonos").
 - **Core Strategy**: Even when deep technical data or comprehensive reference sheets are supplied, the body sections must remain short, punchy, and highly scannable. Use visual tables or callouts instead of long paragraphs to keep reading time low.
 - **Repository Safety**: Never edit published episodes with `status: published` or existing `spotify_url`. Always register new episodes in `.agents/episodes.yaml`.
