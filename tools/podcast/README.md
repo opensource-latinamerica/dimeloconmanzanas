@@ -43,16 +43,15 @@ Este módulo gestiona la distribución automatizada de episodios de audio para e
 Ejecuta el script de automatización:
 
 ```bash
-# Ejemplo: Subir episodio 3 usando el perfil 'deployer' (o 'cloudconnect-deployer')
+# Ejemplo: Subir episodio 3 usando el perfil por defecto 'podcaster'
 python3 tools/podcast/upload_audio.py \
     --episode 0003 \
     --file /ruta/al/archivo-0003.mp3 \
-    --bucket TU-BUCKET-S3 \
-    --profile deployer
+    --bucket TU-BUCKET-S3
 ```
 
 El script:
-* Sube el `.mp3` a `s3://TU-BUCKET-S3/episodes/0003-<nombre>.mp3` usando `--profile deployer`.
+* Sube el `.mp3` a `s3://TU-BUCKET-S3/episodes/0003-<nombre>.mp3` usando `--profile podcaster` por defecto.
 * Calcula el tamaño exacto en bytes (`audio_bytes`).
 * Extrae la duración estimada desde la transcripción Whisper o parámetro `--duration`.
 * Actualiza `.agents/episodes.yaml` automáticamente.

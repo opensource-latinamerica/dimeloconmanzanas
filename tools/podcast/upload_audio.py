@@ -7,7 +7,7 @@ Uso:
     python3 tools/podcast/upload_audio.py --episode 0003 --file /ruta/al/audio.mp3 --bucket nombre-del-bucket
 
 Reglas de AWS:
-    - Utiliza por defecto '--profile deployer' (o '--profile cloudconnect-deployer').
+    - Utiliza por defecto '--profile podcaster' (configurable con --profile).
 """
 
 import argparse
@@ -50,8 +50,8 @@ def main():
     parser.add_argument("--episode", required=True, help="Número de episodio (ej: 0003 o 3)")
     parser.add_argument("--file", required=True, help="Ruta al archivo .mp3 local")
     parser.add_argument("--bucket", default=os.environ.get("PODCAST_S3_BUCKET", ""), help="Nombre del bucket S3")
-    parser.add_argument("--profile", default="deployer", choices=["deployer", "cloudconnect-deployer"],
-                        help="Perfil de AWS CLI (por defecto 'deployer')")
+    parser.add_argument("--profile", default="podcaster",
+                        help="Perfil de AWS CLI (por defecto 'podcaster')")
     parser.add_argument("--region", default="us-east-1", help="Región AWS de S3 (por defecto us-east-1)")
     parser.add_argument("--duration", help="Duración del episodio en formato MM:SS o HH:MM:SS (opcional)")
     parser.add_argument("--dry-run", action="store_true", help="Simular sin subir a S3 ni modificar archivos")
