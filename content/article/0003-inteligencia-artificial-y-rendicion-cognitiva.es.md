@@ -11,6 +11,8 @@ author: "Adriana y Álvaro"
 
 <!--more-->
 
+{{< spotify "https://open.spotify.com/episode/6MQ2hxWqWz4L4S2xd75WS7" >}}
+
 Presentado por **Adriana y Álvaro**. Un viaje riguroso por las investigaciones de la Wharton School y el MIT sobre cómo la elocuencia algorítmica adormece nuestro gimnasio mental.
 
 <!--transcript-->

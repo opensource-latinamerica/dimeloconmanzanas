@@ -134,13 +134,13 @@ episodes:
 
     '
 - number: '0003'
-  title: 0003 - ¿Tu Cerebro en Pausa? Inteligencia Artificial y Rendición Cognitiva
+  title: '0003 - ¿Tu Cerebro en Pausa? Inteligencia Artificial y Rendición Cognitiva'
   file: content/article/0003-inteligencia-artificial-y-rendicion-cognitiva.es.md
   author: Adriana y Álvaro
-  status: draft
-  spotify_url: null
+  status: published
+  spotify_url: https://open.spotify.com/episode/6MQ2hxWqWz4L4S2xd75WS7
+  published_date: '2026-10-04'
   transcript_file: static/transcripts/0003-inteligencia-artificial-y-rendicion-cognitiva.txt
-  created_date: '2026-10-04'
   audio_url: https://conmanzanas.s3.amazonaws.com/episodes/0003-0003.m4a
   audio_bytes: 39854057
   audio_duration: '20:39'
