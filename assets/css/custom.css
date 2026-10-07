@@ -694,13 +694,14 @@ a:hover > :not(pre) > code {
 
 /* Navigation Menu Theme Switcher */
 .menu-theme-item {
-  display: inline-flex !important;
-  align-items: center !important;
+  display: flex !important;
+  align-items: stretch !important;
 }
 
 .nav-theme-toggle {
   display: inline-flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 7px !important;
   background: transparent !important;
   border: none !important;
@@ -709,12 +710,15 @@ a:hover > :not(pre) > code {
   font-size: 0.82rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px !important;
+  line-height: 1.2 !important;
   cursor: pointer !important;
   transition: color 0.2s ease, background-color 0.2s ease !important;
   border-radius: 0 !important;
   text-decoration: none !important;
   font-family: inherit !important;
   outline: none !important;
+  box-sizing: border-box !important;
+  height: 100% !important;
 }
 
 .nav-theme-toggle:hover {
@@ -730,8 +734,16 @@ a:hover > :not(pre) > code {
 .theme-icon-dark,
 .theme-icon-light,
 .theme-icon-tropical {
-  font-size: 0.95rem !important;
+  font-size: 0.88rem !important;
   line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.theme-toggle-text {
+  line-height: 1.2 !important;
+  display: inline-block !important;
 }
 
 [data-theme="dark"] .theme-icon-dark { display: inline-block !important; }
@@ -2774,31 +2786,38 @@ a:hover > :not(pre) > code {
   background: var(--bg-surface) !important;
   display: flex !important;
   flex-wrap: wrap !important;
-  align-items: center !important;
+  align-items: stretch !important;
 }
 
 .mostafa-hugo-theme .navigation .pages ul li {
   border-right: 1px solid var(--border-main) !important;
   box-shadow: none !important;
+  display: flex !important;
+  align-items: stretch !important;
 }
 
 .mostafa-hugo-theme .navigation .pages ul li:last-child {
   border-right: none !important;
 }
 
-.mostafa-hugo-theme .navigation .pages ul li a {
+.mostafa-hugo-theme .navigation .pages ul li a,
+.mostafa-hugo-theme .navigation .pages ul li button {
   color: var(--text-main) !important;
   display: inline-flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 6px !important;
   padding: 12px 18px !important;
   font-size: 0.82rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px !important;
+  line-height: 1.2 !important;
   text-decoration: none !important;
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
+  box-sizing: border-box !important;
+  height: 100% !important;
   transition: color 0.2s ease, background-color 0.2s ease !important;
 }
 
