@@ -8,30 +8,30 @@
   --bg-page: #13111C;
   --bg-surface: #1E1B2E;
   --bg-surface-elevated: #262238;
-  --bg-surface-alt: #171424;
+  --bg-surface-alt: #2B253D;
   --bg-hero: linear-gradient(135deg, #261F38 0%, #171424 100%);
   --bg-hero-border: #3A3252;
-  --bg-input: #191626;
+  --bg-input: #1E1B2E;
   --bg-modal: #1E1B2E;
   --bg-modal-backdrop: rgba(5, 4, 10, 0.85);
   
   --text-main: #F4F1DE;
-  --text-secondary: #B8B0A8;
-  --text-muted: #7E7770;
+  --text-secondary: #C5BDB5;
+  --text-muted: #A39C93;
   --text-inverse: #111111;
   
-  --border-main: #332C46;
-  --border-strong: #493F64;
-  --border-subtle: #252033;
+  --border-main: #3A3250;
+  --border-strong: #524672;
+  --border-subtle: #2B253D;
   
   /* Brand accents */
-  --accent-apple-red: #FF4D6D;
-  --accent-apple-red-hover: #FF758F;
-  --accent-apple-red-soft: rgba(255, 77, 109, 0.16);
+  --accent-apple-red: #FF5C7A;
+  --accent-apple-red-hover: #FF859B;
+  --accent-apple-red-soft: rgba(255, 92, 122, 0.18);
   
-  --accent-honey-orange: #FF9F1C;
-  --accent-honey-orange-hover: #FFB703;
-  --accent-honey-orange-soft: rgba(255, 159, 28, 0.16);
+  --accent-honey-orange: #FFA726;
+  --accent-honey-orange-hover: #FFB74D;
+  --accent-honey-orange-soft: rgba(255, 167, 38, 0.18);
   
   --accent-leaf-green: #00F5D4;
   --accent-leaf-green-hover: #38ef7d;
@@ -44,58 +44,58 @@
 
 /* 2. Modo Claro («Huerto Soleado & Editorial») */
 [data-theme="light"] {
-  --bg-page: #FAF7F2;
+  --bg-page: #F7F5F0;
   --bg-surface: #FFFFFF;
   --bg-surface-elevated: #FFFFFF;
-  --bg-surface-alt: #F4EFEA;
+  --bg-surface-alt: #F3EFE8;
   --bg-hero: linear-gradient(135deg, #FFFDFB 0%, #F5ECE0 100%);
-  --bg-hero-border: #E8DED2;
+  --bg-hero-border: #E2DDD5;
   --bg-input: #FFFFFF;
   --bg-modal: #FFFFFF;
   --bg-modal-backdrop: rgba(30, 20, 10, 0.65);
   
-  --text-main: #24211E;
-  --text-secondary: #57514A;
-  --text-muted: #8C8277;
+  --text-main: #1A1816;
+  --text-secondary: #403B35;
+  --text-muted: #5E574E;
   --text-inverse: #FFFFFF;
   
-  --border-main: #E8DED2;
-  --border-strong: #D5C8B8;
-  --border-subtle: #F0E8DD;
+  --border-main: #E2DDD5;
+  --border-strong: #C9C2B7;
+  --border-subtle: #EFEBE3;
   
-  /* Brand accents */
-  --accent-apple-red: #D62828;
-  --accent-apple-red-hover: #B71C1C;
-  --accent-apple-red-soft: rgba(214, 40, 40, 0.08);
+  /* Brand accents with certified WCAG AA contrast (>= 4.5:1 on white & alt surfaces) */
+  --accent-apple-red: #B71C1C;
+  --accent-apple-red-hover: #8E0000;
+  --accent-apple-red-soft: rgba(183, 28, 28, 0.08);
   
-  --accent-honey-orange: #E85D04;
-  --accent-honey-orange-hover: #DC2F02;
-  --accent-honey-orange-soft: rgba(232, 93, 4, 0.1);
+  --accent-honey-orange: #C2410C;
+  --accent-honey-orange-hover: #9A3412;
+  --accent-honey-orange-soft: rgba(194, 65, 12, 0.1);
   
-  --accent-leaf-green: #2B9348;
-  --accent-leaf-green-hover: #1E6F33;
-  --accent-leaf-green-soft: rgba(43, 147, 72, 0.1);
+  --accent-leaf-green: #1B5E20;
+  --accent-leaf-green-hover: #144617;
+  --accent-leaf-green-soft: rgba(27, 94, 32, 0.1);
   
-  --shadow-card: 0 4px 20px rgba(140, 90, 40, 0.08);
-  --shadow-hover: 0 10px 28px rgba(214, 40, 40, 0.14);
+  --shadow-card: 0 4px 20px rgba(70, 50, 30, 0.08);
+  --shadow-hover: 0 10px 28px rgba(183, 28, 28, 0.14);
   --shadow-modal: 0 20px 50px rgba(40, 25, 15, 0.25);
 }
 
 /* 3. Modo Fiesta Tropical («Pop Latino») */
 [data-theme="tropical"] {
-  --bg-page: #FFFDF8;
+  --bg-page: #FAF6ED;
   --bg-surface: #FFFFFF;
   --bg-surface-elevated: #FFFFFF;
-  --bg-surface-alt: #FFF5EB;
+  --bg-surface-alt: #F5EEDB;
   --bg-hero: linear-gradient(135deg, #FFF8F0 0%, #FFEAD4 100%);
-  --bg-hero-border: #FFD8B3;
+  --bg-hero-border: #FED7AA;
   --bg-input: #FFFFFF;
   --bg-modal: #FFFFFF;
   --bg-modal-backdrop: rgba(40, 20, 10, 0.65);
   
-  --text-main: #1E1B4B;
-  --text-secondary: #475569;
-  --text-muted: #94A3B8;
+  --text-main: #141724;
+  --text-secondary: #374151;
+  --text-muted: #4B5563;
   --text-inverse: #FFFFFF;
   
   --border-main: #FED7AA;
@@ -103,21 +103,21 @@
   --border-subtle: #FFEDD5;
   
   /* Brand accents */
-  --accent-apple-red: #FF3366;
-  --accent-apple-red-hover: #E11D48;
-  --accent-apple-red-soft: rgba(255, 51, 102, 0.1);
+  --accent-apple-red: #BE123C;
+  --accent-apple-red-hover: #9F1239;
+  --accent-apple-red-soft: rgba(190, 18, 60, 0.1);
   
-  --accent-honey-orange: #FF6B35;
-  --accent-honey-orange-hover: #EA580C;
-  --accent-honey-orange-soft: rgba(255, 107, 53, 0.12);
+  --accent-honey-orange: #B43B0A;
+  --accent-honey-orange-hover: #8D2E07;
+  --accent-honey-orange-soft: rgba(180, 59, 10, 0.12);
   
-  --accent-leaf-green: #06D6A0;
-  --accent-leaf-green-hover: #059669;
-  --accent-leaf-green-soft: rgba(6, 214, 160, 0.12);
+  --accent-leaf-green: #047857;
+  --accent-leaf-green-hover: #065F46;
+  --accent-leaf-green-soft: rgba(4, 120, 87, 0.12);
   
-  --shadow-card: 0 4px 20px rgba(255, 107, 53, 0.08);
-  --shadow-hover: 0 10px 28px rgba(255, 51, 102, 0.16);
-  --shadow-modal: 0 20px 50px rgba(30, 27, 75, 0.25);
+  --shadow-card: 0 4px 20px rgba(180, 59, 10, 0.08);
+  --shadow-hover: 0 10px 28px rgba(190, 18, 60, 0.16);
+  --shadow-modal: 0 20px 50px rgba(20, 23, 36, 0.25);
 }
 /* Base Theme Color Integration & Typography */
 :root {
@@ -300,9 +300,16 @@ header.site-header {
   color: var(--text-main) !important;
 }
 
-.mostafa-hugo-theme .navigation .pages ul li.active a {
+.mostafa-hugo-theme .navigation .pages ul li.active a,
+.mostafa-hugo-theme .navigation .pages ul .active a,
+.mostafa-hugo-theme .navigation .pages ul .active {
   color: var(--accent-apple-red) !important;
-  font-weight: 700;
+  font-weight: 800 !important;
+}
+
+.mostafa-hugo-theme .navigation .pages ul .active :hover,
+.mostafa-hugo-theme .navigation .pages ul li.active a:hover {
+  color: var(--accent-apple-red-hover) !important;
 }
 
 .mostafa-hugo-theme article {
@@ -317,6 +324,7 @@ header.site-header {
 }
 
 .mostafa-hugo-theme article .content h1,
+.mostafa-hugo-theme article .content .article-title,
 .mostafa-hugo-theme article .content .article-title a {
   color: var(--text-main) !important;
 }
@@ -328,28 +336,94 @@ header.site-header {
 
 .mostafa-hugo-theme article .content h2,
 .mostafa-hugo-theme article .content h3,
-.mostafa-hugo-theme article .content h4 {
+.mostafa-hugo-theme article .content h4,
+.mostafa-hugo-theme article .content h5,
+.mostafa-hugo-theme article .content h6 {
   color: var(--text-main) !important;
 }
 
 .mostafa-hugo-theme article .content p,
 .mostafa-hugo-theme article .content li {
   color: var(--text-main) !important;
+  line-height: 1.75;
 }
 
 .mostafa-hugo-theme article .content strong,
 .mostafa-hugo-theme article .content b {
   color: var(--text-main) !important;
+  font-weight: 700;
 }
 
 .mostafa-hugo-theme article .content a {
   color: var(--accent-apple-red) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
 }
 
 .mostafa-hugo-theme article .content a:hover {
   color: var(--accent-apple-red-hover) !important;
 }
 
+/* High-contrast blockquotes: eliminate the theme's hardcoded #f6f6f6 leak */
+.mostafa-hugo-theme article .content blockquote,
+.content blockquote,
+.mostafa-hugo-theme article.quote blockquote {
+  background-color: var(--bg-surface-alt) !important;
+  border-left: 4px solid var(--accent-honey-orange) !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  color: var(--text-main) !important;
+  font-style: italic !important;
+  padding: 1.2rem 1.6rem !important;
+  margin: 1.8rem 0 !important;
+  border-radius: 0 10px 10px 0 !important;
+}
+
+.mostafa-hugo-theme article .content blockquote p,
+.content blockquote p {
+  color: var(--text-main) !important;
+}
+
+.mostafa-hugo-theme article .content blockquote cite,
+.content blockquote cite {
+  color: var(--text-muted) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+
+/* Tags in content & footer */
+.mostafa-hugo-theme article .content .tags .link,
+.content .tags .link,
+.tags .link,
+.mostafa-hugo-theme article .footer .tags a,
+.mostafa-hugo-theme article .content .author .link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  background-color: var(--bg-surface-alt) !important;
+  border: 1px solid var(--border-main) !important;
+  color: var(--text-secondary) !important;
+  border-radius: 6px !important;
+  padding: 4px 10px !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.mostafa-hugo-theme article .content .tags .link:hover,
+.content .tags .link:hover,
+.tags .link:hover,
+.mostafa-hugo-theme article .footer .tags a:hover,
+.mostafa-hugo-theme article .content .author .link:hover {
+  color: var(--accent-apple-red) !important;
+  border-color: var(--accent-apple-red) !important;
+  background-color: var(--accent-apple-red-soft) !important;
+  transform: translateY(-1px) !important;
+}
+
+.mostafa-hugo-theme article .content .meta,
 .mostafa-hugo-theme article .footer {
   background: var(--bg-surface-alt) !important;
   border-top: 1px solid var(--border-main) !important;
@@ -362,11 +436,25 @@ header.site-header {
   color: var(--text-muted) !important;
 }
 
+.mostafa-hugo-theme article .content .meta a,
 .mostafa-hugo-theme article .footer a {
   color: var(--text-secondary) !important;
 }
 
+.mostafa-hugo-theme article .content .meta a:hover,
 .mostafa-hugo-theme article .footer a:hover {
+  color: var(--accent-apple-red) !important;
+}
+
+.mostafa-hugo-theme article .content .archive-list ul a {
+  color: var(--text-main) !important;
+}
+
+.mostafa-hugo-theme article .content .archive-list ul a span {
+  color: var(--text-muted) !important;
+}
+
+.mostafa-hugo-theme article .content .archive-list ul a:hover {
   color: var(--accent-apple-red) !important;
 }
 
@@ -374,6 +462,23 @@ header.site-header {
   background-color: var(--bg-page) !important;
   border-top: 1px solid var(--border-main) !important;
   color: var(--text-secondary) !important;
+  box-shadow: none !important;
+}
+
+.mostafa-hugo-theme footer .container strong {
+  color: var(--text-main) !important;
+}
+
+.mostafa-hugo-theme footer a,
+.mostafa-hugo-theme footer .container .right .external-profiles a,
+.mostafa-hugo-theme footer .container .right .languages a {
+  color: var(--text-secondary) !important;
+}
+
+.mostafa-hugo-theme footer a:hover,
+.mostafa-hugo-theme footer .container .right .external-profiles a:hover,
+.mostafa-hugo-theme footer .container .right .languages a:hover {
+  color: var(--accent-apple-red) !important;
 }
 
 .mostafa-hugo-theme .credits {
@@ -383,6 +488,10 @@ header.site-header {
 }
 
 .mostafa-hugo-theme .credits a {
+  color: var(--text-secondary) !important;
+}
+
+.mostafa-hugo-theme .credits a:hover {
   color: var(--accent-apple-red) !important;
 }
 
@@ -574,9 +683,8 @@ a:hover > :not(pre) > code {
   display: none !important;
 }
 
-/* Header Show Widget & Follow Button */
-/* Header Actions: Theme Toggle & Compact Spotify Pill */
-.header-actions {
+/* Header Platforms: Top-right Spotify badge (and future platform links) */
+.header-platforms {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
@@ -584,27 +692,39 @@ a:hover > :not(pre) > code {
   gap: 10px !important;
 }
 
-.header-theme-toggle {
+/* Navigation Menu Theme Switcher */
+.menu-theme-item {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.nav-theme-toggle {
   display: inline-flex !important;
   align-items: center !important;
   gap: 7px !important;
-  background-color: var(--bg-surface) !important;
-  border: 1px solid var(--border-main) !important;
+  background: transparent !important;
+  border: none !important;
   color: var(--text-main) !important;
-  padding: 8px 14px !important;
-  border-radius: 500px !important;
+  padding: 12px 18px !important;
   font-size: 0.82rem !important;
   font-weight: 700 !important;
-  font-family: var(--font-body) !important;
+  letter-spacing: 0.5px !important;
   cursor: pointer !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease !important;
+  transition: color 0.2s ease, background-color 0.2s ease !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  font-family: inherit !important;
+  outline: none !important;
 }
 
-.header-theme-toggle:hover {
-  border-color: var(--border-strong) !important;
-  background-color: var(--bg-surface-elevated) !important;
-  transform: translateY(-1px) !important;
+.nav-theme-toggle:hover {
+  color: var(--accent-apple-red) !important;
+  background-color: var(--bg-surface-alt) !important;
+}
+
+.nav-theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-apple-red) !important;
+  outline-offset: -2px !important;
 }
 
 .theme-icon-dark,
@@ -835,9 +955,9 @@ a:hover > :not(pre) > code {
 }
 
 [data-theme="tropical"] .spotlight-card {
-  background: #1b3d32;
-  border-color: #2e6653;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  background: #FFFFFF;
+  border-color: #FED7AA;
+  box-shadow: 0 10px 24px rgba(180, 59, 10, 0.1);
 }
 
 .spotlight-card:hover {
@@ -1254,7 +1374,7 @@ a:hover > :not(pre) > code {
   background-color: var(--accent-leaf-green-soft);
   padding: 2px 8px;
   border-radius: 6px;
-  border: 1px solid rgba(0, 245, 212, 0.2);
+  border: 1px solid var(--accent-leaf-green-soft);
 }
 
 .episode-card-listen-btn,
@@ -1274,12 +1394,26 @@ a:hover > :not(pre) > code {
   box-shadow: 0 4px 14px var(--accent-honey-orange-soft) !important;
 }
 
+[data-theme="light"] .episode-card-listen-btn,
+[data-theme="light"] .mostafa-hugo-theme article .content a.episode-card-listen-btn,
+[data-theme="tropical"] .episode-card-listen-btn,
+[data-theme="tropical"] .mostafa-hugo-theme article .content a.episode-card-listen-btn {
+  color: #FFFFFF !important;
+}
+
 .episode-card-listen-btn:hover,
 .mostafa-hugo-theme article .content a.episode-card-listen-btn:hover {
   background-color: var(--accent-honey-orange-hover) !important;
-  color: #000000 !important;
+  color: #111111 !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 18px var(--accent-honey-orange-soft) !important;
+}
+
+[data-theme="light"] .episode-card-listen-btn:hover,
+[data-theme="light"] .mostafa-hugo-theme article .content a.episode-card-listen-btn:hover,
+[data-theme="tropical"] .episode-card-listen-btn:hover,
+[data-theme="tropical"] .mostafa-hugo-theme article .content a.episode-card-listen-btn:hover {
+  color: #FFFFFF !important;
 }
 
 .play-icon-circle {
@@ -1288,8 +1422,8 @@ a:hover > :not(pre) > code {
   justify-content: center !important;
   width: 22px !important;
   height: 22px !important;
-  background-color: rgba(0, 0, 0, 0.28) !important;
-  color: #111111 !important;
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  color: inherit !important;
   border-radius: 50% !important;
   font-size: 0.72rem !important;
 }
@@ -1545,8 +1679,8 @@ a:hover > :not(pre) > code {
 
 /* Reference links list styling */
 .content ul:has(a[href$=".pdf"]) {
-  background-color: #2b2b2b;
-  border: 1px solid #3d3d3d;
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-main);
   border-radius: 8px;
   padding: 1.2rem 1.5rem 1.2rem 2.5rem;
   margin: 1.5rem 0;
@@ -1640,8 +1774,12 @@ a:hover > :not(pre) > code {
 
 .manzana-content {
   font-size: 1rem;
-  line-height: 1.65;
-  color: var(--text-secondary);
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+.manzana-content p {
+  color: var(--text-main) !important;
 }
 
 .manzana-content p:last-child {
@@ -2273,7 +2411,7 @@ a:hover > :not(pre) > code {
     gap: 16px !important;
   }
 
-  .header-actions {
+  .header-platforms {
     justify-content: center !important;
     width: 100% !important;
     margin-top: 4px !important;
@@ -2630,20 +2768,22 @@ a:hover > :not(pre) > code {
 .mostafa-hugo-theme .navigation .pages ul {
   border: 1px solid var(--border-main) !important;
   border-top: 0 !important;
-  box-shadow: -1px 1px var(--border-subtle) !important;
-  border-bottom-left-radius: 4px !important;
-  border-bottom-right-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
   background: var(--bg-surface) !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
 }
 
 .mostafa-hugo-theme .navigation .pages ul li {
   border-right: 1px solid var(--border-main) !important;
-  box-shadow: 1px 0 var(--border-subtle) !important;
+  box-shadow: none !important;
 }
 
 .mostafa-hugo-theme .navigation .pages ul li:last-child {
   border-right: none !important;
-  box-shadow: none !important;
 }
 
 .mostafa-hugo-theme .navigation .pages ul li a {
@@ -2653,20 +2793,31 @@ a:hover > :not(pre) > code {
   gap: 6px !important;
   padding: 12px 18px !important;
   font-size: 0.82rem !important;
-  letter-spacing: 1px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
   text-decoration: none !important;
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
+  transition: color 0.2s ease, background-color 0.2s ease !important;
 }
 
 .mostafa-hugo-theme .navigation .pages ul li a:hover {
-  color: var(--accent-honey-orange) !important;
+  color: var(--accent-apple-red) !important;
+  background-color: var(--bg-surface-alt) !important;
 }
 
-.mostafa-hugo-theme .navigation .pages ul li.active a {
+.mostafa-hugo-theme .navigation .pages ul li.active a,
+.mostafa-hugo-theme .navigation .pages ul .active a,
+.mostafa-hugo-theme .navigation .pages ul .active {
   color: var(--accent-apple-red) !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
+  background-color: var(--accent-apple-red-soft) !important;
+}
+
+.mostafa-hugo-theme .navigation .pages ul .active :hover,
+.mostafa-hugo-theme .navigation .pages ul li.active a:hover {
+  color: var(--accent-apple-red-hover) !important;
 }
 
 /* ==========================================================================
