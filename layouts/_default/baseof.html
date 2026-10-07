@@ -60,7 +60,11 @@
     <script>
         (function() {
             var saved = localStorage.getItem('dcm_theme');
-            if (saved && (saved === 'dark' || saved === 'light' || saved === 'tropical')) {
+            if (saved === 'tropical') {
+                saved = 'dark';
+                try { localStorage.setItem('dcm_theme', 'dark'); } catch(e) {}
+            }
+            if (saved && (saved === 'dark' || saved === 'light')) {
                 document.documentElement.setAttribute('data-theme', saved);
             }
         })();

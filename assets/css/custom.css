@@ -768,8 +768,7 @@ a:hover > :not(pre) > code {
 }
 
 .theme-icon-dark,
-.theme-icon-light,
-.theme-icon-tropical {
+.theme-icon-light {
   font-size: 0.88rem !important;
   line-height: 1 !important;
   display: inline-flex !important;
@@ -784,15 +783,9 @@ a:hover > :not(pre) > code {
 
 [data-theme="dark"] .theme-icon-dark { display: inline-block !important; }
 [data-theme="dark"] .theme-icon-light { display: none !important; }
-[data-theme="dark"] .theme-icon-tropical { display: none !important; }
 
 [data-theme="light"] .theme-icon-dark { display: none !important; }
 [data-theme="light"] .theme-icon-light { display: inline-block !important; }
-[data-theme="light"] .theme-icon-tropical { display: none !important; }
-
-[data-theme="tropical"] .theme-icon-dark { display: none !important; }
-[data-theme="tropical"] .theme-icon-light { display: none !important; }
-[data-theme="tropical"] .theme-icon-tropical { display: inline-block !important; }
 
 .header-spotify-pill {
   display: inline-flex !important;

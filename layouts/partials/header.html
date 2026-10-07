@@ -77,10 +77,9 @@
                 </a>
             </li>
             <li class="menu-theme-item">
-                <a href="javascript:void(0)" class="nav-theme-toggle" id="header-theme-toggle" role="button" aria-label="Cambiar tema visual" title="Cambiar tema (Noche / Huerto / Fiesta)">
+                <a href="javascript:void(0)" class="nav-theme-toggle" id="header-theme-toggle" role="button" aria-label="Cambiar tema visual" title="Cambiar tema (Oscuro / Claro)">
                     <span class="theme-icon theme-icon-dark" aria-hidden="true">🌙</span>
                     <span class="theme-icon theme-icon-light" aria-hidden="true">☀️</span>
-                    <span class="theme-icon theme-icon-tropical" aria-hidden="true">🌴</span>
                     <span class="theme-toggle-text">Tema</span>
                 </a>
             </li>
@@ -120,20 +119,13 @@
 
 <script>
 (function() {
-  var themes = ['dark', 'light', 'tropical'];
-  var saved = localStorage.getItem('dcm_theme');
-  if (saved && themes.indexOf(saved) !== -1) {
-    document.documentElement.setAttribute('data-theme', saved);
-  }
-
   function initThemeToggle() {
     var btn = document.getElementById('header-theme-toggle');
     if (!btn) return;
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       var current = document.documentElement.getAttribute('data-theme') || 'dark';
-      var nextIdx = (themes.indexOf(current) + 1) % themes.length;
-      var next = themes[nextIdx];
+      var next = (current === 'light') ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('dcm_theme', next);
     });
