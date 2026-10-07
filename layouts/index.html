@@ -4,12 +4,17 @@
 {{ $allNonExcludedPages := where .Site.RegularPages "Params.excludefromindex" "==" nil }}
 {{ $allNonExcludedPagesNotTypePage := (where .Site.RegularPages "Type" "ne" "page" | intersect $allNonExcludedPages) }}
 
-{{ $pinnedPostRelPermalinks := split .Site.Params.pinnedPost "," }}
-{{ $pinnedPosts := where $allNonExcludedPagesNotTypePage "RelPermalink" "in" $pinnedPostRelPermalinks }}
-{{ $pagesToPaginate := where $allNonExcludedPagesNotTypePage "RelPermalink" "not in" $pinnedPostRelPermalinks }}
+{{ $pinnedPosts := slice }}
+{{ $pagesToPaginate := $allNonExcludedPagesNotTypePage }}
+
+{{ if .Site.Params.pinnedPost }}
+    {{ $pinnedPostRelPermalinks := split .Site.Params.pinnedPost "," }}
+    {{ $pinnedPosts = where $allNonExcludedPagesNotTypePage "RelPermalink" "in" $pinnedPostRelPermalinks }}
+    {{ $pagesToPaginate = where $allNonExcludedPagesNotTypePage "RelPermalink" "not in" $pinnedPostRelPermalinks }}
+{{ end }}
 
 {{ $paginationLimit := index .Site.Params "paginate" | default 10 }}
-{{ if not .Site.Params.pinOnlyToFirstPage }}
+{{ if and .Site.Params.pinnedPost (not .Site.Params.pinOnlyToFirstPage) }}
     {{ $paginationLimit = sub $paginationLimit (len $pinnedPosts) }}
 {{ end }}
 

@@ -33,7 +33,6 @@ enableRobotsTXT = true
     logo = "image_1758312870445.webp"
     author = "Adriana y Álvaro"
     description = "Explorando ideas complejas con explicaciones sencillas."
-    pinnedPost = "/article/bienvenido/"
     spotifyShow = "https://open.spotify.com/show/5e8y2Z7Tts9e5Llr7pxXo3"
     spotifyHeaderType = "widget" # Options: "widget" (embedded player) or "button" (direct follow button)
     colorTheme = "dark" # Palettes: "dark" (Noche Frutal - default), "light" (Huerto Soleado), "tropical" (Fiesta Pop)
